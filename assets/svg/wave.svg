@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 911" preserveAspectRatio="xMidYMid"
+  width="1920" height="911" xmlns:xlink="http://www.w3.org/1999/xlink"
+  style="shape-rendering:auto;display:block;background-position-x:0%;background-position-y:0%;background-size:auto;background-origin:padding-box;background-clip:border-box;background:scroll rgba(255, 255, 255, 0) none  repeat;width:1920px;height:911px;;animation:none">
+  <g>
+    <linearGradient y2="0" y1="0" x2="1" x1="0" id="lg-6chsh1lfl62">
+      <stop offset="0" stop-color="#0008ff"></stop>
+      <stop offset="1" stop-color="#00a2ff"></stop>
+    </linearGradient>
+    <path opacity="0.4" fill="url(#lg-6chsh1lfl62)"
+      d="M 0 0 L 0 798.34 Q 160 889.11 320 853.2 T 640 745.5 T 960 689.76 T 1280 680.01 T 1600 673.48 T 1920 640.69 L 1920 0 Z"
+      style="fill:url('#lg-6chsh1lfl62');opacity:0.4;;animation:none"></path>
+    <path opacity="0.4" fill="url(#lg-6chsh1lfl62)"
+      d="M 0 0 L 0 854.56 Q 160 761.19 320 728.7 T 640 687 T 960 686.44 T 1280 659.66 T 1600 690.87 T 1920 504.06 L 1920 0 Z"
+      style="fill:url('#lg-6chsh1lfl62');opacity:0.4;;animation:none"></path>
+    <path opacity="0.4" fill="url(#lg-6chsh1lfl62)"
+      d="M 0 0 L 0 865.87 Q 160 754.51 320 734.7 T 640 816.25 T 960 792.8 T 1280 712.33 T 1600 552.78 T 1920 586.97 L 1920 0 Z"
+      style="fill:url('#lg-6chsh1lfl62');opacity:0.4;;animation:none"></path>
+    <g></g>
+  </g>
+</svg>

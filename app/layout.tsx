@@ -1,6 +1,15 @@
+import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/providers/theme-provider";
 import type { Metadata, Viewport } from "next";
+import { Geist } from "next/font/google";
+import { PropsWithChildren } from "react";
+import MainLayout from "./_layout/main-layout";
 import "./globals.css";
+
+const geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist",
+});
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -39,21 +48,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
+      <body className={cn(geist.variable, "font-sans")}>
+        <ThemeProvider attribute="class" disableTransitionOnChange>
+          <MainLayout>{children}</MainLayout>
         </ThemeProvider>
       </body>
     </html>
