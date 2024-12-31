@@ -1,7 +1,7 @@
 import logoBackground from "@/assets/svg/wave.svg";
 import MenuAccordion from "@/components/shared/menu-accordion";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { CircuitBoardIcon } from "lucide-react";
+import { toolGroups } from "@/constants/tools";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -25,21 +25,9 @@ export default function LeftMenu() {
             </Link>
           </div>
         </div>
-        <MenuAccordion
-          title="UI Components"
-          items={[
-            {
-              icon: <CircuitBoardIcon className="h-5 w-5" />,
-              href: "/components/button",
-              title: "Button",
-            },
-            {
-              icon: <CircuitBoardIcon className="h-5 w-5" />,
-              href: "/components/input",
-              title: "Input",
-            },
-          ]}
-        />
+        {toolGroups.map((item, index) => (
+          <MenuAccordion key={index} {...item} />
+        ))}
       </ScrollArea>
     </div>
   );
