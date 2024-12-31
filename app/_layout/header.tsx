@@ -77,7 +77,7 @@ const Header: React.FC<Props> = ({ isOpenMenu, onToggleMenu }) => {
     <>
       <div
         ref={wrapperRef}
-        className="sticky top-0 flex items-center gap-4 bg-neutral-100 px-4 py-3 shadow-md transition-all duration-150 dark:bg-neutral-800"
+        className="bg-main-light dark:bg-main-dark sticky top-0 z-10 flex items-center gap-4 px-4 py-3 shadow-md transition-all duration-150"
       >
         <TooltipButton
           onClick={onToggleMenu}

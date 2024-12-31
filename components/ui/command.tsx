@@ -135,6 +135,7 @@ CommandSeparator.displayName = CommandPrimitive.Separator.displayName;
 interface CommandItemProps {
   value: string;
   children: React.ReactNode;
+  onSelect: (val: string) => void;
 }
 
 const CommandItem = React.forwardRef<

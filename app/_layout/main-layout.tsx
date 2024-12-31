@@ -24,13 +24,13 @@ const MainLayout: React.FC<PropsWithChildren> = ({ children }) => {
     <div className="flex">
       <div
         ref={leftMenuRef}
-        className="sticky left-0 top-0 h-screen w-[20rem] flex-shrink-0 shadow-md transition-all duration-150 dark:bg-neutral-700"
+        className="sticky left-0 top-0 h-screen w-[20rem] flex-shrink-0 shadow-md transition-all duration-150"
       >
         <LeftMenu />
       </div>
-      <div className="min-h-screen flex-auto bg-neutral-100 dark:bg-neutral-800">
+      <div className="bg-main-light dark:bg-main-dark min-h-screen flex-auto">
         <Header isOpenMenu={expandingLeftMenu} onToggleMenu={toggleLeftMenu} />
-        {children}
+        <div className="px-6 py-8">{children}</div>
       </div>
     </div>
   );

@@ -1,12 +1,4 @@
 import {
-  DialogContent,
-  DialogDescription,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import { toolGroups } from "@/constants/tools";
-import { useEffect } from "react";
-
-import {
   Command,
   CommandEmpty,
   CommandGroup,
@@ -14,12 +6,25 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
+import {
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { toolGroups } from "@/constants/tools";
+import { useRouter } from "next/navigation";
+import { useEffect, useRef } from "react";
 
 interface Props {
   onOpenDialog: () => void;
 }
 
 const SearchDialog: React.FC<Props> = ({ onOpenDialog }) => {
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  const router = useRouter();
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if ((event.ctrlKey || event.metaKey) && event.key === "k") {
@@ -36,8 +41,16 @@ const SearchDialog: React.FC<Props> = ({ onOpenDialog }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const selectItem = (href: string) => {
+    closeButtonRef.current?.click();
+    router.push(href);
+  };
+
   return (
     <DialogContent className="p-0 pb-2 sm:w-[40rem] sm:min-w-[40rem] sm:max-w-[40rem]">
+      <DialogClose asChild>
+        <button ref={closeButtonRef} className="hidden" />
+      </DialogClose>
       <DialogTitle className="hidden"></DialogTitle>
       <DialogDescription className="hidden"></DialogDescription>
       <Command className="h-full w-full">
@@ -47,7 +60,11 @@ const SearchDialog: React.FC<Props> = ({ onOpenDialog }) => {
           {toolGroups.map((group) => (
             <CommandGroup key={group.title} heading={group.title}>
               {group.items.map((item) => (
-                <CommandItem key={item.href} value={item.title}>
+                <CommandItem
+                  key={item.href}
+                  value={item.title}
+                  onSelect={() => selectItem(item.href)}
+                >
                   {item.icon}
                   <span>{item.title}</span>
                 </CommandItem>

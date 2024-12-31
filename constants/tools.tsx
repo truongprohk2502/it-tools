@@ -17,12 +17,7 @@ export const toolGroups: ToolGroup[] = [
     items: [
       {
         title: "Button",
-        href: "/components/button",
-        icon: <CircuitBoardIcon className="h-5 w-5" />,
-      },
-      {
-        title: "Card",
-        href: "/components/card",
+        href: "/button",
         icon: <CircuitBoardIcon className="h-5 w-5" />,
       },
     ],
