@@ -1,4 +1,4 @@
-import type { UIField } from "@/components/ui-libs/ui-docs";
+import type { UIField } from "@/app/(ui-libs)/_components/ui-docs";
 
 export const buttonProperties: UIField[] = [
   {

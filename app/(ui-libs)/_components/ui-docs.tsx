@@ -1,5 +1,7 @@
+import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Switch } from "@/components/ui/switch";
 import {
   Table,
   TableBody,
@@ -9,8 +11,6 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { cn } from "@/lib/utils";
-import { Input } from "../ui/input";
-import { Switch } from "../ui/switch";
 
 export interface UIField {
   name: string;

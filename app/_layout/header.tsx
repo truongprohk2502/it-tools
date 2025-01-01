@@ -16,7 +16,7 @@ import {
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import SearchDialog from "./search-dialog";
 
 interface Props {
@@ -31,27 +31,6 @@ const Header: React.FC<Props> = ({ isOpenMenu, onToggleMenu }) => {
   const { theme, setTheme } = useTheme();
   const domLoaded = useDomLoaded();
   const router = useRouter();
-
-  useEffect(() => {
-    const wrapperElement = wrapperRef.current!;
-
-    const handleScroll = () => {
-      const isScrolledToTop = window.scrollY === 0;
-      if (isScrolledToTop) {
-        wrapperElement.style.boxShadow = "none";
-      } else {
-        wrapperElement.style.boxShadow = "0 2px 4px rgba(0, 0, 0, 0.1)";
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    handleScroll();
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   const openSearchDialog = () => {
     searchButtonRef.current?.click();
@@ -77,7 +56,7 @@ const Header: React.FC<Props> = ({ isOpenMenu, onToggleMenu }) => {
     <>
       <div
         ref={wrapperRef}
-        className="bg-main-light dark:bg-main-dark sticky top-0 z-10 flex items-center gap-4 px-4 py-3 shadow-md transition-all duration-150"
+        className="flex items-center gap-4 bg-main-light px-4 py-3 shadow-sm transition-all duration-150 dark:bg-main-dark"
       >
         <TooltipButton
           onClick={onToggleMenu}

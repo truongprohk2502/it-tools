@@ -1,15 +1,8 @@
 "use client";
 
-import useDomLoaded from "@/hooks/useDomLoaded";
+import SyntaxHighlighter from "@/components/shared/syntax-highlighter";
 import { cn } from "@/lib/utils";
-import { useTheme } from "next-themes";
 import { useState } from "react";
-import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
-import jsx from "react-syntax-highlighter/dist/esm/languages/prism/jsx";
-import dark from "react-syntax-highlighter/dist/esm/styles/prism/duotone-dark";
-import light from "react-syntax-highlighter/dist/esm/styles/prism/duotone-light";
-
-SyntaxHighlighter.registerLanguage("jsx", jsx);
 
 interface Props {
   code: string;
@@ -18,9 +11,6 @@ interface Props {
 
 const UIPreview: React.FC<Props> = ({ code, children }) => {
   const [showingCode, setShowingCode] = useState<boolean>(false);
-
-  const { theme } = useTheme();
-  const domLoaded = useDomLoaded();
 
   const toggleShowCode = () => {
     setShowingCode(!showingCode);
@@ -46,15 +36,7 @@ const UIPreview: React.FC<Props> = ({ code, children }) => {
           },
         )}
       >
-        {domLoaded && (
-          <SyntaxHighlighter
-            language="jsx"
-            style={theme === "light" ? light : dark}
-            customStyle={{ margin: 0 }}
-          >
-            {code}
-          </SyntaxHighlighter>
-        )}
+        <SyntaxHighlighter code={code} />
       </div>
     </div>
   );
