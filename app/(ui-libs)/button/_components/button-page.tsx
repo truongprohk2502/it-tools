@@ -1,8 +1,7 @@
 "use client";
 
-import UIComponent from "@/components/ui-libs/ui-component";
-import UIDocs from "@/components/ui-libs/ui-docs";
-import Head from "next/head";
+import UIComponent from "@/app/(ui-libs)/_components/ui-component";
+import UIDocs from "@/app/(ui-libs)/_components/ui-docs";
 import { useState } from "react";
 import Button from "./component";
 import { buttonProperties } from "./constant";
@@ -31,24 +30,15 @@ export default function ButtonPage() {
   });
 
   return (
-    <>
-      <Head>
-        <title>UI Button - IT Tools</title>
-        <meta
-          name="description"
-          content="IT Tools - Button component with ReactJS and TailwindCSS"
-        />
-      </Head>
-      <div className="mx-auto max-w-[64rem]">
-        <UIComponent title="Button" code={generateCode(buttonProps)}>
-          <Button {...buttonProps}>{buttonProps.children}</Button>
-        </UIComponent>
-        <UIDocs<ButtonProps>
-          fields={buttonProperties}
-          fieldState={buttonProps}
-          onChange={setButtonProps}
-        />
-      </div>
-    </>
+    <div>
+      <UIComponent title="Button" code={generateCode(buttonProps)}>
+        <Button {...buttonProps}>{buttonProps.children}</Button>
+      </UIComponent>
+      <UIDocs<ButtonProps>
+        fields={buttonProperties}
+        fieldState={buttonProps}
+        onChange={setButtonProps}
+      />
+    </div>
   );
 }
