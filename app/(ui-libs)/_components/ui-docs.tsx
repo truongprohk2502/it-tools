@@ -17,7 +17,7 @@ export interface UIField {
   required: boolean;
   description: string;
   default: string | null;
-  type: "string" | "boolean" | "radio";
+  type: "string" | "number" | "boolean" | "radio" | "none";
   radioList?: string[];
 }
 
@@ -82,6 +82,13 @@ function UIDocs<T>({ fields, fieldState, onChange }: Props<T>) {
                     onChange={(e) => changeValue(item.name, e.target.value)}
                     className="text-xs"
                   />
+                ) : item.type === "number" ? (
+                  <Input
+                    type="number"
+                    value={fieldState[item.name as keyof T] as string}
+                    onChange={(e) => changeValue(item.name, e.target.value)}
+                    className="text-xs"
+                  />
                 ) : item.type === "boolean" ? (
                   <div className="flex items-center">
                     <span
@@ -112,7 +119,9 @@ function UIDocs<T>({ fields, fieldState, onChange }: Props<T>) {
                       true
                     </span>
                   </div>
-                ) : null}
+                ) : (
+                  "-"
+                )}
               </TableCell>
             </TableRow>
           ))}

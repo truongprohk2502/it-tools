@@ -16,13 +16,18 @@ export const toolGroups: ToolGroup[] = [
     title: "UI Components",
     items: [
       {
-        title: "Button",
-        href: "/button",
+        title: "Accordion",
+        href: "/accordion",
         icon: <CircuitBoardIcon className="h-5 w-5" />,
       },
       {
-        title: "Accordion",
-        href: "/accordion",
+        title: "AngleSlider",
+        href: "/angle-slider",
+        icon: <CircuitBoardIcon className="h-5 w-5" />,
+      },
+      {
+        title: "Button",
+        href: "/button",
         icon: <CircuitBoardIcon className="h-5 w-5" />,
       },
     ],

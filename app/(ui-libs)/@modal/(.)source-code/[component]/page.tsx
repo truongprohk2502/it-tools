@@ -1,6 +1,7 @@
 "use client";
 
 import AccordionSourcePage from "@/app/source-code/accordion/page";
+import AngleSliderSourcePage from "@/app/source-code/angle-slider/page";
 import ButtonSourcePage from "@/app/source-code/button/page";
 import { Button } from "@/components/ui/button";
 import {
@@ -26,6 +27,8 @@ export default function Page() {
     switch (component) {
       case "accordion":
         return <AccordionSourcePage />;
+      case "angle-slider":
+        return <AngleSliderSourcePage />;
       case "button":
         return <ButtonSourcePage />;
       default:

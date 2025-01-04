@@ -49,7 +49,7 @@ const UISourceCode: React.FC<Props> = ({ component, steps }) => {
             <CopyButton text={step.sourceCode} />
           </div>
           <ScrollArea className="h-[30rem] w-full">
-            <SyntaxHighlighter code={step.sourceCode} />
+            <SyntaxHighlighter code={step.sourceCode} showLineNumbers />
             <ScrollBar orientation="horizontal" />
           </ScrollArea>
         </div>
