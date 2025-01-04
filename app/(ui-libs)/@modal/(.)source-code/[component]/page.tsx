@@ -1,5 +1,6 @@
 "use client";
 
+import AccordionSourcePage from "@/app/source-code/accordion/page";
 import ButtonSourcePage from "@/app/source-code/button/page";
 import { Button } from "@/components/ui/button";
 import {
@@ -23,6 +24,8 @@ export default function Page() {
 
   const getSourceCode = () => {
     switch (component) {
+      case "accordion":
+        return <AccordionSourcePage />;
       case "button":
         return <ButtonSourcePage />;
       default:

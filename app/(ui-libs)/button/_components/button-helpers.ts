@@ -1,7 +1,6 @@
-import { cva, type VariantProps } from "class-variance-authority";
-import { forwardRef } from "react";
+import { cva } from "class-variance-authority";
 
-const buttonVariants = cva("border border-solid text-sm h-fit", {
+export const buttonVariants = cva("border border-solid text-sm h-fit", {
   variants: {
     variant: {
       solid: null,
@@ -182,34 +181,3 @@ const buttonVariants = cva("border border-solid text-sm h-fit", {
     buttonColor: "primary",
   },
 });
-
-interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  children: React.ReactNode;
-}
-
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    { variant, buttonColor, radius, size, className, children, ...props },
-    ref,
-  ) => {
-    return (
-      <button
-        ref={ref}
-        className={buttonVariants({
-          variant,
-          buttonColor,
-          radius,
-          size,
-          className,
-        })}
-        {...props}
-      >
-        {children}
-      </button>
-    );
-  },
-);
-
-export default Button;

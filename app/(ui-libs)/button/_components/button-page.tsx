@@ -3,7 +3,7 @@
 import UIComponent from "@/app/(ui-libs)/_components/ui-component";
 import UIDocs from "@/app/(ui-libs)/_components/ui-docs";
 import { useState } from "react";
-import Button from "./component";
+import Button from "./button-component";
 import { buttonProperties } from "./constant";
 import type { ButtonProps } from "./types";
 

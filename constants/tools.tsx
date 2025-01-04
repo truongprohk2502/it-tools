@@ -20,6 +20,11 @@ export const toolGroups: ToolGroup[] = [
         href: "/button",
         icon: <CircuitBoardIcon className="h-5 w-5" />,
       },
+      {
+        title: "Accordion",
+        href: "/accordion",
+        icon: <CircuitBoardIcon className="h-5 w-5" />,
+      },
     ],
   },
 ];
