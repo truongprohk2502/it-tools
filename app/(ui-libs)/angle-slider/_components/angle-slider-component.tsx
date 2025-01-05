@@ -127,12 +127,12 @@ const AngleSlider: React.FC<Props> = ({
     <div
       ref={wrapperRef}
       style={{ width: size, height: size }}
-      className="relative flex items-center justify-end rounded-full bg-neutral-200"
+      className="relative flex items-center justify-end rounded-full bg-neutral-200 dark:bg-neutral-700"
     >
       <div
         ref={rotateBarRef}
         style={{ height: barThick }}
-        className="w-1/2 origin-left bg-neutral-700"
+        className="w-1/2 origin-left bg-neutral-700 dark:bg-neutral-200"
       />
       <div className="absolute flex h-full w-full items-center justify-center bg-transparent">
         <div
@@ -140,7 +140,7 @@ const AngleSlider: React.FC<Props> = ({
             width: `${100 - barSizePercent}%`,
             height: `${100 - barSizePercent}%`,
           }}
-          className="rounded-full bg-neutral-200"
+          className="rounded-full bg-neutral-200 dark:bg-neutral-700"
         />
       </div>
       <div className="absolute flex h-full w-full items-center justify-center bg-transparent">

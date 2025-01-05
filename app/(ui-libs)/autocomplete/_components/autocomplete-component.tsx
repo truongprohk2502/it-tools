@@ -138,8 +138,9 @@ const Autocomplete: React.FC<Props> = ({
         className={clsx(
           "flex items-center rounded-md border px-4 py-2",
           {
-            "border-neutral-300 text-neutral-300": disabled,
-            "border-neutral-400 text-neutral-600 hover:border-cyan-500":
+            "border-neutral-300 text-neutral-300 dark:border-neutral-600 dark:text-neutral-700":
+              disabled,
+            "border-neutral-400 text-neutral-600 hover:border-cyan-500 dark:text-neutral-200":
               !disabled,
           },
           { "border-cyan-500": opening },
@@ -159,7 +160,7 @@ const Autocomplete: React.FC<Props> = ({
       <div
         ref={scrollRef}
         className={clsx(
-          "absolute left-0 z-10 max-h-[13rem] min-w-full max-w-[calc(100%+2rem)] overflow-auto rounded-md border border-neutral-200 bg-white",
+          "absolute left-0 z-10 max-h-[13rem] min-w-full max-w-[calc(100%+2rem)] overflow-auto rounded-sm border border-neutral-200 bg-white dark:border-neutral-600 dark:bg-neutral-700",
           {
             "bottom-[calc(100%+0.5rem)]": position === PositionType.Top,
             "top-[calc(100%+0.5rem)]": position === PositionType.Bottom,
@@ -173,7 +174,7 @@ const Autocomplete: React.FC<Props> = ({
             style={{ height: OPTION_HEIGHT }}
             className={clsx(
               "flex cursor-pointer items-center overflow-hidden text-ellipsis whitespace-nowrap px-3 text-sm font-medium",
-              { "bg-neutral-300": selectedOption === item },
+              { "bg-neutral-300 dark:bg-neutral-500": selectedOption === item },
             )}
             onClick={() => handleSelect(item)}
             onMouseEnter={() => handleHover(item)}
