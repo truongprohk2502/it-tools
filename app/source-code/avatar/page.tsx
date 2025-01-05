@@ -1,7 +1,11 @@
-"use client";
-
+import type { Metadata } from "next";
 import UISourceCode from "../_components/ui-source-code";
 import { avatarComponentCode, avatarHelpersCode } from "./constant";
+
+export const metadata: Metadata = {
+  title: "UI Avatar - IT Tools",
+  description: "UI Avatar component using ReactJS and TailwindCSS",
+};
 
 export default function AvatarSourcePage() {
   return (
