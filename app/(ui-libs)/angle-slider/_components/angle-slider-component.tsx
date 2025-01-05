@@ -88,8 +88,8 @@ const AngleSlider: React.FC<Props> = ({
 
     const handleChangeAngle = (angle: number, ended?: boolean) => {
       const value = convertAngleToValue(angle);
-      onChange?.(value);
-      ended && onEnd?.(value);
+      if (onChange) onChange(value);
+      if (ended && onEnd) onEnd(value);
     };
 
     const handleMouseDown = (e: MouseEvent) => {

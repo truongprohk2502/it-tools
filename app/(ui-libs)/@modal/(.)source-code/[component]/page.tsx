@@ -1,10 +1,10 @@
 "use client";
 
-import AccordionSourcePage from "@/app/source-code/accordion/page";
-import AngleSliderSourcePage from "@/app/source-code/angle-slider/page";
-import AutocompleteSourcePage from "@/app/source-code/autocomplete/page";
-import AvatarSourcePage from "@/app/source-code/avatar/page";
-import ButtonSourcePage from "@/app/source-code/button/page";
+import AccordionSource from "@/app/source-code/accordion/accordion-source";
+import AngleSliderSource from "@/app/source-code/angle-slider/angle-slider-source";
+import AutocompleteSource from "@/app/source-code/autocomplete/autocomplete-source";
+import AvatarSource from "@/app/source-code/avatar/avatar-source";
+import ButtonSource from "@/app/source-code/button/button-source";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -28,15 +28,15 @@ export default function Page() {
   const getSourceCode = () => {
     switch (component) {
       case "accordion":
-        return <AccordionSourcePage />;
+        return <AccordionSource />;
       case "angle-slider":
-        return <AngleSliderSourcePage />;
+        return <AngleSliderSource />;
       case "autocomplete":
-        return <AutocompleteSourcePage />;
+        return <AutocompleteSource />;
       case "avatar":
-        return <AvatarSourcePage />;
+        return <AvatarSource />;
       case "button":
-        return <ButtonSourcePage />;
+        return <ButtonSource />;
       default:
         return null;
     }

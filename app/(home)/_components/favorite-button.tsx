@@ -11,7 +11,7 @@ interface Props {
 }
 
 const FavoriteButton: React.FC<Props> = ({ href }) => {
-  const [_, setFavoriteStorageLinks] = useLocalStorage(
+  const [, setFavoriteStorageLinks] = useLocalStorage(
     StorageKeys.FavoriteToolLinks,
   );
   const { favoriteLinks, setFavoriteLinks } = useFavoriteTools();

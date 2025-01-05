@@ -17,11 +17,12 @@ const FavoriteList: React.FC = () => {
 
   useEffect(() => {
     setFavoriteLinks(favoriteLinksFromStorage || []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const favoriteTools = useMemo(() => {
     const toolList = [];
-    for (let link of favoriteLinks) {
+    for (const link of favoriteLinks) {
       const tool = tools.find((item) => item.href === link);
       if (tool) toolList.push(tool);
     }
