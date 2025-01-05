@@ -11,9 +11,10 @@ interface Step {
 interface Props {
   component: string;
   steps: Step[];
+  dependencies?: Array<React.ReactNode>;
 }
 
-const UISourceCode: React.FC<Props> = ({ component, steps }) => {
+const UISourceCode: React.FC<Props> = ({ component, steps, dependencies }) => {
   return (
     <div className="mx-auto flex max-w-[64rem] flex-col">
       <h1 className="text-3xl font-bold">{component}</h1>
@@ -38,9 +39,10 @@ const UISourceCode: React.FC<Props> = ({ component, steps }) => {
           is a utility for managing CSS class names based on various conditions.
         </li>
         <li>
-          A tiny utility for constructing className strings conditionally using{" "}
-          <code className="text-red-500">clsx</code>.
+          <code className="text-red-500">clsx</code> is a tiny utility for
+          constructing className strings conditionally.
         </li>
+        {dependencies?.map((item, index) => <li key={index}>{item}</li>)}
       </ul>
       {steps.map((step, index) => (
         <div key={index}>

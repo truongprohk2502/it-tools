@@ -6,7 +6,7 @@ export const autocompleteProperties: UIField[] = [
     description: "Input value",
     default: "-",
     required: false,
-    type: "none",
+    type: "string",
   },
   {
     name: "options",
@@ -20,14 +20,14 @@ export const autocompleteProperties: UIField[] = [
     description: "Placeholder of Autocomplete",
     default: "-",
     required: false,
-    type: "none",
+    type: "string",
   },
   {
     name: "className",
     description: "Wrapper class name",
     default: "-",
     required: false,
-    type: "none",
+    type: "string",
   },
   {
     name: "disabled",
@@ -35,5 +35,12 @@ export const autocompleteProperties: UIField[] = [
     default: "false",
     required: false,
     type: "boolean",
+  },
+  {
+    name: "onChange",
+    description: "Change event of Autocomplete",
+    default: "-",
+    required: false,
+    type: "none",
   },
 ];
