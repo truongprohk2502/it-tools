@@ -9,7 +9,7 @@ import Link from "next/link";
 export interface MenuItemType {
   title: string;
   href: string;
-  icon: React.ReactNode;
+  icon: React.FC<React.SVGProps<SVGSVGElement>>;
 }
 
 interface Props {
@@ -28,7 +28,9 @@ const MenuAccordion: React.FC<Props> = ({ title, items }) => {
           {items.map((item, index) => (
             <Link key={index} href={item.href}>
               <div className="flex cursor-pointer items-center rounded-md py-2 pl-2 text-sm text-gray-700 hover:bg-blue-200 dark:text-gray-300 dark:hover:bg-neutral-600">
-                <div>{item.icon}</div>
+                <div>
+                  <item.icon className="h-4 w-4" />
+                </div>
                 <p className="ml-2">{item.title}</p>
               </div>
             </Link>

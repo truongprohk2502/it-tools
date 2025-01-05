@@ -47,7 +47,7 @@ const SearchDialog: React.FC<Props> = ({ onOpenDialog }) => {
   };
 
   return (
-    <DialogContent className="p-0 pb-2 sm:w-[40rem] sm:min-w-[40rem] sm:max-w-[40rem]">
+    <DialogContent className="p-0 sm:w-[40rem] sm:min-w-[40rem] sm:max-w-[40rem]">
       <DialogClose asChild>
         <button ref={closeButtonRef} className="hidden" />
       </DialogClose>
@@ -65,8 +65,17 @@ const SearchDialog: React.FC<Props> = ({ onOpenDialog }) => {
                   value={item.title}
                   onSelect={() => selectItem(item.href)}
                 >
-                  {item.icon}
-                  <span>{item.title}</span>
+                  <div className="flex items-center">
+                    <div className="ml-1 w-10">
+                      <item.icon className="!h-6 !w-6" />
+                    </div>
+                    <div>
+                      <div className="text-sm font-semibold">{item.title}</div>
+                      <div className="text-xs text-neutral-400">
+                        {item.description}
+                      </div>
+                    </div>
+                  </div>
                 </CommandItem>
               ))}
             </CommandGroup>

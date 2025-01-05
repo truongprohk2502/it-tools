@@ -7,7 +7,8 @@ import ButtonIcon from "@/assets/icons/button.icon";
 interface Tool {
   title: string;
   href: string;
-  icon: React.ReactNode;
+  description: string;
+  icon: React.FC<React.SVGProps<SVGSVGElement>>;
 }
 
 interface ToolGroup {
@@ -22,27 +23,32 @@ export const toolGroups: ToolGroup[] = [
       {
         title: "Accordion",
         href: "/accordion",
-        icon: <AccordionIcon width={20} height={20} />,
+        description: "React Accordion component with TailwindCSS",
+        icon: AccordionIcon,
       },
       {
         title: "AngleSlider",
         href: "/angle-slider",
-        icon: <AngleSliderIcon width={20} height={20} />,
+        description: "React AngleSlider component with TailwindCSS",
+        icon: AngleSliderIcon,
       },
       {
         title: "Autocomplete",
         href: "/autocomplete",
-        icon: <AutocompleteIcon width={20} height={20} />,
+        description: "React Autocomplete component with TailwindCSS",
+        icon: AutocompleteIcon,
       },
       {
         title: "Avatar",
         href: "/avatar",
-        icon: <AvatarIcon width={20} height={20} />,
+        description: "React Avatar component with TailwindCSS",
+        icon: AvatarIcon,
       },
       {
         title: "Button",
         href: "/button",
-        icon: <ButtonIcon width={20} height={20} />,
+        description: "React Button component with TailwindCSS",
+        icon: ButtonIcon,
       },
     ],
   },
