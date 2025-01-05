@@ -1,4 +1,8 @@
-import { CircuitBoardIcon } from "lucide-react";
+import AccordionIcon from "@/assets/icons/accordion.icon";
+import AngleSliderIcon from "@/assets/icons/angle-slider.icon";
+import AutocompleteIcon from "@/assets/icons/autocomplete.icon";
+import AvatarIcon from "@/assets/icons/avatar.icon";
+import ButtonIcon from "@/assets/icons/button.icon";
 
 interface Tool {
   title: string;
@@ -18,27 +22,27 @@ export const toolGroups: ToolGroup[] = [
       {
         title: "Accordion",
         href: "/accordion",
-        icon: <CircuitBoardIcon className="h-5 w-5" />,
+        icon: <AccordionIcon width={20} height={20} />,
       },
       {
         title: "AngleSlider",
         href: "/angle-slider",
-        icon: <CircuitBoardIcon className="h-5 w-5" />,
+        icon: <AngleSliderIcon width={20} height={20} />,
       },
       {
         title: "Autocomplete",
         href: "/autocomplete",
-        icon: <CircuitBoardIcon className="h-5 w-5" />,
+        icon: <AutocompleteIcon width={20} height={20} />,
       },
       {
         title: "Avatar",
         href: "/avatar",
-        icon: <CircuitBoardIcon className="h-5 w-5" />,
+        icon: <AvatarIcon width={20} height={20} />,
       },
       {
         title: "Button",
         href: "/button",
-        icon: <CircuitBoardIcon className="h-5 w-5" />,
+        icon: <ButtonIcon width={20} height={20} />,
       },
     ],
   },
