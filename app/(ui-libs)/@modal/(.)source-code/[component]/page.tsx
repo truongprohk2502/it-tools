@@ -2,6 +2,7 @@
 
 import AccordionSourcePage from "@/app/source-code/accordion/page";
 import AngleSliderSourcePage from "@/app/source-code/angle-slider/page";
+import AutocompleteSourcePage from "@/app/source-code/autocomplete/page";
 import ButtonSourcePage from "@/app/source-code/button/page";
 import { Button } from "@/components/ui/button";
 import {
@@ -29,6 +30,8 @@ export default function Page() {
         return <AccordionSourcePage />;
       case "angle-slider":
         return <AngleSliderSourcePage />;
+      case "autocomplete":
+        return <AutocompleteSourcePage />;
       case "button":
         return <ButtonSourcePage />;
       default:

@@ -26,6 +26,11 @@ export const toolGroups: ToolGroup[] = [
         icon: <CircuitBoardIcon className="h-5 w-5" />,
       },
       {
+        title: "Autocomplete",
+        href: "/autocomplete",
+        icon: <CircuitBoardIcon className="h-5 w-5" />,
+      },
+      {
         title: "Button",
         href: "/button",
         icon: <CircuitBoardIcon className="h-5 w-5" />,

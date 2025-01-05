@@ -23,7 +23,7 @@ export const accordionProperties: UIField[] = [
     description: "Wrapper class name",
     default: "-",
     required: false,
-    type: "string",
+    type: "none",
   },
 ];
 
