@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     siteName: "IT Tools",
     images: [
       {
-        url: "https://it-tools.netlify.app/images/background.png",
+        url: "https://it-tool.netlify.app/images/background.png",
         width: 800,
         height: 420,
         alt: "IT Tools",

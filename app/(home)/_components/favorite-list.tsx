@@ -1,5 +1,6 @@
 "use client";
 
+import { Skeleton } from "@/components/ui/skeleton";
 import { StorageKeys } from "@/constants/storage";
 import { tools } from "@/constants/tools";
 import useDomLoaded from "@/hooks/useDomLoaded";
@@ -28,6 +29,18 @@ const FavoriteList: React.FC = () => {
     }
     return toolList;
   }, [favoriteLinks]);
+
+  if (!domLoaded)
+    return (
+      <div>
+        <p className="mt-6 font-semibold">Favorites</p>
+        <div className="mt-3 grid grid-cols-2 gap-3 lg:grid-cols-3 xl:grid-cols-4">
+          {Array.from({ length: 4 }).map((_, index) => (
+            <Skeleton key={index} className="h-[166px] rounded-md" />
+          ))}
+        </div>
+      </div>
+    );
 
   if (!domLoaded || !favoriteTools.length) return null;
 
