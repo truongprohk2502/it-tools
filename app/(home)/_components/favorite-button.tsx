@@ -2,6 +2,7 @@
 
 import { StorageKeys } from "@/constants/storage";
 import useDomLoaded from "@/hooks/useDomLoaded";
+import { cn } from "@/lib/utils";
 import useFavoriteTools from "@/stores/useFavoriteTools";
 import { HeartFilledIcon, HeartIcon } from "@radix-ui/react-icons";
 import { useLocalStorage } from "react-use";
@@ -30,11 +31,16 @@ const FavoriteButton: React.FC<Props> = ({ href }) => {
 
   if (!domLoaded) return null;
 
-  const Icon = favoriteLinks?.includes(href) ? HeartFilledIcon : HeartIcon;
+  const isFavorite = favoriteLinks?.includes(href);
+
+  const Icon = isFavorite ? HeartFilledIcon : HeartIcon;
 
   return (
     <Icon
-      className="absolute right-5 top-6 h-5 w-5 cursor-pointer"
+      className={cn(
+        "absolute right-5 top-6 h-5 w-5 cursor-pointer transition-all duration-150 hover:scale-150",
+        isFavorite && "text-red-500",
+      )}
       onClick={toggleFavorite}
     />
   );

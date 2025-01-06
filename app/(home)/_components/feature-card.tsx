@@ -20,7 +20,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   return (
     <div
       className={cn(
-        "relative cursor-pointer rounded-md bg-background px-4 pb-6 pt-4 shadow-sm outline outline-1 outline-transparent transition-all duration-300",
+        "relative h-[10.5rem] cursor-pointer rounded-md bg-background px-4 pb-6 pt-4 shadow-sm outline outline-1 outline-transparent transition-all duration-300",
         "border border-neutral-300 hover:border-blue-500 hover:outline-blue-500 dark:border-neutral-700",
       )}
     >

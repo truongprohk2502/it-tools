@@ -14,7 +14,7 @@ const FavoriteList: React.FC = () => {
     StorageKeys.FavoriteToolLinks,
   );
   const { favoriteLinks, setFavoriteLinks } = useFavoriteTools();
-  const domLoaded = useDomLoaded();
+  const domLoaded = useDomLoaded({ delay: 200 });
 
   useEffect(() => {
     setFavoriteLinks(favoriteLinksFromStorage || []);
@@ -42,9 +42,9 @@ const FavoriteList: React.FC = () => {
       </div>
     );
 
-  if (!domLoaded || !favoriteTools.length) return null;
-
-  return <FeatureGroup title="Favorites" items={favoriteTools} />;
+  return (
+    <FeatureGroup title="Favorites" items={favoriteTools} hasFavoriteCard />
+  );
 };
 
 export default FavoriteList;
