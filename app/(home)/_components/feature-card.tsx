@@ -1,6 +1,6 @@
+import FavoriteButton from "@/components/shared/favorite-button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import FavoriteButton from "./favorite-button";
 
 export interface FeatureCardProps {
   title: string;
@@ -29,7 +29,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
         <h2 className="mt-4 text-lg font-medium">{title}</h2>
         <p className="line-clamp-2 text-sm text-neutral-500">{description}</p>
       </Link>
-      <FavoriteButton href={href} />
+      <FavoriteButton href={href} className="absolute right-5 top-6" />
     </div>
   );
 };

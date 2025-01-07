@@ -9,9 +9,15 @@ import { useLocalStorage } from "react-use";
 
 interface Props {
   href: string;
+  animation?: boolean;
+  className?: string;
 }
 
-const FavoriteButton: React.FC<Props> = ({ href }) => {
+const FavoriteButton: React.FC<Props> = ({
+  href,
+  animation = true,
+  className,
+}) => {
   const [, setFavoriteStorageLinks] = useLocalStorage(
     StorageKeys.FavoriteToolLinks,
   );
@@ -38,8 +44,10 @@ const FavoriteButton: React.FC<Props> = ({ href }) => {
   return (
     <Icon
       className={cn(
-        "absolute right-5 top-6 h-5 w-5 cursor-pointer transition-all duration-150 hover:scale-150",
+        "h-5 w-5 cursor-pointer",
+        animation && "transition-all duration-150 hover:scale-150",
         isFavorite && "text-red-500",
+        className,
       )}
       onClick={toggleFavorite}
     />

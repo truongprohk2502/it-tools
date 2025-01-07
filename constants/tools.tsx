@@ -3,6 +3,7 @@ import AngleSliderIcon from "@/assets/icons/angle-slider.icon";
 import AutocompleteIcon from "@/assets/icons/autocomplete.icon";
 import AvatarIcon from "@/assets/icons/avatar.icon";
 import ButtonIcon from "@/assets/icons/button.icon";
+import JwtIcon from "@/assets/icons/jwt.icon";
 
 interface Tool {
   title: string;
@@ -17,6 +18,17 @@ interface ToolGroup {
 }
 
 export const toolGroups: ToolGroup[] = [
+  {
+    title: "Tools",
+    items: [
+      {
+        title: "Jwt IO",
+        href: "/jwt-io",
+        description: "Decode and encode JWTs",
+        icon: JwtIcon,
+      },
+    ],
+  },
   {
     title: "UI Components",
     items: [
