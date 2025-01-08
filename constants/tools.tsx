@@ -4,6 +4,7 @@ import AutocompleteIcon from "@/assets/icons/autocomplete.icon";
 import AvatarIcon from "@/assets/icons/avatar.icon";
 import ButtonIcon from "@/assets/icons/button.icon";
 import JwtIcon from "@/assets/icons/jwt.icon";
+import WebviewIcon from "@/assets/icons/webview.icon";
 
 interface Tool {
   title: string;
@@ -21,6 +22,12 @@ export const toolGroups: ToolGroup[] = [
   {
     title: "Tools",
     items: [
+      {
+        title: "WebView Playground",
+        href: "/webview-playground",
+        description: "Simple webview with js, html, css",
+        icon: WebviewIcon,
+      },
       {
         title: "Jwt IO",
         href: "/jwt-io",

@@ -28,7 +28,7 @@ const JwtSignature: React.FC<Props> = ({ algorithm, secret, onChange }) => {
       <div className="border-b border-neutral-400 bg-sky-500 px-2 py-1 text-lg font-medium text-white">
         VERIFY SIGNATURE
       </div>
-      <div className="rounded-b-md bg-[#fffffe] p-4 dark:bg-[#1e1e1e]">
+      <div className="rounded-b-md p-4">
         <p className="whitespace-pre-wrap text-sky-500">{getText()}</p>
         <div className="py-1 pl-8">
           <Input
