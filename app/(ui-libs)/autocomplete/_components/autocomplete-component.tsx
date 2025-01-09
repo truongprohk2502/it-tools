@@ -1,4 +1,4 @@
-import useClickAway from "@/hooks/useClickAway";
+import useClickAway from "@/hooks/use-click-away";
 import clsx from "clsx";
 import { useRef, useState } from "react";
 

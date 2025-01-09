@@ -1,6 +1,7 @@
 "use client";
 
-import { useTheme } from "next-themes";
+import { Theme } from "@/constants/system";
+import useSystemTheme from "@/hooks/use-system-theme";
 import { useCallback } from "react";
 import Editor from "react-simple-code-editor";
 
@@ -17,13 +18,13 @@ const RegexTextarea: React.FC<Props> = ({
   value,
   onChange,
 }) => {
-  const { theme } = useTheme();
+  const theme = useSystemTheme();
 
   const highlightMatchedString = useCallback(
     (code: string) => {
       if (invalid || !regex) return code;
 
-      const bgColor = theme === "light" ? "#93C5FD" : "#3689e5";
+      const bgColor = theme === Theme.Light ? "#93C5FD" : "#3689e5";
 
       try {
         const regParts = regex.match(/^\/(.*?)\/([gimsu]*)$/);

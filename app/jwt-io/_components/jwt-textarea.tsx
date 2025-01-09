@@ -1,6 +1,6 @@
 "use client";
 
-import useMirrorStyles from "@/hooks/useMirrorStyles";
+import useMirrorStyles from "@/hooks/use-mirror-styles";
 import { useRef } from "react";
 
 interface Props {

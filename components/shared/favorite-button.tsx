@@ -1,7 +1,7 @@
 "use client";
 
 import { StorageKeys } from "@/constants/storage";
-import useDomLoaded from "@/hooks/useDomLoaded";
+import useDomLoaded from "@/hooks/use-dom-loaded";
 import { cn } from "@/lib/utils";
 import useFavoriteTools from "@/stores/useFavoriteTools";
 import { HeartFilledIcon, HeartIcon } from "@radix-ui/react-icons";

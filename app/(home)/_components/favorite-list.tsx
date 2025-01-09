@@ -3,7 +3,7 @@
 import { Skeleton } from "@/components/ui/skeleton";
 import { StorageKeys } from "@/constants/storage";
 import { tools } from "@/constants/tools";
-import useDomLoaded from "@/hooks/useDomLoaded";
+import useDomLoaded from "@/hooks/use-dom-loaded";
 import useFavoriteTools from "@/stores/useFavoriteTools";
 import { useEffect, useMemo } from "react";
 import { useLocalStorage } from "react-use";

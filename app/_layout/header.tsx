@@ -3,7 +3,9 @@
 import BuyCoffeeIcon from "@/assets/icons/buy-coffee.icon";
 import TooltipButton from "@/components/shared/tooltip-button";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
-import useDomLoaded from "@/hooks/useDomLoaded";
+import { Theme } from "@/constants/system";
+import useDomLoaded from "@/hooks/use-dom-loaded";
+import useSystemTheme from "@/hooks/use-system-theme";
 import {
   GithubIcon,
   HouseIcon,
@@ -28,7 +30,8 @@ const Header: React.FC<Props> = ({ isOpenMenu, onToggleMenu }) => {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const searchButtonRef = useRef<HTMLButtonElement>(null);
 
-  const { theme, setTheme } = useTheme();
+  const { setTheme } = useTheme();
+  const theme = useSystemTheme();
   const domLoaded = useDomLoaded();
   const router = useRouter();
 
@@ -49,7 +52,7 @@ const Header: React.FC<Props> = ({ isOpenMenu, onToggleMenu }) => {
   };
 
   const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
+    setTheme(theme === Theme.Dark ? Theme.Light : Theme.Dark);
   };
 
   return (
@@ -84,11 +87,11 @@ const Header: React.FC<Props> = ({ isOpenMenu, onToggleMenu }) => {
           <GithubIcon className="h-6 w-6" />
         </TooltipButton>
         <TooltipButton
-          tooltip={theme === "light" ? "Dark mode" : "Light mode"}
+          tooltip={theme === Theme.Light ? "Dark mode" : "Light mode"}
           onClick={toggleTheme}
         >
           {domLoaded &&
-            (theme === "light" ? (
+            (theme === Theme.Light ? (
               <MoonIcon className="h-6 w-6" />
             ) : (
               <SunIcon className="h-6 w-6" />

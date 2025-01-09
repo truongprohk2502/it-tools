@@ -10,7 +10,9 @@ const useClickAway = (
   useEffect(() => {
     const handler = (event: MouseEvent | TouchEvent) => {
       const el = ref.current!;
-      el && !el.contains(event.target as HTMLElement) && onClickAway(event);
+      if (!el) return;
+      if (el.contains(event.target as HTMLElement)) return;
+      onClickAway(event);
     };
 
     for (const eventName of defaultEvents) {

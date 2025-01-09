@@ -4,7 +4,8 @@ import ReactIcon from "@/assets/icons/react.icon";
 import ToolHeader from "@/components/shared/tool-header";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Route } from "@/constants/routes";
-import { useTheme } from "next-themes";
+import { Theme } from "@/constants/system";
+import useSystemTheme from "@/hooks/use-system-theme";
 import { themes } from "prism-react-renderer";
 import { useEffect, useRef } from "react";
 import { LiveEditor, LiveError, LivePreview, LiveProvider } from "react-live";
@@ -13,7 +14,7 @@ import { DEFAULT_REACT_COMPONENT_CODE } from "./constants";
 const ReactPlaygroundPage: React.FC = () => {
   const liveEditorRef = useRef<HTMLDivElement>(null);
 
-  const { theme } = useTheme();
+  const theme = useSystemTheme();
 
   useEffect(() => {
     const liveEditor = liveEditorRef.current!;
@@ -49,7 +50,9 @@ const ReactPlaygroundPage: React.FC = () => {
             className="h-[40rem] overflow-auto rounded-md border border-neutral-400 bg-[rgb(251,251,251)] dark:bg-[#011627]"
           >
             <LiveEditor
-              theme={theme === "light" ? themes.nightOwlLight : themes.nightOwl}
+              theme={
+                theme === Theme.Light ? themes.nightOwlLight : themes.nightOwl
+              }
               style={{ fontSize: 12, height: "40rem" }}
             />
           </ScrollArea>

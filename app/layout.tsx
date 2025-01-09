@@ -52,7 +52,12 @@ export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn(geist.variable, "font-sans")}>
-        <ThemeProvider attribute="class" disableTransitionOnChange>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           <MainLayout>{children}</MainLayout>
         </ThemeProvider>
       </body>
