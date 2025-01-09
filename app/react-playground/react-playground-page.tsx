@@ -1,10 +1,12 @@
 "use client";
 
 import ReactIcon from "@/assets/icons/react.icon";
+import Spinner from "@/components/shared/spinner";
 import ToolHeader from "@/components/shared/tool-header";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Route } from "@/constants/routes";
 import { Theme } from "@/constants/system";
+import useDomLoaded from "@/hooks/use-dom-loaded";
 import useSystemTheme from "@/hooks/use-system-theme";
 import { themes } from "prism-react-renderer";
 import { useEffect, useRef } from "react";
@@ -15,6 +17,7 @@ const ReactPlaygroundPage: React.FC = () => {
   const liveEditorRef = useRef<HTMLDivElement>(null);
 
   const theme = useSystemTheme();
+  const domLoaded = useDomLoaded();
 
   useEffect(() => {
     const liveEditor = liveEditorRef.current!;
@@ -49,12 +52,18 @@ const ReactPlaygroundPage: React.FC = () => {
             ref={liveEditorRef}
             className="h-[40rem] overflow-auto rounded-md border border-neutral-400 bg-[rgb(251,251,251)] dark:bg-[#011627]"
           >
-            <LiveEditor
-              theme={
-                theme === Theme.Light ? themes.nightOwlLight : themes.nightOwl
-              }
-              style={{ fontSize: 12, height: "40rem" }}
-            />
+            {domLoaded ? (
+              <LiveEditor
+                theme={
+                  theme === Theme.Light ? themes.nightOwlLight : themes.nightOwl
+                }
+                style={{ fontSize: 12, height: "40rem" }}
+              />
+            ) : (
+              <div className="flex h-[40rem] w-full items-center justify-center">
+                <Spinner />
+              </div>
+            )}
           </ScrollArea>
           <ScrollArea className="h-[40rem] overflow-auto">
             <LivePreview />

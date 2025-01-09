@@ -49,6 +49,12 @@ export const toolGroups: ToolGroup[] = [
         description: "Learn, build and test Regex",
         icon: RegexIcon,
       },
+      // {
+      //   title: "Markdown",
+      //   href: Route.Markdown,
+      //   description: "The markdown documents live preview",
+      //   icon: MarkdownIcon,
+      // },
     ],
   },
   {
