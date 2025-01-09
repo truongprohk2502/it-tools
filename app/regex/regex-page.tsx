@@ -3,11 +3,12 @@
 import RegexIcon from "@/assets/icons/regex.icon";
 import ToolHeader from "@/components/shared/tool-header";
 import { Input } from "@/components/ui/input";
+import { Route } from "@/constants/routes";
 import { useEffect, useState } from "react";
 import { parseRegExpLiteral } from "regexpp";
 import type { RegExpLiteral } from "regexpp/ast";
-import RegexExplanation from "./_components/RegexExplanation";
-import RegexTextarea from "./_components/RegexTextarea";
+import RegexExplanation from "./_components/regex-explanation";
+import RegexTextarea from "./_components/regex-textarea";
 import { DEFAULT_REGEX_PARAGRAPH } from "./constants";
 
 const RegexPage: React.FC = () => {
@@ -38,7 +39,7 @@ const RegexPage: React.FC = () => {
       <ToolHeader
         title="Regular Expression"
         description="Learn, build and test Regular Expressions (Regex)"
-        href="/regex"
+        href={Route.Regex}
         icon={RegexIcon}
       />
       <div>

@@ -10,6 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Route } from "@/constants/routes";
 import { cn } from "@/lib/utils";
 import base64 from "base-64";
 import EncBase64 from "crypto-js/enc-base64";
@@ -18,10 +19,10 @@ import HmacSHA384 from "crypto-js/hmac-sha384";
 import HmacSHA512 from "crypto-js/hmac-sha512";
 import { CircleCheck, CircleX } from "lucide-react";
 import { useEffect, useState } from "react";
-import JwtHeader from "./_components/JwtHeader";
-import JwtPayload from "./_components/JwtPayload";
-import JwtSignature from "./_components/JwtSignature";
-import JwtTextarea from "./_components/JwtTextarea";
+import JwtHeader from "./_components/jwt-header";
+import JwtPayload from "./_components/jwt-payload";
+import JwtSignature from "./_components/jwt-signature";
+import JwtTextarea from "./_components/jwt-textarea";
 import { JWT_INIT_DATA, JwtAlgorithm } from "./constants";
 import {
   formatBase64String,
@@ -158,7 +159,7 @@ const JwtIOPage: React.FC = () => {
       <ToolHeader
         title="JWT IO"
         description="Allows you to decode, verify and generate JWT."
-        href="/jwt-io"
+        href={Route.JwtIO}
         icon={JwtIcon}
       />
       <div className="mb-4 flex items-center gap-6">

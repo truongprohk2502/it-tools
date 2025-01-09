@@ -3,10 +3,11 @@
 import WebviewIcon from "@/assets/icons/webview.icon";
 import ToolHeader from "@/components/shared/tool-header";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Route } from "@/constants/routes";
 import { useEffect, useRef, useState } from "react";
-import WebConsole from "./_components/WebConsole";
-import WebView from "./_components/WebView";
-import WebViewEditor from "./_components/WebViewEditor";
+import WebConsole from "./_components/web-console";
+import WebView from "./_components/web-view";
+import WebViewEditor from "./_components/web-view-editor";
 import {
   DEFAULT_CSS_CODE,
   DEFAULT_HTML_CODE,
@@ -83,7 +84,7 @@ const WebViewPage: React.FC = () => {
       <ToolHeader
         title="WebView Playground"
         description="Simple web view playground with editing JavaScript, HTML, CSS and rendering as well as debugging web page at realtime."
-        href="/webview-playground"
+        href={Route.WebViewPlayground}
         icon={WebviewIcon}
       />
       <div className="mb-10 grid w-full grid-cols-2 gap-6">
