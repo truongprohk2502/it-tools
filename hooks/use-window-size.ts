@@ -6,10 +6,7 @@ type Size = {
 };
 
 export default function useWindowSize() {
-  const [state, setState] = useState<Size>({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
+  const [state, setState] = useState<Size>({ width: 0, height: 0 });
 
   useEffect(() => {
     const handler = () => {
@@ -18,6 +15,8 @@ export default function useWindowSize() {
         height: window.innerHeight,
       });
     };
+
+    handler();
 
     window.addEventListener("resize", handler);
 
