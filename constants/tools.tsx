@@ -7,6 +7,7 @@ import JwtIcon from "@/assets/icons/jwt.icon";
 import ReactIcon from "@/assets/icons/react.icon";
 import RegexIcon from "@/assets/icons/regex.icon";
 import WebviewIcon from "@/assets/icons/webview.icon";
+import WheelIcon from "@/assets/icons/wheel.icon";
 import { Route } from "./routes";
 
 interface Tool {
@@ -48,6 +49,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.Regex,
         description: "Learn, build and test Regex",
         icon: RegexIcon,
+      },
+      {
+        title: "Random wheel",
+        href: Route.RandomWheel,
+        description: "Random name picker",
+        icon: WheelIcon,
       },
       // {
       //   title: "Markdown",

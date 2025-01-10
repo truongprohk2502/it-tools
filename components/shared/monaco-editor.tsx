@@ -1,5 +1,6 @@
 "use client";
 
+import { BackgroundColor } from "@/constants/system";
 import { Editor, type EditorProps, loader } from "@monaco-editor/react";
 import { useTheme } from "next-themes";
 import { useEffect } from "react";
@@ -12,9 +13,14 @@ enum Themes {
 
 interface Props extends EditorProps {
   asSimple?: boolean;
+  hideMinimap?: boolean;
 }
 
-const MonacoEditor: React.FC<Props> = ({ asSimple = true, ...props }) => {
+const MonacoEditor: React.FC<Props> = ({
+  asSimple = true,
+  hideMinimap,
+  ...props
+}) => {
   const { theme } = useTheme();
 
   useEffect(() => {
@@ -24,7 +30,7 @@ const MonacoEditor: React.FC<Props> = ({ asSimple = true, ...props }) => {
         inherit: true,
         rules: [],
         colors: {
-          "editor.background": "#eaedff",
+          "editor.background": BackgroundColor.Light,
         },
       });
       monaco.editor.defineTheme(Themes.Dark, {
@@ -32,7 +38,7 @@ const MonacoEditor: React.FC<Props> = ({ asSimple = true, ...props }) => {
         inherit: true,
         rules: [],
         colors: {
-          "editor.background": "#1f202b",
+          "editor.background": BackgroundColor.Dark,
         },
       });
     });
@@ -53,7 +59,11 @@ const MonacoEditor: React.FC<Props> = ({ asSimple = true, ...props }) => {
                 enabled: false,
               },
             }
-          : undefined
+          : {
+              minimap: {
+                enabled: !hideMinimap,
+              },
+            }
       }
       {...props}
     />
