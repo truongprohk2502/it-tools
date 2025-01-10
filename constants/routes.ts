@@ -1,4 +1,5 @@
 export enum Route {
+  CompareTexts = "/compare-texts",
   JwtIO = "/jwt-io",
   Regex = "/regex",
   ReactPlayground = "/react-playground",

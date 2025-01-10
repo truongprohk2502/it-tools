@@ -3,6 +3,7 @@ import AngleSliderIcon from "@/assets/icons/angle-slider.icon";
 import AutocompleteIcon from "@/assets/icons/autocomplete.icon";
 import AvatarIcon from "@/assets/icons/avatar.icon";
 import ButtonIcon from "@/assets/icons/button.icon";
+import CompareIcon from "@/assets/icons/compare.icon";
 import JwtIcon from "@/assets/icons/jwt.icon";
 import ReactIcon from "@/assets/icons/react.icon";
 import RegexIcon from "@/assets/icons/regex.icon";
@@ -27,6 +28,12 @@ export const toolGroups: ToolGroup[] = [
   {
     title: "Tools",
     items: [
+      {
+        title: "Compare Texts",
+        href: Route.CompareTexts,
+        description: "Compare texts to find the difference",
+        icon: CompareIcon,
+      },
       {
         title: "WebView Playground",
         href: Route.WebViewPlayground,
