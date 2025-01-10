@@ -1,6 +1,9 @@
 "use client";
 
+import WheelIcon from "@/assets/icons/wheel.icon";
 import MonacoEditor from "@/components/shared/monaco-editor";
+import ToolHeader from "@/components/shared/tool-header";
+import { Route } from "@/constants/routes";
 import { getRandomHexColor } from "@/utils/get-colors";
 import { CircleXIcon } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
@@ -65,10 +68,16 @@ const RandomWheelPage: React.FC = () => {
   };
 
   return (
-    <>
+    <div className="mx-auto min-w-[45rem] max-w-[80rem]">
+      <ToolHeader
+        title="Random Wheel"
+        description="Free and easy to use spinner. Enter names and spin the wheel to pick a random winner. Customize look and feel, save and share wheels."
+        href={Route.RandomWheel}
+        icon={WheelIcon}
+      />
       <div
         ref={wheelRef}
-        className="mx-auto flex min-w-[45rem] max-w-[80rem] flex-col px-6 xl:flex-row xl:gap-20 2xl:gap-20"
+        className="flex flex-col px-6 xl:flex-row xl:gap-20 2xl:gap-20"
       >
         <div className="flex flex-col items-center">
           <Wheel
@@ -119,7 +128,7 @@ const RandomWheelPage: React.FC = () => {
         onClose={handleCloseDialog}
         onRemove={handleRemoveOption}
       />
-    </>
+    </div>
   );
 };
 

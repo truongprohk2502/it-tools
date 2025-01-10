@@ -4,6 +4,7 @@ export enum Route {
   ReactPlayground = "/react-playground",
   WebViewPlayground = "/webview-playground",
   Markdown = "/markdown",
+  GenerateText = "/generate-text",
   RandomWheel = "/random-wheel",
   UIAccordion = "/accordion",
   UIAngleSlider = "/angle-slider",

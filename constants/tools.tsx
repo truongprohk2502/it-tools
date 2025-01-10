@@ -6,6 +6,7 @@ import ButtonIcon from "@/assets/icons/button.icon";
 import JwtIcon from "@/assets/icons/jwt.icon";
 import ReactIcon from "@/assets/icons/react.icon";
 import RegexIcon from "@/assets/icons/regex.icon";
+import TextIcon from "@/assets/icons/text.icon";
 import WebviewIcon from "@/assets/icons/webview.icon";
 import WheelIcon from "@/assets/icons/wheel.icon";
 import { Route } from "./routes";
@@ -51,7 +52,13 @@ export const toolGroups: ToolGroup[] = [
         icon: RegexIcon,
       },
       {
-        title: "Random wheel",
+        title: "Generate Text",
+        href: Route.GenerateText,
+        description: "Generate texts with more languages",
+        icon: TextIcon,
+      },
+      {
+        title: "Random Wheel",
         href: Route.RandomWheel,
         description: "Random name picker",
         icon: WheelIcon,
