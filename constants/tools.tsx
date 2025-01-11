@@ -5,6 +5,7 @@ import AvatarIcon from "@/assets/icons/avatar.icon";
 import ButtonIcon from "@/assets/icons/button.icon";
 import CompareIcon from "@/assets/icons/compare.icon";
 import JwtIcon from "@/assets/icons/jwt.icon";
+import NumberIcon from "@/assets/icons/number.icon";
 import ReactIcon from "@/assets/icons/react.icon";
 import RegexIcon from "@/assets/icons/regex.icon";
 import TextIcon from "@/assets/icons/text.icon";
@@ -63,6 +64,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.GenerateText,
         description: "Generate texts with more languages",
         icon: TextIcon,
+      },
+      {
+        title: "Number Converter",
+        href: Route.NumberConverter,
+        description: "Number converters and conversions",
+        icon: NumberIcon,
       },
       {
         title: "Random Wheel",

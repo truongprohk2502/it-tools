@@ -6,6 +6,7 @@ export enum Route {
   WebViewPlayground = "/webview-playground",
   Markdown = "/markdown",
   GenerateText = "/generate-text",
+  NumberConverter = "/number-converter",
   RandomWheel = "/random-wheel",
   UIAccordion = "/accordion",
   UIAngleSlider = "/angle-slider",
