@@ -2,6 +2,8 @@ export enum Route {
   CompareTexts = "/compare-texts",
   JwtIO = "/jwt-io",
   Regex = "/regex",
+  ColorPicker = "/color-picker",
+  ImageCrop = "/image-crop",
   ReactPlayground = "/react-playground",
   WebViewPlayground = "/webview-playground",
   Markdown = "/markdown",

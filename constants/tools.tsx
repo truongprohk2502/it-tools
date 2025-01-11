@@ -4,7 +4,9 @@ import ApiIcon from "@/assets/icons/api.icon";
 import AutocompleteIcon from "@/assets/icons/autocomplete.icon";
 import AvatarIcon from "@/assets/icons/avatar.icon";
 import ButtonIcon from "@/assets/icons/button.icon";
+import ColorIcon from "@/assets/icons/color.icon";
 import CompareIcon from "@/assets/icons/compare.icon";
+import ImageCropIcon from "@/assets/icons/image-crop.icon";
 import JsonIcon from "@/assets/icons/json.icon";
 import JwtIcon from "@/assets/icons/jwt.icon";
 import NumberIcon from "@/assets/icons/number.icon";
@@ -60,6 +62,18 @@ export const toolGroups: ToolGroup[] = [
         href: Route.Regex,
         description: "Learn, build and test Regex",
         icon: RegexIcon,
+      },
+      {
+        title: "Image Crop",
+        href: Route.ImageCrop,
+        description: "Crop an image file in seconds",
+        icon: ImageCropIcon,
+      },
+      {
+        title: "Color Picker",
+        href: Route.ColorPicker,
+        description: "Pick color with various format",
+        icon: ColorIcon,
       },
       {
         title: "Generate Text",
