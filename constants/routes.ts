@@ -5,6 +5,7 @@ export enum Route {
   ReactPlayground = "/react-playground",
   WebViewPlayground = "/webview-playground",
   Markdown = "/markdown",
+  GenerateAPIResponse = "/api-response",
   GenerateText = "/generate-text",
   NumberConverter = "/number-converter",
   RandomWheel = "/random-wheel",

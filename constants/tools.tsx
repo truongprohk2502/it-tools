@@ -1,5 +1,6 @@
 import AccordionIcon from "@/assets/icons/accordion.icon";
 import AngleSliderIcon from "@/assets/icons/angle-slider.icon";
+import ApiIcon from "@/assets/icons/api.icon";
 import AutocompleteIcon from "@/assets/icons/autocomplete.icon";
 import AvatarIcon from "@/assets/icons/avatar.icon";
 import ButtonIcon from "@/assets/icons/button.icon";
@@ -64,6 +65,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.GenerateText,
         description: "Generate texts with more languages",
         icon: TextIcon,
+      },
+      {
+        title: "Generate API Response",
+        href: Route.GenerateAPIResponse,
+        description: "Generate fake JSON API Response",
+        icon: ApiIcon,
       },
       {
         title: "Number Converter",

@@ -40,7 +40,7 @@ const MainLayout: React.FC<PropsWithChildren> = ({ children }) => {
         )}
       >
         <div className="h-full w-full overflow-auto">
-          <div className="sticky top-0 z-10 h-[4rem] flex-shrink-0">
+          <div className="sticky top-0 z-20 h-[4rem] flex-shrink-0">
             <Header
               isOpenMenu={expandingLeftMenu}
               onToggleMenu={toggleLeftMenu}
