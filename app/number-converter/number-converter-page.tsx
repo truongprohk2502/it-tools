@@ -35,7 +35,7 @@ const NumberConverterPage: React.FC = () => {
   const toLabel = NUMBER_FORMATS.find((item) => item.value === toFormat)!.label;
 
   const handleChangeFrom = (format: NumberFormatType) => {
-    format === toFormat && setToFormat(fromFormat);
+    if (format === toFormat) setToFormat(fromFormat);
     setFromFormat(format);
   };
 
@@ -61,7 +61,7 @@ const NumberConverterPage: React.FC = () => {
       const fromNum = bigInt(fromValue.trim(), fromFormat);
       const toNum = fromNum.toString(+toFormat);
       setToValue(toNum);
-    } catch (err) {
+    } catch {
       setError("Please enter valid number.");
       setToValue("");
     }

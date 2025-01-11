@@ -47,29 +47,29 @@ const ApiJsonInstruction: React.FC = () => {
           <p className="mt-4 font-bold">String type</p>
           <p className="mb-4 text-sm">
             We will define string type by passing{" "}
-            <span className="font-bold italic">"string"</span> as value of
+            <span className="font-bold italic">{'"string"'}</span> as value of
             property.
           </p>
           <JSONPrettyView transparentBackground data={{ fullName: "string" }} />
           <p className="mt-4 font-bold">Number type</p>
           <p className="mb-4 text-sm">
             We will define number type by passing{" "}
-            <span className="font-bold italic">"number"</span> as value of
+            <span className="font-bold italic">{'"number"'}</span> as value of
             property.
           </p>
           <JSONPrettyView transparentBackground data={{ age: "number" }} />
           <p className="mt-4 font-bold">Boolean type</p>
           <p className="mb-4 text-sm">
             We will define boolean type by passing{" "}
-            <span className="font-bold italic">"boolean"</span> as value of
+            <span className="font-bold italic">{'"boolean"'}</span> as value of
             property.
           </p>
           <JSONPrettyView transparentBackground data={{ isMale: "boolean" }} />
           <p className="mt-4 font-bold">Object type</p>
           <p className="mb-4 text-sm">
             We will define object type by passing{" "}
-            <span className="font-bold italic">"another object"</span> to define
-            value of property.
+            <span className="font-bold italic">{'"another object"'}</span> to
+            define value of property.
           </p>
           <JSONPrettyView
             transparentBackground
@@ -79,7 +79,7 @@ const ApiJsonInstruction: React.FC = () => {
           <p className="mb-4 text-sm">
             We will define array type by passing{" "}
             <span className="font-bold italic">
-              "an array with only one item"
+              {'"an array with only one item"'}
             </span>{" "}
             to define value of array.
           </p>

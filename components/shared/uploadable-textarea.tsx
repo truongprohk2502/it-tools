@@ -1,4 +1,3 @@
-import { cn } from "@/lib/utils";
 import { UploadIcon } from "lucide-react";
 import { useCallback } from "react";
 import { toast } from "sonner";
@@ -8,6 +7,7 @@ interface Props {
   title?: string;
   value: string;
   height?: string | number;
+  defaultLanguage?: string;
   disabled?: boolean;
   disabledUpload?: boolean;
   onChange: React.Dispatch<React.SetStateAction<string>>;
@@ -17,6 +17,7 @@ const UploadableTextarea: React.FC<Props> = ({
   title,
   value,
   height,
+  defaultLanguage,
   disabled,
   disabledUpload,
   onChange,
@@ -68,22 +69,17 @@ const UploadableTextarea: React.FC<Props> = ({
           )}
         </div>
       )}
-      <div
-        className={cn(
-          "relative flex overflow-hidden rounded-sm border border-blue-700 dark:border-blue-900",
-          disabled && "bg-neutral-200",
-        )}
-      >
+      <div className="relative flex overflow-hidden rounded-sm border border-blue-700 dark:border-blue-900">
         <MonacoEditor
           asSimple={false}
           hideMinimap
           width="100%"
           height={height}
+          defaultLanguage={defaultLanguage}
           value={value}
           onChange={(val) => onChange(val || "")}
           options={{ readOnly: disabled }}
         />
-        {disabled && <div className="absolute inset-0 bg-white opacity-50" />}
       </div>
     </div>
   );

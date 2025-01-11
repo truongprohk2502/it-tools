@@ -5,6 +5,7 @@ import AutocompleteIcon from "@/assets/icons/autocomplete.icon";
 import AvatarIcon from "@/assets/icons/avatar.icon";
 import ButtonIcon from "@/assets/icons/button.icon";
 import CompareIcon from "@/assets/icons/compare.icon";
+import JsonIcon from "@/assets/icons/json.icon";
 import JwtIcon from "@/assets/icons/jwt.icon";
 import NumberIcon from "@/assets/icons/number.icon";
 import ReactIcon from "@/assets/icons/react.icon";
@@ -71,6 +72,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.GenerateAPIResponse,
         description: "Generate fake JSON API Response",
         icon: ApiIcon,
+      },
+      {
+        title: "JSON Formatter",
+        href: Route.JsonFormatter,
+        description: "Validate, format, convert and save JSON data",
+        icon: JsonIcon,
       },
       {
         title: "Number Converter",

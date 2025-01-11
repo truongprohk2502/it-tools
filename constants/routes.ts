@@ -7,6 +7,7 @@ export enum Route {
   Markdown = "/markdown",
   GenerateAPIResponse = "/api-response",
   GenerateText = "/generate-text",
+  JsonFormatter = "/json-formatter",
   NumberConverter = "/number-converter",
   RandomWheel = "/random-wheel",
   UIAccordion = "/accordion",

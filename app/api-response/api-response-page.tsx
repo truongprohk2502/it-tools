@@ -7,7 +7,6 @@ import NumberInput from "@/components/shared/number-input";
 import ToolHeader from "@/components/shared/tool-header";
 import { Button } from "@/components/ui/button";
 import { Route } from "@/constants/routes";
-import useSystemTheme from "@/hooks/use-system-theme";
 import { copyToClipboard } from "@/utils/copy-to-clipboard";
 import { faker } from "@faker-js/faker/locale/en";
 import flatten from "lodash/flatten";
@@ -27,8 +26,6 @@ const ApiResponsePage: React.FC = () => {
   const [totalRecords, setTotalRecords] = useState<string>("5");
   const [jsonInput, setJsonInput] = useState<string>(DEFAULT_API_FORMAT);
   const [error, setError] = useState<string | null>(null);
-
-  const theme = useSystemTheme();
 
   const generateFakeText = (key: string, type: string) => {
     if (type === "boolean") return faker.datatype.boolean();
