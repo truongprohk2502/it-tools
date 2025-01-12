@@ -3,6 +3,7 @@ import AngleSliderIcon from "@/assets/icons/angle-slider.icon";
 import ApiIcon from "@/assets/icons/api.icon";
 import AutocompleteIcon from "@/assets/icons/autocomplete.icon";
 import AvatarIcon from "@/assets/icons/avatar.icon";
+import BadgeIcon from "@/assets/icons/badge.icon";
 import ButtonIcon from "@/assets/icons/button.icon";
 import ColorIcon from "@/assets/icons/color.icon";
 import CompareIcon from "@/assets/icons/compare.icon";
@@ -146,6 +147,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.UIAvatar,
         description: "React Avatar component with TailwindCSS",
         icon: AvatarIcon,
+      },
+      {
+        title: "Badge",
+        href: Route.UIBadge,
+        description: "React Badge component with TailwindCSS",
+        icon: BadgeIcon,
       },
       {
         title: "Button",

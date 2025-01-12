@@ -4,6 +4,7 @@ import AccordionSource from "@/app/source-code/accordion/accordion-source";
 import AngleSliderSource from "@/app/source-code/angle-slider/angle-slider-source";
 import AutocompleteSource from "@/app/source-code/autocomplete/autocomplete-source";
 import AvatarSource from "@/app/source-code/avatar/avatar-source";
+import BadgeSource from "@/app/source-code/badge/badge-source";
 import ButtonSource from "@/app/source-code/button/button-source";
 import { Button } from "@/components/ui/button";
 import {
@@ -35,6 +36,8 @@ export default function Page() {
         return <AutocompleteSource />;
       case "avatar":
         return <AvatarSource />;
+      case "badge":
+        return <BadgeSource />;
       case "button":
         return <ButtonSource />;
       default:

@@ -17,5 +17,6 @@ export enum Route {
   UIAngleSlider = "/angle-slider",
   UIAutocomplete = "/autocomplete",
   UIAvatar = "/avatar",
+  UIBadge = "/badge",
   UIButton = "/button",
 }

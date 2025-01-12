@@ -1,0 +1,65 @@
+import type { UIField } from "@/app/(ui-libs)/_components/ui-docs";
+
+export const badgeProperties: UIField[] = [
+  {
+    name: "title",
+    description: "Badge label",
+    default: null,
+    required: true,
+    type: "string",
+  },
+  {
+    name: "shape",
+    description: "Shape of Badge",
+    default: '"square"',
+    required: false,
+    type: "radio",
+    radioList: ["square", "circle"],
+  },
+  {
+    name: "size",
+    description: "Size of Badge",
+    default: '"medium"',
+    required: false,
+    type: "radio",
+    radioList: ["small", "medium", "large"],
+  },
+  {
+    name: "color",
+    description: "Color of Badge",
+    default: '"primary"',
+    required: false,
+    type: "radio",
+    radioList: [
+      "primary",
+      "secondary",
+      "success",
+      "danger",
+      "warning",
+      "info",
+      "light",
+      "dark",
+    ],
+  },
+  {
+    name: "showOutline",
+    description: "Whether display outline",
+    default: "false",
+    required: false,
+    type: "boolean",
+  },
+  {
+    name: "hidden",
+    description: "Hide Badge label",
+    default: "false",
+    required: false,
+    type: "boolean",
+  },
+  {
+    name: "children",
+    description: "Badge children element",
+    default: null,
+    required: true,
+    type: "none",
+  },
+];
