@@ -8,6 +8,7 @@ export enum Route {
   WebViewPlayground = "/webview-playground",
   Markdown = "/markdown",
   GenerateAPIResponse = "/api-response",
+  GenerateQrCode = "/qr-code",
   GenerateText = "/generate-text",
   JsonFormatter = "/json-formatter",
   NumberConverter = "/number-converter",

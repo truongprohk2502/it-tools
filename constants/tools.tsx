@@ -10,6 +10,7 @@ import ImageCropIcon from "@/assets/icons/image-crop.icon";
 import JsonIcon from "@/assets/icons/json.icon";
 import JwtIcon from "@/assets/icons/jwt.icon";
 import NumberIcon from "@/assets/icons/number.icon";
+import QrIcon from "@/assets/icons/qr.icon";
 import ReactIcon from "@/assets/icons/react.icon";
 import RegexIcon from "@/assets/icons/regex.icon";
 import TextIcon from "@/assets/icons/text.icon";
@@ -74,6 +75,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.ColorPicker,
         description: "Pick color with various format",
         icon: ColorIcon,
+      },
+      {
+        title: "QR Code",
+        href: Route.GenerateQrCode,
+        description: "Create and download QR Code",
+        icon: QrIcon,
       },
       {
         title: "Generate Text",
