@@ -5,6 +5,7 @@ import AngleSliderSource from "@/app/source-code/angle-slider/angle-slider-sourc
 import AutocompleteSource from "@/app/source-code/autocomplete/autocomplete-source";
 import AvatarSource from "@/app/source-code/avatar/avatar-source";
 import BadgeSource from "@/app/source-code/badge/badge-source";
+import BreadcrumbSource from "@/app/source-code/breadcrumb/breadcrumb-source";
 import ButtonSource from "@/app/source-code/button/button-source";
 import { Button } from "@/components/ui/button";
 import {
@@ -38,6 +39,8 @@ export default function Page() {
         return <AvatarSource />;
       case "badge":
         return <BadgeSource />;
+      case "breadcrumb":
+        return <BreadcrumbSource />;
       case "button":
         return <ButtonSource />;
       default:

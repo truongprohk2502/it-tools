@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function LeftMenu() {
   return (
     <div className="h-full w-full">
-      <ScrollArea className="h-full w-full">
+      <ScrollArea className="h-full w-full pb-6">
         <div className="sticky top-0 aspect-[32/15] w-full">
           <Image
             priority

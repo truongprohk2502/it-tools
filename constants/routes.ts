@@ -18,5 +18,6 @@ export enum Route {
   UIAutocomplete = "/autocomplete",
   UIAvatar = "/avatar",
   UIBadge = "/badge",
+  UIBreadcrumb = "/breadcrumb",
   UIButton = "/button",
 }

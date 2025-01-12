@@ -16,6 +16,7 @@ export interface UIField {
   name: string;
   required: boolean;
   description: string;
+  typeLabel?: string;
   default: string | null;
   type: "string" | "number" | "boolean" | "radio" | "none";
   radioList?: string[];
@@ -51,7 +52,15 @@ function UIDocs<T>({ fields, fieldState, onChange }: Props<T>) {
                 <span>{item.name}</span>
                 {item.required && <span className="text-red-500">{" *"}</span>}
               </TableCell>
-              <TableCell className="align-top">{item.description}</TableCell>
+              <TableCell className="align-top">
+                {item.description}
+                {item.typeLabel && (
+                  <>
+                    <br />
+                    <code>{item.typeLabel}</code>
+                  </>
+                )}
+              </TableCell>
               <TableCell className="align-top italic">
                 {item.default || "-"}
               </TableCell>
