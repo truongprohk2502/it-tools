@@ -2,8 +2,8 @@
 
 import UIComponent from "@/app/(ui-libs)/_components/ui-component";
 import UIDocs from "@/app/(ui-libs)/_components/ui-docs";
+import { Button } from "@it-tool-ui/button";
 import { useState } from "react";
-import Button from "./button-component";
 import { buttonProperties } from "./constant";
 import type { ButtonProps } from "./types";
 
@@ -31,7 +31,7 @@ export default function ButtonPage() {
 
   return (
     <div>
-      <UIComponent title="Button" code={generateCode(buttonProps)}>
+      <UIComponent title="Button" code={generateCode(buttonProps)} hasNpmLink>
         <Button {...buttonProps}>{buttonProps.children}</Button>
       </UIComponent>
       <UIDocs<ButtonProps>
