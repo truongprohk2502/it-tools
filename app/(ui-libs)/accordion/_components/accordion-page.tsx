@@ -14,7 +14,6 @@ import { accordionItemProperties, accordionProperties } from "./constant";
 const generateCode = (props: AccordionProps) => `<Accordion
   variant="${props.variant}"
   selectMode="${props.selectMode}"
-  className="${props.className}"
 >
   <AccordionItem id="1" title="Accordion 1">
     Lorem 1 ipsum dolor sit amet consectetur adipisicing elit. Earum
@@ -41,7 +40,6 @@ export default function AccordionPage() {
   const [accordionProps, setAccordionProps] = useState<AccordionProps>({
     variant: "light",
     selectMode: "single",
-    className: "",
     children: null,
   });
 

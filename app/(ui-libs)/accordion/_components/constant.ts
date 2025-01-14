@@ -25,6 +25,27 @@ export const accordionProperties: UIField[] = [
     required: false,
     type: "none",
   },
+  {
+    name: "itemClassName",
+    description: "Item class name",
+    default: "-",
+    required: false,
+    type: "none",
+  },
+  {
+    name: "headerClassName",
+    description: "Item header class name",
+    default: "-",
+    required: false,
+    type: "none",
+  },
+  {
+    name: "contentClassName",
+    description: "Item content class name",
+    default: "-",
+    required: false,
+    type: "none",
+  },
 ];
 
 export const accordionItemProperties: UIChildField[] = [

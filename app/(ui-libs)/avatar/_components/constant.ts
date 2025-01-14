@@ -60,4 +60,25 @@ export const avatarProperties: UIField[] = [
     required: false,
     type: "boolean",
   },
+  {
+    name: "className",
+    description: "Wrapper class name",
+    default: "-",
+    required: false,
+    type: "none",
+  },
+  {
+    name: "imageClassName",
+    description: "Image class name",
+    default: "-",
+    required: false,
+    type: "none",
+  },
+  {
+    name: "fallbackClassName",
+    description: "Fallback wrapper class name",
+    default: "-",
+    required: false,
+    type: "none",
+  },
 ];

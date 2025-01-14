@@ -62,4 +62,18 @@ export const badgeProperties: UIField[] = [
     required: true,
     type: "none",
   },
+  {
+    name: "className",
+    description: "Wrapper class name",
+    default: "-",
+    required: false,
+    type: "none",
+  },
+  {
+    name: "labelClassName",
+    description: "Text label class name",
+    default: "-",
+    required: false,
+    type: "none",
+  },
 ];
