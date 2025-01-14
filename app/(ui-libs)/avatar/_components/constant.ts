@@ -6,7 +6,7 @@ export const avatarProperties: UIField[] = [
     description: "Avatar image url",
     default: "-",
     required: false,
-    type: "string",
+    type: "none",
   },
   {
     name: "name",
@@ -30,6 +30,13 @@ export const avatarProperties: UIField[] = [
     required: false,
     type: "radio",
     radioList: ["small", "large", "full"],
+  },
+  {
+    name: "hideImage",
+    description: "Whether hide avatar image",
+    default: "false",
+    required: false,
+    type: "boolean",
   },
   {
     name: "bordered",

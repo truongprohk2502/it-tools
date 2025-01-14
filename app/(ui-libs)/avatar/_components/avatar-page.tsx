@@ -2,19 +2,19 @@
 
 import UIComponent from "@/app/(ui-libs)/_components/ui-component";
 import UIDocs from "@/app/(ui-libs)/_components/ui-docs";
+import { Avatar, type AvatarProps } from "@it-tool-ui/avatar";
 import { useState } from "react";
-import Avatar from "./avatar-component";
 import { avatarProperties } from "./constant";
-import type { AvatarProps } from "./types";
 
 const generateCode = (props: AvatarProps) => `<Avatar
   name="${props.name}"
   src="${props.src}"
   size="${props.size}"
   radius="${props.radius}"
-  bordered="${props.bordered}"
-  randomFallbackColor="${props.randomFallbackColor}"
-  disabled="${props.disabled}"
+  hideImage={${props.hideImage}}
+  bordered={${props.bordered}}
+  randomFallbackColor={${props.randomFallbackColor}}
+  disabled={${props.disabled}}
 />
 `;
 

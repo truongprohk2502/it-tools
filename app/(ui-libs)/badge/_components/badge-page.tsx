@@ -2,11 +2,10 @@
 
 import UIComponent from "@/app/(ui-libs)/_components/ui-component";
 import UIDocs from "@/app/(ui-libs)/_components/ui-docs";
+import { Avatar } from "@it-tool-ui/avatar";
+import { Badge, type BadgeProps } from "@it-tool-ui/badge";
 import { useState } from "react";
-import Avatar from "../../avatar/_components/avatar-component";
-import Badge from "./badge-component";
 import { badgeProperties } from "./constant";
-import type { BadgeProps } from "./types";
 
 const generateCode = (props: BadgeProps) => `<Badge
   title="${props.title}"
@@ -32,6 +31,7 @@ export default function BadgePage() {
     color: "primary",
     showOutline: false,
     hidden: false,
+    children: null,
   });
 
   return (

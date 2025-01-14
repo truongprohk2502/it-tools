@@ -2,16 +2,15 @@
 
 import UIComponent from "@/app/(ui-libs)/_components/ui-component";
 import UIDocs from "@/app/(ui-libs)/_components/ui-docs";
+import { Autocomplete, AutocompleteProps } from "@it-tool-ui/autocomplete";
 import { useState } from "react";
-import Autocomplete from "./autocomplete-component";
 import { autocompleteProperties } from "./constant";
-import type { AutocompleteProps } from "./types";
 
-const generateCode = (props: AutocompleteProps) => `<<Autocomplete
+const generateCode = (props: Partial<AutocompleteProps>) => `<Autocomplete
   placeholder="${props.placeholder}"
   disabled={${props.disabled}}
-  value="${props.value}"
-  onChange={setValue}
+  value={animal}
+  onChange={setAnimal}
   options={[
     "Cat",
     "Dog",
@@ -47,6 +46,7 @@ export default function AutocompletePage() {
       ],
       placeholder: "Input animal",
       disabled: false,
+      onChange: () => {},
     },
   );
 
@@ -56,8 +56,16 @@ export default function AutocompletePage() {
 
   return (
     <div>
-      <UIComponent title="Autocomplete" code={generateCode(autocompleteProps)}>
-        <Autocomplete {...autocompleteProps} onChange={changeValue} />
+      <UIComponent
+        title="Autocomplete"
+        code={generateCode(autocompleteProps)}
+        hasNpmLink
+      >
+        <Autocomplete
+          {...autocompleteProps}
+          value={autocompleteProps.value as string}
+          onChange={changeValue}
+        />
       </UIComponent>
       <UIDocs<AutocompleteProps>
         fields={autocompleteProperties}

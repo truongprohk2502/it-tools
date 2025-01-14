@@ -2,10 +2,9 @@
 
 import UIComponent from "@/app/(ui-libs)/_components/ui-component";
 import UIDocs from "@/app/(ui-libs)/_components/ui-docs";
+import { Breadcrumb, type BreadcrumbProps } from "@it-tool-ui/breadcrumb";
 import { useState } from "react";
-import Breadcrumb from "./breadcrumb-component";
 import { breadcrumbProperties } from "./constant";
-import type { BreadcrumbProps } from "./types";
 
 const generateCode = (props: BreadcrumbProps) => `<Breadcrumb
   separator="${props.separator}"
@@ -31,21 +30,19 @@ export default function BreadcrumbPage() {
     itemsAfterCollapse: 2,
     hasCollapse: true,
     disabled: false,
+    items: [
+      { label: "Home", value: "/home" },
+      { label: "Music", value: "/music" },
+      { label: "Genre", value: "/genre" },
+      { label: "Album", value: "/album" },
+      { label: "Song", value: "/song" },
+    ],
   });
 
   return (
     <div>
       <UIComponent title="Breadcrumb" code={generateCode(breadcrumbProps)}>
-        <Breadcrumb
-          {...breadcrumbProps}
-          items={[
-            { label: "Home", value: "/home" },
-            { label: "Music", value: "/music" },
-            { label: "Genre", value: "/genre" },
-            { label: "Album", value: "/album" },
-            { label: "Song", value: "/song" },
-          ]}
-        />
+        <Breadcrumb {...breadcrumbProps} />
       </UIComponent>
       <UIDocs<BreadcrumbProps>
         fields={breadcrumbProperties}
