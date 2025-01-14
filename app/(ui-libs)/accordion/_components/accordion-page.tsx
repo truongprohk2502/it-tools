@@ -2,12 +2,14 @@
 
 import UIComponent from "@/app/(ui-libs)/_components/ui-component";
 import UIDocs from "@/app/(ui-libs)/_components/ui-docs";
+import {
+  Accordion,
+  AccordionItem,
+  type AccordionProps,
+} from "@it-tool-ui/accordion";
 import { useState } from "react";
 import UIChildDocs from "../../_components/ui-child-docs";
-import Accordion from "./accordion-component";
-import AccordionItem from "./accordion-item";
 import { accordionItemProperties, accordionProperties } from "./constant";
-import type { AccordionProps } from "./types";
 
 const generateCode = (props: AccordionProps) => `<Accordion
   variant="${props.variant}"
@@ -40,11 +42,16 @@ export default function AccordionPage() {
     variant: "light",
     selectMode: "single",
     className: "",
+    children: null,
   });
 
   return (
     <div>
-      <UIComponent title="Accordion" code={generateCode(accordionProps)}>
+      <UIComponent
+        title="Accordion"
+        code={generateCode(accordionProps)}
+        hasNpmLink
+      >
         <Accordion {...accordionProps}>
           <AccordionItem id="1" title="Accordion 1">
             Lorem 1 ipsum dolor sit amet consectetur adipisicing elit. Earum

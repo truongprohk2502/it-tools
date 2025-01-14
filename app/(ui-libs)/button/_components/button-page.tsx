@@ -2,17 +2,16 @@
 
 import UIComponent from "@/app/(ui-libs)/_components/ui-component";
 import UIDocs from "@/app/(ui-libs)/_components/ui-docs";
-import { Button } from "@it-tool-ui/button";
+import { Button, type ButtonProps } from "@it-tool-ui/button";
 import { useState } from "react";
 import { buttonProperties } from "./constant";
-import type { ButtonProps } from "./types";
 
 const generateCode = (props: ButtonProps) => `<Button
   buttonColor="${props.buttonColor}"
   radius="${props.radius}"
   size="${props.size}"
   variant="${props.variant}"
-  disabled={${props.disabled.toString()}}
+  disabled={${Boolean(props.disabled).toString()}}
   onClick={() => {}}
 >
   ${props.children}

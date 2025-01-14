@@ -2,10 +2,9 @@
 
 import UIComponent from "@/app/(ui-libs)/_components/ui-component";
 import UIDocs from "@/app/(ui-libs)/_components/ui-docs";
+import { AngleSlider, AngleSliderProps } from "@it-tool-ui/angle-slider";
 import { useState } from "react";
-import AngleSlider from "./angle-slider-component";
 import { angleSliderProperties } from "./constant";
-import type { AngleSliderProps } from "./types";
 
 const generateCode = (props: AngleSliderProps) => `<AngleSlider
   value={${props.value}}
@@ -31,7 +30,11 @@ export default function AngleSliderPage() {
 
   return (
     <div>
-      <UIComponent title="AngleSlider" code={generateCode(angleSliderProps)}>
+      <UIComponent
+        title="AngleSlider"
+        code={generateCode(angleSliderProps)}
+        hasNpmLink
+      >
         <AngleSlider
           {...angleSliderProps}
           onChange={(val) => console.log("change: " + val)}
