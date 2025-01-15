@@ -1,27 +1,8 @@
-export const angleSliderComponentCode = `// angle-slider-component.tsx
-import clsx from "clsx";
+"use client";
+
+import { cn } from "@/lib/utils";
 import { useCallback, useEffect, useRef } from "react";
-
-type Position = {
-  x: number;
-  y: number;
-};
-
-interface Props {
-  value?: number;
-  max: number;
-  showLabel?: boolean;
-  size?: string | number;
-  barSizePercent?: number;
-  barThick?: string | number;
-  labelSize?: "small" | "medium" | "large";
-  className?: string;
-  barClassName?: string;
-  backgroundClassName?: string;
-  labelClassName?: string;
-  onChange?: (value: number) => void;
-  onEnd?: (value: number) => void;
-}
+import type { AngleSliderProps, Position } from "./angle-slider.types";
 
 const AngleSlider: React.FC<AngleSliderProps> = ({
   value = 0,
@@ -50,7 +31,7 @@ const AngleSlider: React.FC<AngleSliderProps> = ({
       const value = Math.round(ratio * max);
       return value;
     },
-    [max]
+    [max],
   );
 
   const convertValueToAngle = useCallback(
@@ -60,7 +41,7 @@ const AngleSlider: React.FC<AngleSliderProps> = ({
       const angle = Math.round(ratio * 360) - 90;
       return angle;
     },
-    [max]
+    [max],
   );
 
   const isRotating = useRef<boolean>(false);
@@ -70,7 +51,7 @@ const AngleSlider: React.FC<AngleSliderProps> = ({
   useEffect(() => {
     if (value === undefined) return;
     const angle = convertValueToAngle(value);
-    rotateBarRef.current!.style.transform = \`rotate(\${angle}deg)\`;
+    rotateBarRef.current!.style.transform = `rotate(${angle}deg)`;
   }, [value, convertValueToAngle]);
 
   useEffect(() => {
@@ -88,7 +69,7 @@ const AngleSlider: React.FC<AngleSliderProps> = ({
       const deltaX = e.clientX - centerPos.current.x;
       const deltaY = e.clientY - centerPos.current.y;
       const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
-      rotateBarRef.current!.style.transform = \`rotate(\${angle}deg)\`;
+      rotateBarRef.current!.style.transform = `rotate(${angle}deg)`;
       rotateAngle.current = angle;
       const value = convertAngleToValue(angle);
       labelRef.current!.textContent = value.toString();
@@ -136,35 +117,35 @@ const AngleSlider: React.FC<AngleSliderProps> = ({
     <div
       ref={wrapperRef}
       style={{ width: size, height: size }}
-      className={clsx(
+      className={cn(
         "relative flex items-center justify-end rounded-full bg-neutral-200 dark:bg-neutral-700",
-        className
+        className,
       )}
     >
       <div
         ref={rotateBarRef}
         style={{ height: barThick }}
-        className={clsx(
+        className={cn(
           "w-1/2 origin-left bg-neutral-700 dark:bg-neutral-200",
-          barClassName
+          barClassName,
         )}
       />
       <div className="absolute flex h-full w-full items-center justify-center bg-transparent">
         <div
           style={{
-            width: \`\${100 - barSizePercent}%\`,
-            height: \`\${100 - barSizePercent}%\`,
+            width: `${100 - barSizePercent}%`,
+            height: `${100 - barSizePercent}%`,
           }}
-          className={clsx(
+          className={cn(
             "rounded-full bg-neutral-200 dark:bg-neutral-700",
-            backgroundClassName
+            backgroundClassName,
           )}
         />
       </div>
       <div className="absolute flex h-full w-full items-center justify-center bg-transparent">
         <span
           ref={labelRef}
-          className={clsx(
+          className={cn(
             "select-none",
             { invisible: !showLabel },
             {
@@ -172,7 +153,7 @@ const AngleSlider: React.FC<AngleSliderProps> = ({
               "text-sm": labelSize === "medium",
               "text-lg": labelSize === "large",
             },
-            labelClassName
+            labelClassName,
           )}
         >
           {value}
@@ -183,4 +164,3 @@ const AngleSlider: React.FC<AngleSliderProps> = ({
 };
 
 export default AngleSlider;
-`;

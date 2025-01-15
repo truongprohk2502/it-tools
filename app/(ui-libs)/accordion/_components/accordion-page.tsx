@@ -6,7 +6,7 @@ import {
   Accordion,
   AccordionItem,
   type AccordionProps,
-} from "@it-tool-ui/accordion";
+} from "@/components/ui-lib/accordion";
 import { useState } from "react";
 import UIChildDocs from "../../_components/ui-child-docs";
 import { accordionItemProperties, accordionProperties } from "./constant";

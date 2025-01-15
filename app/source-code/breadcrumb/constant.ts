@@ -39,6 +39,7 @@ export const separatorVariants = cva(
 `;
 
 export const breadcrumbComponentCode = `// breadcrumb.component.tsx
+import clsx from "clsx";
 import { VariantProps } from "class-variance-authority";
 import { breadcrumbVariants, separatorVariants } from "./breadcrumb.helpers";
 
@@ -49,6 +50,10 @@ interface BreadcrumbProps extends VariantProps<typeof breadcrumbVariants> {
   hasCollapse?: boolean;
   itemsBeforeCollapse?: number;
   itemsAfterCollapse?: number;
+  className?: string;
+  itemClassName?: string;
+  labelClassName?: string;
+  separatorClassName?: string;
   onClick?: (val: string | null) => void;
 }
 
@@ -60,6 +65,10 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({
   itemsBeforeCollapse = 1,
   itemsAfterCollapse = 2,
   size,
+  className,
+  itemClassName,
+  labelClassName,
+  separatorClassName,
   onClick,
 }) => {
   const getItems = () => {
@@ -76,13 +85,16 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({
   const renderItems = getItems();
 
   return (
-    <div className="flex flex-wrap items-center">
+    <div className={clsx("flex flex-wrap items-center", className)}>
       {renderItems.map((item, index) => (
-        <div key={item.value} className="flex items-center">
+        <div
+          key={item.value}
+          className={clsx("flex items-center", itemClassName)}
+        >
           <p
             data-last={index === renderItems.length - 1}
             data-disabled={Boolean(disabled)}
-            className={breadcrumbVariants({ size })}
+            className={clsx(breadcrumbVariants({ size }), labelClassName)}
             onClick={() => onClick && onClick(item.value)}
           >
             {item.label || "..."}
@@ -90,7 +102,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({
           {index !== renderItems.length - 1 && (
             <p
               data-disabled={Boolean(disabled)}
-              className={separatorVariants({ size })}
+              className={clsx(separatorVariants({ size }), separatorClassName)}
             >
               {separator === "arrow" ? ">" : "/"}
             </p>

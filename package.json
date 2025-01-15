@@ -11,13 +11,6 @@
   "dependencies": {
     "@faker-js/faker": "^9.3.0",
     "@hookform/resolvers": "^3.10.0",
-    "@it-tool-ui/accordion": "^1.0.2",
-    "@it-tool-ui/angle-slider": "^1.0.3",
-    "@it-tool-ui/autocomplete": "^1.0.3",
-    "@it-tool-ui/avatar": "^1.0.5",
-    "@it-tool-ui/badge": "^1.0.2",
-    "@it-tool-ui/breadcrumb": "^1.0.2",
-    "@it-tool-ui/button": "^1.0.6",
     "@monaco-editor/react": "^4.6.0",
     "@radix-ui/react-accordion": "^1.2.2",
     "@radix-ui/react-checkbox": "^1.1.3",

@@ -20,4 +20,5 @@ export enum Route {
   UIBadge = "/badge",
   UIBreadcrumb = "/breadcrumb",
   UIButton = "/button",
+  UIBrowserMockup = "/browser-mockup",
 }

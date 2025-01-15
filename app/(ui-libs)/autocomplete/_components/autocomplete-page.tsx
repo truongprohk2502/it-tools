@@ -2,7 +2,10 @@
 
 import UIComponent from "@/app/(ui-libs)/_components/ui-component";
 import UIDocs from "@/app/(ui-libs)/_components/ui-docs";
-import { Autocomplete, AutocompleteProps } from "@it-tool-ui/autocomplete";
+import {
+  Autocomplete,
+  type AutocompleteProps,
+} from "@/components/ui-lib/autocomplete";
 import { useState } from "react";
 import { autocompleteProperties } from "./constant";
 

@@ -2,7 +2,7 @@
 
 import UIComponent from "@/app/(ui-libs)/_components/ui-component";
 import UIDocs from "@/app/(ui-libs)/_components/ui-docs";
-import { Avatar, type AvatarProps } from "@it-tool-ui/avatar";
+import { Avatar, type AvatarProps } from "@/components/ui-lib/avatar";
 import { useState } from "react";
 import { avatarProperties } from "./constant";
 
@@ -31,7 +31,7 @@ export default function AvatarPage() {
 
   return (
     <div>
-      <UIComponent title="Avatar" code={generateCode(avatarProps)}>
+      <UIComponent title="Avatar" code={generateCode(avatarProps)} hasNpmLink>
         <Avatar {...avatarProps} />
       </UIComponent>
       <UIDocs<AvatarProps>

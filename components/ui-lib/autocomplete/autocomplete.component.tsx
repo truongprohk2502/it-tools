@@ -1,59 +1,11 @@
-export const autocompleteUseClickAwayCode = `// useClickAway.ts
-import { RefObject, useEffect } from "react";
+"use client";
 
-const defaultEvents = ["mousedown", "touchstart"];
-type DefaultEventType = "mousedown" | "touchstart";
-
-const useClickAway = (
-  ref: RefObject<HTMLElement | null>,
-  onClickAway: (event: MouseEvent | TouchEvent) => void,
-) => {
-  useEffect(() => {
-    const handler = (event: MouseEvent | TouchEvent) => {
-      const el = ref.current!;
-      el && !el.contains(event.target as HTMLElement) && onClickAway(event);
-    };
-
-    for (const eventName of defaultEvents) {
-      document.addEventListener(eventName as DefaultEventType, handler);
-    }
-
-    return () => {
-      for (const eventName of defaultEvents) {
-        document.removeEventListener(eventName as DefaultEventType, handler);
-      }
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ref]);
-};
-
-export default useClickAway;
-`;
-
-export const autocompleteComponentCode = `// autocomplete.component.tsx
 import useClickAway from "@/hooks/use-click-away";
-import clsx from "clsx";
+import { cn } from "@/lib/utils";
 import { useRef, useState } from "react";
+import { type AutocompleteProps, PositionType } from "./autocomplete.types";
 
 const OPTION_HEIGHT = 32;
-
-enum PositionType {
-  Top,
-  Bottom,
-}
-
-interface Props {
-  value: string;
-  placeholder?: string;
-  className?: string;
-  inputClassName?: string;
-  inputWrapperClassName?: string;
-  optionClassName?: string;
-  optionsWrapperClassName?: string;
-  disabled?: boolean;
-  options: string[];
-  onChange: (value: string) => void;
-}
 
 const Autocomplete: React.FC<AutocompleteProps> = ({
   value,
@@ -97,7 +49,7 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
       if (index === filteredOptions.length - 1) {
         scrollRef.current!.scrollTo(
           0,
-          scrollRef.current!.scrollHeight - optionHeight
+          scrollRef.current!.scrollHeight - optionHeight,
         );
       } else {
         const optionToTop = index * OPTION_HEIGHT;
@@ -146,7 +98,7 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
     const { bottom } = dropdownRef.current!.getBoundingClientRect();
     const distanceToBottom = window.innerHeight - bottom;
     setPosition(
-      distanceToBottom > 230 ? PositionType.Bottom : PositionType.Top
+      distanceToBottom > 230 ? PositionType.Bottom : PositionType.Top,
     );
     setOpening(true);
   };
@@ -174,9 +126,9 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
   };
 
   return (
-    <div ref={dropdownRef} className={clsx("relative w-[12rem]", className)}>
+    <div ref={dropdownRef} className={cn("relative w-[12rem]", className)}>
       <div
-        className={clsx(
+        className={cn(
           "flex items-center rounded-md border px-4 py-2",
           {
             "border-neutral-300 text-neutral-300 dark:border-neutral-600 dark:text-neutral-700":
@@ -185,14 +137,14 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
               !disabled,
           },
           { "border-cyan-500": opening },
-          inputWrapperClassName
+          inputWrapperClassName,
         )}
       >
         <input
           type="text"
-          className={clsx(
+          className={cn(
             "w-full bg-transparent text-sm focus:outline-none",
-            inputClassName
+            inputClassName,
           )}
           disabled={disabled}
           placeholder={placeholder}
@@ -204,24 +156,24 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
       </div>
       <div
         ref={scrollRef}
-        className={clsx(
+        className={cn(
           "absolute left-0 z-10 max-h-[13rem] min-w-full max-w-[calc(100%+2rem)] overflow-auto rounded-sm border border-neutral-200 bg-white dark:border-neutral-600 dark:bg-neutral-700",
           {
             "bottom-[calc(100%+0.5rem)]": position === PositionType.Top,
             "top-[calc(100%+0.5rem)]": position === PositionType.Bottom,
           },
           { hidden: !opening || filteredOptions.length === 0 },
-          optionsWrapperClassName
+          optionsWrapperClassName,
         )}
       >
         {filteredOptions.map((item) => (
           <p
             key={item}
             style={{ height: OPTION_HEIGHT }}
-            className={clsx(
+            className={cn(
               "flex cursor-pointer items-center overflow-hidden text-ellipsis whitespace-nowrap px-3 text-sm font-medium",
               { "bg-neutral-300 dark:bg-neutral-500": selectedOption === item },
-              optionClassName
+              optionClassName,
             )}
             onClick={() => handleSelect(item)}
             onMouseEnter={() => handleHover(item)}
@@ -235,4 +187,3 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
 };
 
 export default Autocomplete;
-`;

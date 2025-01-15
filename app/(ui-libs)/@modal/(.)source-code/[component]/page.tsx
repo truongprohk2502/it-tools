@@ -6,6 +6,7 @@ import AutocompleteSource from "@/app/source-code/autocomplete/autocomplete-sour
 import AvatarSource from "@/app/source-code/avatar/avatar-source";
 import BadgeSource from "@/app/source-code/badge/badge-source";
 import BreadcrumbSource from "@/app/source-code/breadcrumb/breadcrumb-source";
+import BrowserMockupSource from "@/app/source-code/browser-mockup/browser-mockup-source";
 import ButtonSource from "@/app/source-code/button/button-source";
 import { Button } from "@/components/ui/button";
 import {
@@ -41,6 +42,8 @@ export default function Page() {
         return <BadgeSource />;
       case "breadcrumb":
         return <BreadcrumbSource />;
+      case "browser-mockup":
+        return <BrowserMockupSource />;
       case "button":
         return <ButtonSource />;
       default:

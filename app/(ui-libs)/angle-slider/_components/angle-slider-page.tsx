@@ -2,7 +2,10 @@
 
 import UIComponent from "@/app/(ui-libs)/_components/ui-component";
 import UIDocs from "@/app/(ui-libs)/_components/ui-docs";
-import { AngleSlider, AngleSliderProps } from "@it-tool-ui/angle-slider";
+import {
+  AngleSlider,
+  type AngleSliderProps,
+} from "@/components/ui-lib/angle-slider";
 import { useState } from "react";
 import { angleSliderProperties } from "./constant";
 

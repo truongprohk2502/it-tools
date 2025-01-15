@@ -73,16 +73,23 @@ interface Props
   bordered?: boolean;
   disabled?: boolean;
   randomFallbackColor?: boolean;
+  className?: string;
+  imageClassName?: string;
+  fallbackClassName?: string;
 }
 
-const Avatar: React.FC<Props> = ({
+const Avatar: React.FC<AvatarProps> = ({
   src,
   name,
   radius,
   size,
+  hideImage,
   bordered,
   disabled,
   randomFallbackColor,
+  className,
+  imageClassName,
+  fallbackClassName,
 }) => {
   const [showingFallback, setShowingFallback] = useState<boolean>(!src);
 
@@ -98,13 +105,17 @@ const Avatar: React.FC<Props> = ({
       data-disabled={Boolean(disabled)}
       style={{
         borderColor:
-          showingFallback && randomFallbackColor
+          (hideImage || showingFallback) && randomFallbackColor
             ? randomColor.bgColor
             : "#a3a3a3",
       }}
-      className={clsx(wrapperVariants({ size }), radiusVariants({ radius }))}
+      className={clsx(
+        wrapperVariants({ size }),
+        radiusVariants({ radius }),
+        className
+      )}
     >
-      {showingFallback ? (
+      {hideImage || showingFallback ? (
         <div
           style={{
             backgroundColor: randomFallbackColor
@@ -115,6 +126,7 @@ const Avatar: React.FC<Props> = ({
           className={clsx(
             "flex h-full w-full items-center justify-center",
             radiusVariants({ radius }),
+            fallbackClassName
           )}
         >
           <span className={textVariants({ size })}>
@@ -125,7 +137,11 @@ const Avatar: React.FC<Props> = ({
         <img
           src={src}
           alt={name}
-          className={clsx("h-full w-full", radiusVariants({ radius }))}
+          className={clsx(
+            "h-full w-full",
+            radiusVariants({ radius }),
+            imageClassName
+          )}
           onError={() => setShowingFallback(true)}
         />
       )}

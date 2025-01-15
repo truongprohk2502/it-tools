@@ -2,7 +2,10 @@
 
 import UIComponent from "@/app/(ui-libs)/_components/ui-component";
 import UIDocs from "@/app/(ui-libs)/_components/ui-docs";
-import { Breadcrumb, type BreadcrumbProps } from "@it-tool-ui/breadcrumb";
+import {
+  Breadcrumb,
+  type BreadcrumbProps,
+} from "@/components/ui-lib/breadcrumb";
 import { useState } from "react";
 import { breadcrumbProperties } from "./constant";
 
@@ -41,7 +44,11 @@ export default function BreadcrumbPage() {
 
   return (
     <div>
-      <UIComponent title="Breadcrumb" code={generateCode(breadcrumbProps)}>
+      <UIComponent
+        title="Breadcrumb"
+        code={generateCode(breadcrumbProps)}
+        hasNpmLink
+      >
         <Breadcrumb {...breadcrumbProps} />
       </UIComponent>
       <UIDocs<BreadcrumbProps>

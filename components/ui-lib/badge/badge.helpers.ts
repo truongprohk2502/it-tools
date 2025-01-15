@@ -1,4 +1,3 @@
-export const badgeVariantCode = `// badge.helpers.ts
 import { cva } from "class-variance-authority";
 
 export const badgeVariants = cva(
@@ -101,50 +100,3 @@ export const badgeVariants = cva(
     },
   },
 );
-`;
-
-export const badgeComponentCode = `// badge.component.tsx
-import { VariantProps } from "class-variance-authority";
-import { badgeVariants } from "./badge.helpers";
-
-interface BadgeProps extends VariantProps<typeof badgeVariants> {
-  title: string;
-  showOutline?: boolean;
-  hidden?: boolean;
-  className?: string;
-  labelClassName?: string;
-  children: React.ReactNode;
-}
-
-const Badge: React.FC<BadgeProps> = ({
-  title,
-  shape,
-  size,
-  color,
-  position,
-  showOutline,
-  hidden,
-  className,
-  labelClassName,
-  children,
-}) => {
-  return (
-    <div className={cn("relative w-fit", className)}>
-      {children}
-      {!hidden && (
-        <div
-          data-outline={Boolean(showOutline).toString()}
-          className={cn(
-            badgeVariants({ shape, size, position, color }),
-            labelClassName
-          )}
-        >
-          {title}
-        </div>
-      )}
-    </div>
-  );
-};
-
-export default Badge;
-`;

@@ -6,6 +6,9 @@ type AccordionType = "light" | "bordered" | "splitted";
 
 interface ContextProps {
   variant: AccordionType;
+  itemClassName?: string;
+  headerClassName?: string;
+  contentClassName?: string;
   openingItems: string[];
   toggleItem: (key: string) => void;
 }
@@ -20,6 +23,9 @@ interface Props {
   variant?: AccordionType;
   selectMode?: "single" | "multiple";
   className?: string;
+  itemClassName?: string;
+  headerClassName?: string;
+  contentClassName?: string;
   children: React.ReactNode;
 }
 
@@ -27,6 +33,9 @@ const Accordion: React.FC<Props> = ({
   variant = "light",
   selectMode = "single",
   className,
+  itemClassName,
+  headerClassName,
+  contentClassName,
   children,
 }) => {
   const [openingItems, setOpeningItems] = useState<string[]>([]);
@@ -43,7 +52,16 @@ const Accordion: React.FC<Props> = ({
   };
 
   return (
-    <AccordionContext.Provider value={{ variant, openingItems, toggleItem }}>
+    <AccordionContext.Provider
+      value={{
+        variant,
+        itemClassName,
+        headerClassName,
+        contentClassName,
+        openingItems,
+        toggleItem,
+      }}
+    >
       <div
         className={clsx(
           {
@@ -75,8 +93,19 @@ interface Props {
   children: React.ReactNode;
 }
 
-const AccordionItem: React.FC<Props> = ({ id, title, children }) => {
-  const { variant, openingItems, toggleItem } = useContext(AccordionContext);
+const AccordionItem: React.FC<AccordionItemProps> = ({
+  id,
+  title,
+  children,
+}) => {
+  const {
+    variant,
+    itemClassName,
+    headerClassName,
+    contentClassName,
+    openingItems,
+    toggleItem,
+  } = useContext(AccordionContext);
 
   const contentRef = useRef<HTMLDivElement | null>(null);
   const contentHeight = useRef<number>(0);
@@ -97,17 +126,24 @@ const AccordionItem: React.FC<Props> = ({ id, title, children }) => {
 
   return (
     <div
-      className={clsx("group", {
-        "rounded-md border border-neutral-200 px-2 shadow-sm":
-          variant === "splitted",
-      })}
+      className={clsx(
+        "group",
+        {
+          "rounded-md border border-neutral-200 px-2 shadow-sm":
+            variant === "splitted",
+        },
+        itemClassName
+      )}
     >
-      <div className="flex cursor-pointer py-2" onClick={() => toggleItem(id)}>
+      <div
+        className={clsx("flex cursor-pointer py-2", headerClassName)}
+        onClick={() => toggleItem(id)}
+      >
         <div className="mr-2 flex flex-1 text-lg font-medium">{title}</div>
         <ChevronLeftIcon
           className={clsx(
             "h-6 w-6 flex-shrink-0 transform text-neutral-700 duration-150",
-            { "-rotate-90": opening },
+            { "-rotate-90": opening }
           )}
         />
       </div>
@@ -115,6 +151,7 @@ const AccordionItem: React.FC<Props> = ({ id, title, children }) => {
         className={clsx(
           "transform overflow-hidden py-0 opacity-0 transition-all duration-300",
           { "py-2 opacity-100": opening },
+          contentClassName
         )}
         style={{
           height: opening ? \`\${contentHeight.current + 16}px\` : 0,
@@ -130,12 +167,10 @@ const AccordionItem: React.FC<Props> = ({ id, title, children }) => {
       <div
         className={clsx(
           "h-[1px] w-full bg-neutral-200 group-last-of-type:hidden",
-          { hidden: variant === "splitted" },
+          { hidden: variant === "splitted" }
         )}
       />
     </div>
   );
 };
-
-export default AccordionItem;
 `;

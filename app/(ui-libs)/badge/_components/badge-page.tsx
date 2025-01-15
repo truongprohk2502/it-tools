@@ -2,8 +2,8 @@
 
 import UIComponent from "@/app/(ui-libs)/_components/ui-component";
 import UIDocs from "@/app/(ui-libs)/_components/ui-docs";
-import { Avatar } from "@it-tool-ui/avatar";
-import { Badge, type BadgeProps } from "@it-tool-ui/badge";
+import { Avatar } from "@/components/ui-lib/avatar";
+import { Badge, type BadgeProps } from "@/components/ui-lib/badge";
 import { useState } from "react";
 import { badgeProperties } from "./constant";
 
@@ -36,7 +36,7 @@ export default function BadgePage() {
 
   return (
     <div>
-      <UIComponent title="Badge" code={generateCode(badgeProps)}>
+      <UIComponent title="Badge" code={generateCode(badgeProps)} hasNpmLink>
         <Badge {...badgeProps}>
           <Avatar
             src="https://i.pravatar.cc/150?u=a042581f4e29026704d"

@@ -2,7 +2,7 @@
 
 import UIComponent from "@/app/(ui-libs)/_components/ui-component";
 import UIDocs from "@/app/(ui-libs)/_components/ui-docs";
-import { Button, type ButtonProps } from "@it-tool-ui/button";
+import { Button, type ButtonProps } from "@/components/ui-lib/button";
 import { useState } from "react";
 import { buttonProperties } from "./constant";
 
