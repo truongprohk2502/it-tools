@@ -12,6 +12,7 @@ import CarouselSource from "@/app/source-code/carousel/carousel-source";
 import CheckboxSource from "@/app/source-code/checkbox/checkbox-source";
 import ChipSource from "@/app/source-code/chip/chip-source";
 import CodeSnippetSource from "@/app/source-code/code-snippet/code-snippet-source";
+import ContextMenuSource from "@/app/source-code/context-menu/context-menu-source";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -58,6 +59,8 @@ export default function Page() {
         return <ChipSource />;
       case "code-snippet":
         return <CodeSnippetSource />;
+      case "context-menu":
+        return <ContextMenuSource />;
       default:
         return null;
     }

@@ -13,6 +13,7 @@ import ChipIcon from "@/assets/icons/chip.icon";
 import CodeSnippetIcon from "@/assets/icons/code-snippet.icon";
 import ColorIcon from "@/assets/icons/color.icon";
 import CompareIcon from "@/assets/icons/compare.icon";
+import ContextMenuIcon from "@/assets/icons/context-menu.icon";
 import ImageCropIcon from "@/assets/icons/image-crop.icon";
 import JsonIcon from "@/assets/icons/json.icon";
 import JwtIcon from "@/assets/icons/jwt.icon";
@@ -201,6 +202,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.UICodeSnippet,
         description: "React CodeSnippet component with TailwindCSS",
         icon: CodeSnippetIcon,
+      },
+      {
+        title: "ContextMenu",
+        href: Route.UIContextMenu,
+        description: "React ContextMenu component with TailwindCSS",
+        icon: ContextMenuIcon,
       },
     ],
   },

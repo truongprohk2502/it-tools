@@ -25,4 +25,5 @@ export enum Route {
   UICheckbox = "/checkbox",
   UIChip = "/chip",
   UICodeSnippet = "/code-snippet",
+  UIContextMenu = "/context-menu",
 }
