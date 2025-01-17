@@ -8,6 +8,7 @@ import BreadcrumbIcon from "@/assets/icons/breadcrumb.icon";
 import BrowserMockupIcon from "@/assets/icons/browser-mockup.icon";
 import ButtonIcon from "@/assets/icons/button.icon";
 import CarouselIcon from "@/assets/icons/carousel.icon";
+import CheckboxIcon from "@/assets/icons/checkbox.icon";
 import ColorIcon from "@/assets/icons/color.icon";
 import CompareIcon from "@/assets/icons/compare.icon";
 import ImageCropIcon from "@/assets/icons/image-crop.icon";
@@ -180,6 +181,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.UICarousel,
         description: "React Carousel component with TailwindCSS",
         icon: CarouselIcon,
+      },
+      {
+        title: "Checkbox",
+        href: Route.UICheckbox,
+        description: "React Checkbox component with TailwindCSS",
+        icon: CheckboxIcon,
       },
     ],
   },

@@ -9,6 +9,7 @@ import BreadcrumbSource from "@/app/source-code/breadcrumb/breadcrumb-source";
 import BrowserMockupSource from "@/app/source-code/browser-mockup/browser-mockup-source";
 import ButtonSource from "@/app/source-code/button/button-source";
 import CarouselSource from "@/app/source-code/carousel/carousel-source";
+import CheckboxSource from "@/app/source-code/checkbox/checkbox-source";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -49,6 +50,8 @@ export default function Page() {
         return <ButtonSource />;
       case "carousel":
         return <CarouselSource />;
+      case "checkbox":
+        return <CheckboxSource />;
       default:
         return null;
     }

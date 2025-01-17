@@ -1,0 +1,72 @@
+import type { UIField } from "@/app/(ui-libs)/_components/ui-docs";
+
+export const checkboxProperties: UIField[] = [
+  {
+    name: "label",
+    description: "Label of Checkbox",
+    default: null,
+    required: false,
+    type: "string",
+  },
+  {
+    name: "inputSize",
+    description: "Size of Checkbox",
+    default: '"medium"',
+    required: false,
+    type: "radio",
+    radioList: ["small", "medium", "large"],
+  },
+  {
+    name: "checkboxColor",
+    description: "Color of Checkbox",
+    default: '"primary"',
+    required: false,
+    type: "radio",
+    radioList: [
+      "primary",
+      "secondary",
+      "success",
+      "danger",
+      "warning",
+      "info",
+      "light",
+      "dark",
+    ],
+  },
+  {
+    name: "disabled",
+    description: "Disabled status of Checkbox",
+    default: "false",
+    required: false,
+    type: "boolean",
+  },
+  {
+    name: "checked",
+    description: "Checked status of Checkbox",
+    default: null,
+    required: true,
+    type: "none",
+  },
+  {
+    name: "wrapperClassName",
+    description: "Wrapper class",
+    default: null,
+    required: true,
+    type: "none",
+  },
+  {
+    name: "labelClassName",
+    description: "Label class",
+    default: null,
+    required: true,
+    type: "none",
+  },
+  {
+    name: "onChangeChecked",
+    description: "Change checked status event",
+    default: null,
+    required: true,
+    type: "none",
+    typeLabel: "(checked: boolean) => void",
+  },
+];
