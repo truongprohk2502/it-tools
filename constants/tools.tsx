@@ -7,6 +7,7 @@ import BadgeIcon from "@/assets/icons/badge.icon";
 import BreadcrumbIcon from "@/assets/icons/breadcrumb.icon";
 import BrowserMockupIcon from "@/assets/icons/browser-mockup.icon";
 import ButtonIcon from "@/assets/icons/button.icon";
+import CarouselIcon from "@/assets/icons/carousel.icon";
 import ColorIcon from "@/assets/icons/color.icon";
 import CompareIcon from "@/assets/icons/compare.icon";
 import ImageCropIcon from "@/assets/icons/image-crop.icon";
@@ -173,6 +174,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.UIButton,
         description: "React Button component with TailwindCSS",
         icon: ButtonIcon,
+      },
+      {
+        title: "Carousel",
+        href: Route.UICarousel,
+        description: "React Carousel component with TailwindCSS",
+        icon: CarouselIcon,
       },
     ],
   },

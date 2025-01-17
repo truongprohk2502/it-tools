@@ -8,6 +8,7 @@ import BadgeSource from "@/app/source-code/badge/badge-source";
 import BreadcrumbSource from "@/app/source-code/breadcrumb/breadcrumb-source";
 import BrowserMockupSource from "@/app/source-code/browser-mockup/browser-mockup-source";
 import ButtonSource from "@/app/source-code/button/button-source";
+import CarouselSource from "@/app/source-code/carousel/carousel-source";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -46,6 +47,8 @@ export default function Page() {
         return <BrowserMockupSource />;
       case "button":
         return <ButtonSource />;
+      case "carousel":
+        return <CarouselSource />;
       default:
         return null;
     }
