@@ -1,0 +1,73 @@
+import type { UIField } from "@/app/(ui-libs)/_components/ui-docs";
+
+export const chipProperties: UIField[] = [
+  {
+    name: "title",
+    description: "Title of Chip",
+    default: null,
+    required: false,
+    type: "string",
+  },
+  {
+    name: "variant",
+    description: "Variant style of Chip",
+    default: '"solid"',
+    required: false,
+    type: "radio",
+    radioList: ["solid", "bordered"],
+  },
+  {
+    name: "size",
+    description: "Size of Chip",
+    default: '"medium"',
+    required: false,
+    type: "radio",
+    radioList: ["small", "medium", "large"],
+  },
+  {
+    name: "color",
+    description: "Color of Chip",
+    default: '"primary"',
+    required: false,
+    type: "radio",
+    radioList: [
+      "primary",
+      "secondary",
+      "success",
+      "danger",
+      "warning",
+      "info",
+      "light",
+      "dark",
+    ],
+  },
+  {
+    name: "disabled",
+    description: "Disabled status",
+    default: "false",
+    required: false,
+    type: "boolean",
+  },
+  {
+    name: "hasRemove",
+    description: "Show remove button",
+    default: "false",
+    required: false,
+    type: "boolean",
+  },
+  {
+    name: "className",
+    description: "Wrapper class",
+    default: null,
+    required: false,
+    type: "none",
+  },
+  {
+    name: "onRemove",
+    description: "Click remove button event",
+    default: null,
+    required: false,
+    type: "none",
+    typeLabel: "() => void",
+  },
+];

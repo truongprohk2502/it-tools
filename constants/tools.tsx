@@ -9,6 +9,8 @@ import BrowserMockupIcon from "@/assets/icons/browser-mockup.icon";
 import ButtonIcon from "@/assets/icons/button.icon";
 import CarouselIcon from "@/assets/icons/carousel.icon";
 import CheckboxIcon from "@/assets/icons/checkbox.icon";
+import ChipIcon from "@/assets/icons/chip.icon";
+import CodeSnippetIcon from "@/assets/icons/code-snippet.icon";
 import ColorIcon from "@/assets/icons/color.icon";
 import CompareIcon from "@/assets/icons/compare.icon";
 import ImageCropIcon from "@/assets/icons/image-crop.icon";
@@ -187,6 +189,18 @@ export const toolGroups: ToolGroup[] = [
         href: Route.UICheckbox,
         description: "React Checkbox component with TailwindCSS",
         icon: CheckboxIcon,
+      },
+      {
+        title: "Chip",
+        href: Route.UIChip,
+        description: "React Chip component with TailwindCSS",
+        icon: ChipIcon,
+      },
+      {
+        title: "CodeSnippet",
+        href: Route.UICodeSnippet,
+        description: "React CodeSnippet component with TailwindCSS",
+        icon: CodeSnippetIcon,
       },
     ],
   },
