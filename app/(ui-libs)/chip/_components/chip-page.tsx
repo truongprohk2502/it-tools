@@ -2,46 +2,40 @@
 
 import UIComponent from "@/app/(ui-libs)/_components/ui-component";
 import UIDocs from "@/app/(ui-libs)/_components/ui-docs";
-import { Checkbox, type CheckboxProps } from "@/components/ui-lib/checkbox";
+import { Chip, type ChipProps } from "@/components/ui-lib/chip";
 import { useState } from "react";
 import { chipProperties } from "./constant";
 
-const generateCode = (props: CheckboxProps) => `<Checkbox
-  label="${props.label}"
-  inputSize="${props.inputSize}"
-  checkboxColor="${props.checkboxColor}"
+const generateCode = (props: ChipProps) => `<Chip
+  title="${props.title}"
+  color="${props.color}"
+  variant="${props.variant}"
+  size="${props.size}"
   disabled={${props.disabled}}
-  checked={${props.checked}}
-  onChangeChecked={setCheckedValue}
+  hasRemove={${props.hasRemove}}
+  onRemove={handleRemoveChip}
 />
 `;
 
-export default function CheckboxPage() {
-  const [checkboxProps, setCheckboxProps] = useState<CheckboxProps>({
-    label: "Are you okay?",
-    inputSize: "medium",
-    checkboxColor: "primary",
+export default function ChipPage() {
+  const [chipProps, setChipProps] = useState<ChipProps>({
+    title: "IT Tools",
+    color: "primary",
+    variant: "solid",
+    size: "medium",
     disabled: false,
-    checked: true,
+    hasRemove: true,
   });
-
-  const toggleCheckbox = (checked: boolean) => {
-    setCheckboxProps({ ...checkboxProps, checked });
-  };
 
   return (
     <div>
-      <UIComponent
-        title="Checkbox"
-        code={generateCode(checkboxProps)}
-        hasNpmLink
-      >
-        <Checkbox {...checkboxProps} onChangeChecked={toggleCheckbox} />
+      <UIComponent title="Chip" code={generateCode(chipProps)}>
+        <Chip {...chipProps} />
       </UIComponent>
-      <UIDocs<CheckboxProps>
+      <UIDocs<ChipProps>
         fields={chipProperties}
-        fieldState={checkboxProps}
-        onChange={setCheckboxProps}
+        fieldState={chipProps}
+        onChange={setChipProps}
       />
     </div>
   );

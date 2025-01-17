@@ -10,6 +10,8 @@ import BrowserMockupSource from "@/app/source-code/browser-mockup/browser-mockup
 import ButtonSource from "@/app/source-code/button/button-source";
 import CarouselSource from "@/app/source-code/carousel/carousel-source";
 import CheckboxSource from "@/app/source-code/checkbox/checkbox-source";
+import ChipSource from "@/app/source-code/chip/chip-source";
+import CodeSnippetSource from "@/app/source-code/code-snippet/code-snippet-source";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -52,6 +54,10 @@ export default function Page() {
         return <CarouselSource />;
       case "checkbox":
         return <CheckboxSource />;
+      case "chip":
+        return <ChipSource />;
+      case "code-snippet":
+        return <CodeSnippetSource />;
       default:
         return null;
     }

@@ -31,11 +31,7 @@ export default function CheckboxPage() {
 
   return (
     <div>
-      <UIComponent
-        title="Checkbox"
-        code={generateCode(checkboxProps)}
-        hasNpmLink
-      >
+      <UIComponent title="Checkbox" code={generateCode(checkboxProps)}>
         <Checkbox {...checkboxProps} onChangeChecked={toggleCheckbox} />
       </UIComponent>
       <UIDocs<CheckboxProps>

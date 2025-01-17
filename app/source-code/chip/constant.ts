@@ -1,3 +1,4 @@
+export const chipVariantCode = `// chip.helpers.ts
 import { cva } from "class-variance-authority";
 
 export const chipVariants = cva("w-fit flex items-center rounded-full", {
@@ -178,3 +179,72 @@ export const iconVariants = cva(
     },
   },
 );
+`;
+
+export const chipComponentCode = `// chip.component.tsx
+import clsx from "clsx";
+import type { VariantProps } from "class-variance-authority";
+import { CircleXIcon } from "lucide-react";
+import {
+  chipVariants,
+  iconVariants,
+  labelVariants,
+  textColorVariants,
+} from "./chip.helpers";
+
+export interface ChipProps extends VariantProps<typeof chipVariants> {
+  title: string;
+  disabled?: boolean;
+  hasRemove?: boolean;
+  className?: string;
+  onRemove?: () => void;
+}
+
+const Chip: React.FC<ChipProps> = ({
+  title,
+  variant = "solid",
+  disabled = false,
+  size,
+  color,
+  hasRemove,
+  className,
+  onRemove,
+}) => {
+  const handleRemove = () => {
+    if (disabled) return;
+    onRemove?.();
+  };
+
+  return (
+    <div
+      data-solid={variant === "solid"}
+      data-disabled={disabled}
+      className={clsx(chipVariants({ size, color, variant }), className)}
+    >
+      <span
+        data-solid={variant === "solid"}
+        data-disabled={disabled}
+        className={clsx(
+          labelVariants({ size }),
+          textColorVariants({ color, variant }),
+        )}
+      >
+        {title}
+      </span>
+      {hasRemove && (
+        <CircleXIcon
+          data-solid={variant === "solid"}
+          data-disabled={disabled}
+          className={clsx(
+            iconVariants({ size }),
+            textColorVariants({ color, variant }),
+          )}
+          onClick={handleRemove}
+        />
+      )}
+    </div>
+  );
+};
+
+export default Chip;
+`;
