@@ -26,4 +26,5 @@ export enum Route {
   UIChip = "/chip",
   UICodeSnippet = "/code-snippet",
   UIContextMenu = "/context-menu",
+  UICountdown = "/countdown",
 }

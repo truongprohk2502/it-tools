@@ -14,6 +14,7 @@ import CodeSnippetIcon from "@/assets/icons/code-snippet.icon";
 import ColorIcon from "@/assets/icons/color.icon";
 import CompareIcon from "@/assets/icons/compare.icon";
 import ContextMenuIcon from "@/assets/icons/context-menu.icon";
+import CountdownIcon from "@/assets/icons/countdown.icon";
 import ImageCropIcon from "@/assets/icons/image-crop.icon";
 import JsonIcon from "@/assets/icons/json.icon";
 import JwtIcon from "@/assets/icons/jwt.icon";
@@ -208,6 +209,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.UIContextMenu,
         description: "React ContextMenu component with TailwindCSS",
         icon: ContextMenuIcon,
+      },
+      {
+        title: "Countdown",
+        href: Route.UICountdown,
+        description: "React Countdown component with TailwindCSS",
+        icon: CountdownIcon,
       },
     ],
   },
