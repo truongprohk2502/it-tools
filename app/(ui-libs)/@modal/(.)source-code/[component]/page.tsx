@@ -17,6 +17,7 @@ import CountdownSource from "@/app/source-code/countdown/countdown-source";
 import DatePickerSource from "@/app/source-code/date-picker/date-picker-source";
 import DialogSource from "@/app/source-code/dialog/dialog-source";
 import DrawerSource from "@/app/source-code/drawer/drawer-source";
+import DropdownSource from "@/app/source-code/dropdown/dropdown-source";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -73,6 +74,8 @@ export default function Page() {
         return <DialogSource />;
       case "drawer":
         return <DrawerSource />;
+      case "dropdown":
+        return <DropdownSource />;
       default:
         return null;
     }

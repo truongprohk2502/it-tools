@@ -18,6 +18,7 @@ import CountdownIcon from "@/assets/icons/countdown.icon";
 import DatePickerIcon from "@/assets/icons/date-picker.icon";
 import DialogIcon from "@/assets/icons/dialog.icon";
 import DrawerIcon from "@/assets/icons/drawer.icon";
+import DropdownIcon from "@/assets/icons/dropdown.icon";
 import ImageCropIcon from "@/assets/icons/image-crop.icon";
 import JsonIcon from "@/assets/icons/json.icon";
 import JwtIcon from "@/assets/icons/jwt.icon";
@@ -236,6 +237,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.UIDrawer,
         description: "React Drawer component with TailwindCSS",
         icon: DrawerIcon,
+      },
+      {
+        title: "Dropdown",
+        href: Route.UIDropdown,
+        description: "React Dropdown component with TailwindCSS",
+        icon: DropdownIcon,
       },
     ],
   },

@@ -30,4 +30,5 @@ export enum Route {
   UIDatePicker = "/date-picker",
   UIDialog = "/dialog",
   UIDrawer = "/drawer",
+  UIDropdown = "/dropdown",
 }
