@@ -33,4 +33,6 @@ export enum Route {
   UIDropdown = "/dropdown",
   UIGalleria = "/galleria",
   UIImageDiff = "/image-diff",
+  UIInput = "/input",
+  UITextarea = "/textarea",
 }

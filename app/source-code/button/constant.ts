@@ -1,4 +1,6 @@
 export const buttonVariantCode = `// button.helpers.ts
+import { cva } from "class-variance-authority";
+
 const buttonVariants = cva("border border-solid text-sm h-fit", {
   variants: {
     variant: {

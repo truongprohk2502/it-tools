@@ -22,6 +22,7 @@ import DropdownIcon from "@/assets/icons/dropdown.icon";
 import GalleriaIcon from "@/assets/icons/galleria.icon";
 import ImageCropIcon from "@/assets/icons/image-crop.icon";
 import ImageDiffIcon from "@/assets/icons/image-diff.icon";
+import InputIcon from "@/assets/icons/input.icon";
 import JsonIcon from "@/assets/icons/json.icon";
 import JwtIcon from "@/assets/icons/jwt.icon";
 import NumberIcon from "@/assets/icons/number.icon";
@@ -29,6 +30,7 @@ import QrIcon from "@/assets/icons/qr.icon";
 import ReactIcon from "@/assets/icons/react.icon";
 import RegexIcon from "@/assets/icons/regex.icon";
 import TextIcon from "@/assets/icons/text.icon";
+import TextareaIcon from "@/assets/icons/textarea.icon";
 import WebviewIcon from "@/assets/icons/webview.icon";
 import WheelIcon from "@/assets/icons/wheel.icon";
 import { Route } from "./routes";
@@ -257,6 +259,18 @@ export const toolGroups: ToolGroup[] = [
         href: Route.UIImageDiff,
         description: "React ImageDiff component with TailwindCSS",
         icon: ImageDiffIcon,
+      },
+      {
+        title: "Input",
+        href: Route.UIInput,
+        description: "React Input component with TailwindCSS",
+        icon: InputIcon,
+      },
+      {
+        title: "Textarea",
+        href: Route.UITextarea,
+        description: "React Textarea component with TailwindCSS",
+        icon: TextareaIcon,
       },
     ],
   },
