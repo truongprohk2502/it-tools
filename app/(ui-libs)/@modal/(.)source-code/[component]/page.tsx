@@ -21,6 +21,7 @@ import DropdownSource from "@/app/source-code/dropdown/dropdown-source";
 import GalleriaSource from "@/app/source-code/galleria/galleria-source";
 import ImageDiffSource from "@/app/source-code/image-diff/image-diff-source";
 import InputSource from "@/app/source-code/input/input-source";
+import SkeletonSource from "@/app/source-code/skeleton/skeleton-source";
 import TextareaSource from "@/app/source-code/textarea/textarea-source";
 import { Button } from "@/components/ui/button";
 import {
@@ -88,6 +89,8 @@ export default function Page() {
         return <InputSource />;
       case "textarea":
         return <TextareaSource />;
+      case "skeleton":
+        return <SkeletonSource />;
       default:
         return null;
     }

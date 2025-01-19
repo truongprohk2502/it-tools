@@ -25,10 +25,12 @@ import ImageDiffIcon from "@/assets/icons/image-diff.icon";
 import InputIcon from "@/assets/icons/input.icon";
 import JsonIcon from "@/assets/icons/json.icon";
 import JwtIcon from "@/assets/icons/jwt.icon";
+import MobileMockupIcon from "@/assets/icons/mobile-mockup.icon";
 import NumberIcon from "@/assets/icons/number.icon";
 import QrIcon from "@/assets/icons/qr.icon";
 import ReactIcon from "@/assets/icons/react.icon";
 import RegexIcon from "@/assets/icons/regex.icon";
+import SkeletonIcon from "@/assets/icons/skeleton.icon";
 import TextIcon from "@/assets/icons/text.icon";
 import TextareaIcon from "@/assets/icons/textarea.icon";
 import WebviewIcon from "@/assets/icons/webview.icon";
@@ -271,6 +273,18 @@ export const toolGroups: ToolGroup[] = [
         href: Route.UITextarea,
         description: "React Textarea component with TailwindCSS",
         icon: TextareaIcon,
+      },
+      {
+        title: "MobileMockup",
+        href: Route.UIMobileMockup,
+        description: "React MobileMockup component with TailwindCSS",
+        icon: MobileMockupIcon,
+      },
+      {
+        title: "Skeleton",
+        href: Route.UISkeleton,
+        description: "React Skeleton component with TailwindCSS",
+        icon: SkeletonIcon,
       },
     ],
   },

@@ -114,6 +114,10 @@ export default {
           from: { opacity: "1" },
           to: { opacity: "0" },
         },
+        skeleton: {
+          from: { transform: "translateX(-100%)" },
+          to: { transform: "translateX(100%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -127,6 +131,7 @@ export default {
         "shift-left-in": "shift-left-in 0.15s ease-in-out",
         "shift-left-out": "shift-left-out 0.15s ease-in-out",
         splash: "splash 0.15s ease-in-out",
+        skeleton: "skeleton 2s infinite",
       },
     },
   },
