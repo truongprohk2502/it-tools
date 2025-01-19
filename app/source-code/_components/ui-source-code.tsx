@@ -2,6 +2,8 @@ import CopyButton from "@/components/shared/copy-button";
 import SyntaxHighlighter from "@/components/shared/syntax-highlighter";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
+type DependencyLib = "react-portal" | "dayjs" | "tinycolor2";
+
 interface Step {
   title: string;
   description?: string;
@@ -11,7 +13,7 @@ interface Step {
 interface Props {
   component: string;
   steps: Step[];
-  dependencies?: Array<React.ReactNode>;
+  dependencies?: DependencyLib[];
 }
 
 const UISourceCode: React.FC<Props> = ({ component, steps, dependencies }) => {
@@ -42,7 +44,27 @@ const UISourceCode: React.FC<Props> = ({ component, steps, dependencies }) => {
           <code className="text-red-500">clsx</code> is a tiny utility for
           constructing className strings conditionally.
         </li>
-        {dependencies?.map((item, index) => <li key={index}>{item}</li>)}
+        {dependencies?.includes("react-portal") && (
+          <li>
+            <code className="text-red-500">@radix-ui/react-portal </code>
+            is a minimalist JavaScript library that renders a React subtree in a
+            different part of the DOM.
+          </li>
+        )}
+        {dependencies?.includes("dayjs") && (
+          <li>
+            <code className="text-red-500">dayjs </code>
+            is a minimalist JavaScript library that parses, validates,
+            manipulates, and displays dates and times.
+          </li>
+        )}
+        {dependencies?.includes("tinycolor2") && (
+          <li>
+            <code className="text-red-500">tinycolor2 </code>
+            is a lightweight library helping get contrast text color based on
+            background.
+          </li>
+        )}
       </ul>
       {steps.map((step, index) => (
         <div key={index}>

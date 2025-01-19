@@ -93,7 +93,7 @@ const Dialog: React.FC<DialogProps> = ({
   return (
     <Portal.Root>
       <div
-        className={clsx(
+        className={cn(
           "fixed inset-0 z-20 flex items-center justify-center",
           {
             invisible: !rendering,
@@ -102,7 +102,7 @@ const Dialog: React.FC<DialogProps> = ({
         )}
       >
         <div
-          className={clsx(
+          className={cn(
             "absolute inset-0 bg-[rgba(0,0,0,0.5)] fill-mode-forwards",
             !disabledAnimation &&
               (open ? "animate-opacity-up" : "animate-opacity-down"),
@@ -110,8 +110,8 @@ const Dialog: React.FC<DialogProps> = ({
           onClick={handleClickOverlay}
         />
         <div
-          className={clsx(
-            "z-10 min-h-40 min-w-96 rounded-md bg-white shadow-md fill-mode-forwards",
+          className={cn(
+            "z-10 min-h-40 min-w-96 rounded-md bg-white shadow-md fill-mode-forwards dark:bg-neutral-800",
             !disabledAnimation &&
               (open ? "animate-scale-up" : "animate-scale-down"),
           )}
@@ -119,7 +119,7 @@ const Dialog: React.FC<DialogProps> = ({
         >
           {(title || !hideHeaderClose) && (
             <div
-              className={clsx("flex items-center rounded-t-md px-6 py-4", {
+              className={cn("flex items-center rounded-t-md px-6 py-4", {
                 "justify-between": title && !hideHeaderClose,
                 "justify-end": !title && !hideHeaderClose,
               })}
@@ -127,7 +127,7 @@ const Dialog: React.FC<DialogProps> = ({
               {title && <p className="text-xl font-semibold">{title}</p>}
               {!hideHeaderClose && (
                 <XIcon
-                  className="h-6 w-6 cursor-pointer text-neutral-700"
+                  className="h-6 w-6 cursor-pointer text-neutral-700 dark:text-neutral-200"
                   onClick={onClose}
                 />
               )}
@@ -138,7 +138,7 @@ const Dialog: React.FC<DialogProps> = ({
             <div className="flex justify-end gap-3 px-6 py-4">
               {hasFooterCancel && (
                 <button
-                  className="rounded-sm border-none bg-neutral-200 px-4 py-2 text-sm text-neutral-600 focus:outline-none"
+                  className="rounded-sm border-none bg-neutral-200 px-4 py-2 text-sm text-neutral-600 focus:outline-none dark:bg-neutral-500 dark:text-neutral-200"
                   onClick={onClose}
                 >
                   Cancel
@@ -146,7 +146,7 @@ const Dialog: React.FC<DialogProps> = ({
               )}
               {hasFooterConfirm && (
                 <button
-                  className="rounded-sm border-none bg-neutral-800 px-4 py-2 text-sm text-white focus:outline-none"
+                  className="rounded-sm border-none bg-neutral-800 px-4 py-2 text-sm text-white focus:outline-none dark:bg-neutral-200 dark:text-neutral-900"
                   onClick={onConfirm}
                 >
                   {confirmTitle || "Confirm"}

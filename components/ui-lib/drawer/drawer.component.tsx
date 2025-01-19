@@ -4,18 +4,19 @@ import { cn } from "@/lib/utils";
 import * as Portal from "@radix-ui/react-portal";
 import { XIcon } from "lucide-react";
 import { useEffect, useState } from "react";
-import type { DialogProps } from "./dialog.types";
+import type { DrawerProps } from "./drawer.types";
 
-const Dialog: React.FC<DialogProps> = ({
+const Drawer: React.FC<DrawerProps> = ({
   open,
-  title,
+  position = "right",
   hideHeaderClose,
   overlayCancel,
-  disabledAnimation,
+  title,
   hasFooterCancel,
   hasFooterConfirm,
   confirmTitle,
   className,
+  wrapperClassName,
   children,
   onConfirm,
   onClose,
@@ -25,26 +26,18 @@ const Dialog: React.FC<DialogProps> = ({
   useEffect(() => {
     if (open) {
       setRendering(true);
-    } else if (disabledAnimation) {
-      setRendering(false);
     }
-  }, [open, disabledAnimation]);
+  }, [open]);
 
   const handleAnimationEnd = () => {
-    if (disabledAnimation) return;
     if (!open) setRendering(false);
-  };
-
-  const handleClickOverlay = () => {
-    if (!overlayCancel) return;
-    onClose();
   };
 
   return (
     <Portal.Root>
       <div
         className={cn(
-          "fixed inset-0 z-20 flex items-center justify-center",
+          "fixed inset-0 z-20",
           {
             invisible: !rendering,
           },
@@ -54,27 +47,31 @@ const Dialog: React.FC<DialogProps> = ({
         <div
           className={cn(
             "absolute inset-0 bg-[rgba(0,0,0,0.5)] fill-mode-forwards",
-            !disabledAnimation &&
-              (open ? "animate-opacity-up" : "animate-opacity-down"),
+            open ? "animate-opacity-up" : "animate-opacity-down",
           )}
-          onClick={handleClickOverlay}
+          onClick={() => overlayCancel && onClose()}
         />
         <div
           className={cn(
-            "z-10 min-h-40 min-w-96 rounded-md bg-white shadow-md fill-mode-forwards dark:bg-neutral-800",
-            !disabledAnimation &&
-              (open ? "animate-scale-up" : "animate-scale-down"),
+            "absolute inset-y-0 z-10 flex w-96 flex-col overflow-auto bg-white shadow-md fill-mode-forwards dark:bg-neutral-800",
+            {
+              "right-0": position === "right",
+              "left-0": position === "left",
+            },
+            {
+              "animate-shift-right-in": open && position === "right",
+              "animate-shift-right-out": !open && position === "right",
+              "animate-shift-left-in": open && position === "left",
+              "animate-shift-left-out": !open && position === "left",
+            },
           )}
           onAnimationEnd={handleAnimationEnd}
         >
           {(title || !hideHeaderClose) && (
-            <div
-              className={cn("flex items-center rounded-t-md px-6 py-4", {
-                "justify-between": title && !hideHeaderClose,
-                "justify-end": !title && !hideHeaderClose,
-              })}
-            >
-              {title && <p className="text-xl font-semibold">{title}</p>}
+            <div className="flex h-12 items-center justify-between border-b border-neutral-200 bg-white px-2 dark:border-neutral-700 dark:bg-neutral-800">
+              <h3 className="line-clamp-1 text-ellipsis font-semibold">
+                {title}
+              </h3>
               {!hideHeaderClose && (
                 <XIcon
                   className="h-6 w-6 cursor-pointer text-neutral-700 dark:text-neutral-200"
@@ -83,12 +80,14 @@ const Dialog: React.FC<DialogProps> = ({
               )}
             </div>
           )}
-          <div className="px-6 py-4">{children}</div>
+          <div className={cn("flex-1 overflow-auto", wrapperClassName)}>
+            {children}
+          </div>
           {(hasFooterConfirm || hasFooterCancel) && (
-            <div className="flex justify-end gap-3 px-6 py-4">
+            <div className="sticky bottom-0 flex justify-end gap-3 border-t border-neutral-200 bg-white px-4 py-3 dark:border-neutral-700 dark:bg-neutral-800">
               {hasFooterCancel && (
                 <button
-                  className="rounded-sm border-none bg-neutral-200 px-4 py-2 text-sm text-neutral-600 focus:outline-none dark:bg-neutral-500 dark:text-neutral-200"
+                  className="rounded-md border-none bg-neutral-200 px-4 py-2 text-sm text-neutral-600 focus:outline-none dark:bg-neutral-500 dark:text-neutral-200"
                   onClick={onClose}
                 >
                   Cancel
@@ -96,7 +95,7 @@ const Dialog: React.FC<DialogProps> = ({
               )}
               {hasFooterConfirm && (
                 <button
-                  className="rounded-sm border-none bg-neutral-800 px-4 py-2 text-sm text-white focus:outline-none dark:bg-neutral-200 dark:text-neutral-900"
+                  className="rounded-md border-none bg-neutral-800 px-4 py-2 text-sm text-white focus:outline-none dark:bg-neutral-200 dark:text-neutral-900"
                   onClick={onConfirm}
                 >
                   {confirmTitle || "Confirm"}
@@ -110,4 +109,4 @@ const Dialog: React.FC<DialogProps> = ({
   );
 };
 
-export default Dialog;
+export default Drawer;

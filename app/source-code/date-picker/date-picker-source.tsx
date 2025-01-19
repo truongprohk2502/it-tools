@@ -12,13 +12,7 @@ export default function DatePickerSource() {
   return (
     <UISourceCode
       component="DatePicker"
-      dependencies={[
-        <>
-          <code className="text-red-500">dayjs </code>
-          is a minimalist JavaScript library that parses, validates,
-          manipulates, and displays dates and times.
-        </>,
-      ]}
+      dependencies={["dayjs"]}
       steps={[
         {
           title: "Step 1: Create useClickAway hook",

@@ -5,13 +5,7 @@ export default function AvatarSource() {
   return (
     <UISourceCode
       component="Avatar"
-      dependencies={[
-        <>
-          <code className="text-red-500">tinycolor2 </code>
-          is a lightweight library helping get contrast text color based on
-          background.
-        </>,
-      ]}
+      dependencies={["tinycolor2"]}
       steps={[
         {
           title: "Step 1: Create helper functions",

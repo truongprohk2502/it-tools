@@ -5,13 +5,7 @@ export default function DialogSource() {
   return (
     <UISourceCode
       component="Dialog"
-      dependencies={[
-        <>
-          <code className="text-red-500">@radix-ui/react-portal </code>
-          is a minimalist JavaScript library that renders a React subtree in a
-          different part of the DOM.
-        </>,
-      ]}
+      dependencies={["react-portal"]}
       steps={[
         {
           title: "Step 1: Create Tailwind animation",

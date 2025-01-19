@@ -94,6 +94,22 @@ export default {
           from: { transform: "scale(1)", opacity: "1" },
           to: { transform: "scale(0.9)", opacity: "0" },
         },
+        "shift-right-in": {
+          from: { transform: "translateX(100%)" },
+          to: { transform: "translateX(0%)" },
+        },
+        "shift-right-out": {
+          from: { transform: "translateX(0%)" },
+          to: { transform: "translateX(100%)" },
+        },
+        "shift-left-in": {
+          from: { transform: "translateX(-100%)" },
+          to: { transform: "translateX(0%)" },
+        },
+        "shift-left-out": {
+          from: { transform: "translateX(0%)" },
+          to: { transform: "translateX(-100%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -102,6 +118,10 @@ export default {
         "opacity-down": "opacity-down 0.15s ease-in-out",
         "scale-up": "scale-up 0.15s ease-in-out",
         "scale-down": "scale-down 0.15s ease-in-out",
+        "shift-right-in": "shift-right-in 0.15s ease-in-out",
+        "shift-right-out": "shift-right-out 0.15s ease-in-out",
+        "shift-left-in": "shift-left-in 0.15s ease-in-out",
+        "shift-left-out": "shift-left-out 0.15s ease-in-out",
       },
     },
   },
