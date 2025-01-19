@@ -78,10 +78,30 @@ export default {
             height: "0",
           },
         },
+        "opacity-up": {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+        "opacity-down": {
+          from: { opacity: "1" },
+          to: { opacity: "0" },
+        },
+        "scale-up": {
+          from: { transform: "scale(0.9)", opacity: "0" },
+          to: { transform: "scale(1)", opacity: "1" },
+        },
+        "scale-down": {
+          from: { transform: "scale(1)", opacity: "1" },
+          to: { transform: "scale(0.9)", opacity: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "opacity-up": "opacity-up 0.15s ease-in-out",
+        "opacity-down": "opacity-down 0.15s ease-in-out",
+        "scale-up": "scale-up 0.15s ease-in-out",
+        "scale-down": "scale-down 0.15s ease-in-out",
       },
     },
   },

@@ -28,4 +28,5 @@ export enum Route {
   UIContextMenu = "/context-menu",
   UICountdown = "/countdown",
   UIDatePicker = "/date-picker",
+  UIDialog = "/dialog",
 }
