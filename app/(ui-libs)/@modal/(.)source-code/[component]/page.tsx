@@ -14,6 +14,7 @@ import ChipSource from "@/app/source-code/chip/chip-source";
 import CodeSnippetSource from "@/app/source-code/code-snippet/code-snippet-source";
 import ContextMenuSource from "@/app/source-code/context-menu/context-menu-source";
 import CountdownSource from "@/app/source-code/countdown/countdown-source";
+import DatePickerSource from "@/app/source-code/date-picker/date-picker-source";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -64,6 +65,8 @@ export default function Page() {
         return <ContextMenuSource />;
       case "countdown":
         return <CountdownSource />;
+      case "date-picker":
+        return <DatePickerSource />;
       default:
         return null;
     }
