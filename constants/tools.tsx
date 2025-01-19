@@ -19,6 +19,7 @@ import DatePickerIcon from "@/assets/icons/date-picker.icon";
 import DialogIcon from "@/assets/icons/dialog.icon";
 import DrawerIcon from "@/assets/icons/drawer.icon";
 import DropdownIcon from "@/assets/icons/dropdown.icon";
+import GalleriaIcon from "@/assets/icons/galleria.icon";
 import ImageCropIcon from "@/assets/icons/image-crop.icon";
 import JsonIcon from "@/assets/icons/json.icon";
 import JwtIcon from "@/assets/icons/jwt.icon";
@@ -243,6 +244,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.UIDropdown,
         description: "React Dropdown component with TailwindCSS",
         icon: DropdownIcon,
+      },
+      {
+        title: "Galleria",
+        href: Route.UIGalleria,
+        description: "React Galleria component with TailwindCSS",
+        icon: GalleriaIcon,
       },
     ],
   },

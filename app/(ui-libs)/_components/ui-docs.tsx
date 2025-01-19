@@ -104,8 +104,8 @@ function UIDocs<T>({ fields, fieldState, onChange }: Props<T>) {
                       className={cn(
                         "cursor-pointer select-none text-xs",
                         !fieldState[item.name as keyof T]
-                          ? "text-neutral-700"
-                          : "text-neutral-300",
+                          ? "text-neutral-700 dark:text-neutral-300"
+                          : "text-neutral-300 dark:text-neutral-700",
                       )}
                       onClick={() => changeValue(item.name, false)}
                     >
@@ -120,8 +120,8 @@ function UIDocs<T>({ fields, fieldState, onChange }: Props<T>) {
                       className={cn(
                         "cursor-pointer select-none text-xs",
                         fieldState[item.name as keyof T]
-                          ? "text-neutral-700"
-                          : "text-neutral-300",
+                          ? "text-neutral-700 dark:text-neutral-300"
+                          : "text-neutral-300 dark:text-neutral-700",
                       )}
                       onClick={() => changeValue(item.name, true)}
                     >

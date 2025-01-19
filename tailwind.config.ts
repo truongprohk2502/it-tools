@@ -110,6 +110,10 @@ export default {
           from: { transform: "translateX(0%)" },
           to: { transform: "translateX(-100%)" },
         },
+        splash: {
+          from: { opacity: "1" },
+          to: { opacity: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -122,8 +126,9 @@ export default {
         "shift-right-out": "shift-right-out 0.15s ease-in-out",
         "shift-left-in": "shift-left-in 0.15s ease-in-out",
         "shift-left-out": "shift-left-out 0.15s ease-in-out",
+        splash: "splash 0.15s ease-in-out",
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("tailwind-scrollbar-hide")],
 } satisfies Config;

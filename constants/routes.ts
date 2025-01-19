@@ -31,4 +31,5 @@ export enum Route {
   UIDialog = "/dialog",
   UIDrawer = "/drawer",
   UIDropdown = "/dropdown",
+  UIGalleria = "/galleria",
 }
