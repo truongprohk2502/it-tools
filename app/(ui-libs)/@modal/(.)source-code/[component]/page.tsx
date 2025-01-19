@@ -19,6 +19,7 @@ import DialogSource from "@/app/source-code/dialog/dialog-source";
 import DrawerSource from "@/app/source-code/drawer/drawer-source";
 import DropdownSource from "@/app/source-code/dropdown/dropdown-source";
 import GalleriaSource from "@/app/source-code/galleria/galleria-source";
+import ImageDiffSource from "@/app/source-code/image-diff/image-diff-source";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -79,6 +80,8 @@ export default function Page() {
         return <DropdownSource />;
       case "galleria":
         return <GalleriaSource />;
+      case "image-diff":
+        return <ImageDiffSource />;
       default:
         return null;
     }

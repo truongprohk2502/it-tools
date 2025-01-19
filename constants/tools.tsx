@@ -21,6 +21,7 @@ import DrawerIcon from "@/assets/icons/drawer.icon";
 import DropdownIcon from "@/assets/icons/dropdown.icon";
 import GalleriaIcon from "@/assets/icons/galleria.icon";
 import ImageCropIcon from "@/assets/icons/image-crop.icon";
+import ImageDiffIcon from "@/assets/icons/image-diff.icon";
 import JsonIcon from "@/assets/icons/json.icon";
 import JwtIcon from "@/assets/icons/jwt.icon";
 import NumberIcon from "@/assets/icons/number.icon";
@@ -250,6 +251,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.UIGalleria,
         description: "React Galleria component with TailwindCSS",
         icon: GalleriaIcon,
+      },
+      {
+        title: "ImageDiff",
+        href: Route.UIImageDiff,
+        description: "React ImageDiff component with TailwindCSS",
+        icon: ImageDiffIcon,
       },
     ],
   },
