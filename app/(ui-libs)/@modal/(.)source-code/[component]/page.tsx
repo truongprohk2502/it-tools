@@ -28,6 +28,7 @@ import RadioSource from "@/app/source-code/radio/radio-source";
 import RatingSource from "@/app/source-code/rating/rating-source";
 import RippleSource from "@/app/source-code/ripple/ripple-source";
 import SkeletonSource from "@/app/source-code/skeleton/skeleton-source";
+import SliderSource from "@/app/source-code/slider/slider-source";
 import TextareaSource from "@/app/source-code/textarea/textarea-source";
 import { Button } from "@/components/ui/button";
 import {
@@ -109,6 +110,8 @@ export default function Page() {
         return <TextareaSource />;
       case "skeleton":
         return <SkeletonSource />;
+      case "slider":
+        return <SliderSource />;
       default:
         return null;
     }

@@ -37,6 +37,7 @@ import ReactIcon from "@/assets/icons/react.icon";
 import RegexIcon from "@/assets/icons/regex.icon";
 import RippleIcon from "@/assets/icons/ripple.icon";
 import SkeletonIcon from "@/assets/icons/skeleton.icon";
+import SliderIcon from "@/assets/icons/slider.icon";
 import TextIcon from "@/assets/icons/text.icon";
 import TextareaIcon from "@/assets/icons/textarea.icon";
 import WebviewIcon from "@/assets/icons/webview.icon";
@@ -309,6 +310,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.UIRipple,
         description: "React Ripple component with TailwindCSS",
         icon: RippleIcon,
+      },
+      {
+        title: "Slider",
+        href: Route.UISlider,
+        description: "React Slider component with TailwindCSS",
+        icon: SliderIcon,
       },
       {
         title: "Textarea",

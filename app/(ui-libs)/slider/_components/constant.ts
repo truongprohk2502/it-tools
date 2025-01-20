@@ -1,0 +1,71 @@
+import type { UIField } from "@/app/(ui-libs)/_components/ui-docs";
+
+export const sliderProperties: UIField[] = [
+  {
+    name: "sliderSize",
+    description: "Size of Slider",
+    default: '"medium"',
+    required: false,
+    type: "radio",
+    radioList: ["small", "medium", "large"],
+  },
+  {
+    name: "bgColor",
+    description: "Color of Slider",
+    default: '"primary"',
+    required: false,
+    type: "radio",
+    radioList: [
+      "primary",
+      "secondary",
+      "success",
+      "danger",
+      "warning",
+      "info",
+      "light",
+      "dark",
+    ],
+  },
+  {
+    name: "defaultValue",
+    description: "Slider default value",
+    default: null,
+    required: false,
+    type: "number",
+  },
+  {
+    name: "value",
+    description: "Slider controlled value",
+    default: null,
+    required: false,
+    type: "none",
+  },
+  {
+    name: "min",
+    description: "Minimum value",
+    default: "0",
+    required: false,
+    type: "none",
+  },
+  {
+    name: "max",
+    description: "Maximum value",
+    default: "100",
+    required: false,
+    type: "none",
+  },
+  {
+    name: "disabled",
+    description: "Disabled Slider",
+    default: "false",
+    required: false,
+    type: "boolean",
+  },
+  {
+    name: "className",
+    description: "Wrapper class",
+    default: null,
+    required: false,
+    type: "none",
+  },
+];
