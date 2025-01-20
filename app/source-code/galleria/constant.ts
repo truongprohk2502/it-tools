@@ -154,11 +154,16 @@ const Galleria: React.FC<GalleriaProps> = ({
       )}
     >
       <div className="relative flex-auto">
-        <img
-          src={images[currentIndex]?.photoUrl}
-          alt=""
-          className="h-full w-full object-cover"
-        />
+        {images.map((item, index) => (
+          <img
+            key={index}
+            src={item.photoUrl}
+            alt=""
+            className={cn("h-full w-full object-cover", {
+              hidden: currentIndex !== index,
+            })}
+          />
+        ))}
         {animation && changedCount > 0 && (
           <div
             key={changedCount}

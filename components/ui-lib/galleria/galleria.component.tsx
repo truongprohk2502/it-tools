@@ -130,15 +130,20 @@ const Galleria: React.FC<GalleriaProps> = ({
       )}
     >
       <div className="relative flex-auto">
-        <img
-          src={images[currentIndex]?.photoUrl}
-          alt=""
-          className="h-full w-full object-cover"
-        />
+        {images.map((item, index) => (
+          <img
+            key={index}
+            src={item.photoUrl}
+            alt=""
+            className={cn("h-full w-full object-cover", {
+              hidden: currentIndex !== index,
+            })}
+          />
+        ))}
         {animation && changedCount > 0 && (
           <div
             key={changedCount}
-            className="animate-splash absolute inset-0 bg-white fill-mode-forwards"
+            className="absolute inset-0 animate-splash bg-white fill-mode-forwards"
           />
         )}
       </div>
@@ -152,7 +157,7 @@ const Galleria: React.FC<GalleriaProps> = ({
         </button>
         <div
           ref={containerRef}
-          className="scrollbar-hide flex flex-auto flex-nowrap overflow-auto"
+          className="flex flex-auto flex-nowrap overflow-auto scrollbar-hide"
         >
           {images.map((image, index) => (
             <div

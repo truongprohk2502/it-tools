@@ -27,6 +27,7 @@ import JsonIcon from "@/assets/icons/json.icon";
 import JwtIcon from "@/assets/icons/jwt.icon";
 import MobileMockupIcon from "@/assets/icons/mobile-mockup.icon";
 import NumberIcon from "@/assets/icons/number.icon";
+import OtpInputIcon from "@/assets/icons/otp-input.icon";
 import QrIcon from "@/assets/icons/qr.icon";
 import ReactIcon from "@/assets/icons/react.icon";
 import RegexIcon from "@/assets/icons/regex.icon";
@@ -267,6 +268,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.UIInput,
         description: "React Input component with TailwindCSS",
         icon: InputIcon,
+      },
+      {
+        title: "OtpInput",
+        href: Route.UIOtpInput,
+        description: "React OtpInput component with TailwindCSS",
+        icon: OtpInputIcon,
       },
       {
         title: "Textarea",
