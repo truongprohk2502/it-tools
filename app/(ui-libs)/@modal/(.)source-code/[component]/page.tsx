@@ -26,6 +26,7 @@ import PaginationSource from "@/app/source-code/pagination/pagination-source";
 import ProgressSource from "@/app/source-code/progress/progress-source";
 import RadioSource from "@/app/source-code/radio/radio-source";
 import RatingSource from "@/app/source-code/rating/rating-source";
+import RippleSource from "@/app/source-code/ripple/ripple-source";
 import SkeletonSource from "@/app/source-code/skeleton/skeleton-source";
 import TextareaSource from "@/app/source-code/textarea/textarea-source";
 import { Button } from "@/components/ui/button";
@@ -102,6 +103,8 @@ export default function Page() {
         return <RadioSource />;
       case "rating":
         return <RatingSource />;
+      case "ripple":
+        return <RippleSource />;
       case "textarea":
         return <TextareaSource />;
       case "skeleton":

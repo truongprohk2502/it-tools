@@ -35,6 +35,7 @@ import RadioIcon from "@/assets/icons/radio.icon";
 import RatingIcon from "@/assets/icons/rating.icon";
 import ReactIcon from "@/assets/icons/react.icon";
 import RegexIcon from "@/assets/icons/regex.icon";
+import RippleIcon from "@/assets/icons/ripple.icon";
 import SkeletonIcon from "@/assets/icons/skeleton.icon";
 import TextIcon from "@/assets/icons/text.icon";
 import TextareaIcon from "@/assets/icons/textarea.icon";
@@ -302,6 +303,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.UIRating,
         description: "React Rating component with TailwindCSS",
         icon: RatingIcon,
+      },
+      {
+        title: "Ripple",
+        href: Route.UIRipple,
+        description: "React Ripple component with TailwindCSS",
+        icon: RippleIcon,
       },
       {
         title: "Textarea",
