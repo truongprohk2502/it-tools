@@ -29,7 +29,7 @@ interface Props<T> {
 }
 
 function UIDocs<T>({ fields, fieldState, onChange }: Props<T>) {
-  const changeValue = (key: string, value: string | boolean) => {
+  const changeValue = (key: string, value: string | number | boolean) => {
     onChange({ ...fieldState, [key]: value });
   };
 
@@ -95,7 +95,9 @@ function UIDocs<T>({ fields, fieldState, onChange }: Props<T>) {
                   <Input
                     type="number"
                     value={fieldState[item.name as keyof T] as string}
-                    onChange={(e) => changeValue(item.name, e.target.value)}
+                    onChange={(e) =>
+                      changeValue(item.name, Number(e.target.value))
+                    }
                     className="text-xs"
                   />
                 ) : item.type === "boolean" ? (
