@@ -31,6 +31,7 @@ import OtpInputIcon from "@/assets/icons/otp-input.icon";
 import PaginationIcon from "@/assets/icons/pagination.icon";
 import ProgressIcon from "@/assets/icons/progress.icon";
 import QrIcon from "@/assets/icons/qr.icon";
+import RadioIcon from "@/assets/icons/radio.icon";
 import ReactIcon from "@/assets/icons/react.icon";
 import RegexIcon from "@/assets/icons/regex.icon";
 import SkeletonIcon from "@/assets/icons/skeleton.icon";
@@ -288,6 +289,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.UIProgress,
         description: "React Progress component with TailwindCSS",
         icon: ProgressIcon,
+      },
+      {
+        title: "Radio",
+        href: Route.UIRadio,
+        description: "React Radio component with TailwindCSS",
+        icon: RadioIcon,
       },
       {
         title: "Textarea",

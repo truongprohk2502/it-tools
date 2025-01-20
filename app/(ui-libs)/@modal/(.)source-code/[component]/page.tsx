@@ -24,6 +24,7 @@ import InputSource from "@/app/source-code/input/input-source";
 import OtpInputSource from "@/app/source-code/otp-input/otp-input-source";
 import PaginationSource from "@/app/source-code/pagination/pagination-source";
 import ProgressSource from "@/app/source-code/progress/progress-source";
+import RadioSource from "@/app/source-code/radio/radio-source";
 import SkeletonSource from "@/app/source-code/skeleton/skeleton-source";
 import TextareaSource from "@/app/source-code/textarea/textarea-source";
 import { Button } from "@/components/ui/button";
@@ -96,6 +97,8 @@ export default function Page() {
         return <PaginationSource />;
       case "progress":
         return <ProgressSource />;
+      case "radio":
+        return <RadioSource />;
       case "textarea":
         return <TextareaSource />;
       case "skeleton":

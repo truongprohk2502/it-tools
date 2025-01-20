@@ -1,0 +1,65 @@
+import type { UIField } from "@/app/(ui-libs)/_components/ui-docs";
+
+export const radioProperties: UIField[] = [
+  {
+    name: "checked",
+    description: "Label of Radio",
+    default: "false",
+    required: true,
+    type: "boolean",
+  },
+  {
+    name: "label",
+    description: "Label of Radio",
+    default: null,
+    required: false,
+    type: "string",
+  },
+  {
+    name: "inputSize",
+    description: "Size of Radio",
+    default: '"medium"',
+    required: false,
+    type: "radio",
+    radioList: ["small", "medium", "large"],
+  },
+  {
+    name: "radioColor",
+    description: "Color of Radio",
+    default: '"primary"',
+    required: false,
+    type: "radio",
+    radioList: [
+      "primary",
+      "secondary",
+      "success",
+      "danger",
+      "warning",
+      "info",
+      "light",
+      "dark",
+    ],
+  },
+  {
+    name: "disabled",
+    description: "Disabled Radio",
+    default: "false",
+    required: false,
+    type: "boolean",
+  },
+  {
+    name: "className",
+    description: "Wrapper class",
+    default: null,
+    required: false,
+    type: "none",
+  },
+  {
+    name: "onChangeChecked",
+    description: "Checked change event",
+    default: null,
+    required: false,
+    type: "none",
+    typeLabel: "(checked: boolean, value: any) => void",
+  },
+];
