@@ -36,6 +36,7 @@ export enum Route {
   UIInput = "/input",
   UIOtpInput = "/otp-input",
   UIPagination = "/pagination",
+  UIProgress = "/progress",
   UITextarea = "/textarea",
   UIMobileMockup = "/mobile-mockup",
   UISkeleton = "/skeleton",

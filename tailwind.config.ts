@@ -118,6 +118,10 @@ export default {
           from: { transform: "translateX(-100%)" },
           to: { transform: "translateX(100%)" },
         },
+        "progress-bar-stripes": {
+          from: { backgroundPosition: "1rem 0" },
+          to: { backgroundPosition: "0 0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -132,6 +136,7 @@ export default {
         "shift-left-out": "shift-left-out 0.15s ease-in-out",
         splash: "splash 0.15s ease-in-out",
         skeleton: "skeleton 2s infinite",
+        "progress-bar-stripes": "progress-bar-stripes 1s linear infinite",
       },
     },
   },
