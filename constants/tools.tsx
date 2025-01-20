@@ -38,6 +38,8 @@ import RegexIcon from "@/assets/icons/regex.icon";
 import RippleIcon from "@/assets/icons/ripple.icon";
 import SkeletonIcon from "@/assets/icons/skeleton.icon";
 import SliderIcon from "@/assets/icons/slider.icon";
+import SpinnerIcon from "@/assets/icons/spinner.icon";
+import SwapIcon from "@/assets/icons/swap.icon";
 import TextIcon from "@/assets/icons/text.icon";
 import TextareaIcon from "@/assets/icons/textarea.icon";
 import WebviewIcon from "@/assets/icons/webview.icon";
@@ -312,10 +314,28 @@ export const toolGroups: ToolGroup[] = [
         icon: RippleIcon,
       },
       {
+        title: "Skeleton",
+        href: Route.UISkeleton,
+        description: "React Skeleton component with TailwindCSS",
+        icon: SkeletonIcon,
+      },
+      {
         title: "Slider",
         href: Route.UISlider,
         description: "React Slider component with TailwindCSS",
         icon: SliderIcon,
+      },
+      {
+        title: "Spinner",
+        href: Route.UISpinner,
+        description: "React Spinner component with TailwindCSS",
+        icon: SpinnerIcon,
+      },
+      {
+        title: "SwapButton",
+        href: Route.UISwapButton,
+        description: "React SwapButton component with TailwindCSS",
+        icon: SwapIcon,
       },
       {
         title: "Textarea",
@@ -328,12 +348,6 @@ export const toolGroups: ToolGroup[] = [
         href: Route.UIMobileMockup,
         description: "React MobileMockup component with TailwindCSS",
         icon: MobileMockupIcon,
-      },
-      {
-        title: "Skeleton",
-        href: Route.UISkeleton,
-        description: "React Skeleton component with TailwindCSS",
-        icon: SkeletonIcon,
       },
     ],
   },

@@ -122,6 +122,60 @@ export default {
           from: { backgroundPosition: "1rem 0" },
           to: { backgroundPosition: "0 0" },
         },
+        pulse: {
+          "0%": {
+            transform: "scale(0)",
+            opacity: "0.5",
+          },
+          "50%": {
+            transform: "scale(1)",
+            opacity: "1",
+          },
+          "100%": {
+            transform: "scale(0)",
+            opacity: "0.5",
+          },
+        },
+        bounce: {
+          from: { transform: "translateY(-10px)" },
+          to: { transform: "translateY(10px)" },
+        },
+        fade: {
+          from: { opacity: "1" },
+          to: { opacity: "0" },
+        },
+        scale: {
+          "0%": {
+            transform: "scaleY(0.4)",
+          },
+          "20%": {
+            transform: "scaleY(1)",
+          },
+          "40%": {
+            transform: "scaleY(0.4)",
+          },
+          "100%": {
+            transform: "scaleY(0.4)",
+          },
+        },
+        "clip-loader": {
+          "100%": {
+            transform: "rotate(360deg)",
+          },
+        },
+        "clip-circle": {
+          "0%": {
+            strokeDasharray: "1,200",
+            strokeDashoffset: "0",
+          },
+          "50%": {
+            strokeDasharray: "90,200",
+            strokeDashoffset: "-35px",
+          },
+          "100%": {
+            strokeDashoffset: "-125px",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -137,6 +191,12 @@ export default {
         splash: "splash 0.15s ease-in-out",
         skeleton: "skeleton 2s infinite",
         "progress-bar-stripes": "progress-bar-stripes 1s linear infinite",
+        pulse: "pulse 1.111s ease-in-out infinite",
+        bounce: "bounce 0.5s ease-in infinite alternate",
+        fade: "fade 1s infinite linear",
+        scale: "scale 0.9s ease-in-out infinite",
+        "clip-loader": "clip-loader 2s linear infinite",
+        "clip-circle": "clip-circle 1.5s ease-in-out infinite",
       },
     },
   },

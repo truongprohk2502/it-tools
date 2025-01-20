@@ -29,6 +29,8 @@ import RatingSource from "@/app/source-code/rating/rating-source";
 import RippleSource from "@/app/source-code/ripple/ripple-source";
 import SkeletonSource from "@/app/source-code/skeleton/skeleton-source";
 import SliderSource from "@/app/source-code/slider/slider-source";
+import SpinnerSource from "@/app/source-code/spinner/spinner-source";
+import SwapButtonSource from "@/app/source-code/swap-button/swap-button-source";
 import TextareaSource from "@/app/source-code/textarea/textarea-source";
 import { Button } from "@/components/ui/button";
 import {
@@ -112,6 +114,10 @@ export default function Page() {
         return <SkeletonSource />;
       case "slider":
         return <SliderSource />;
+      case "spinner":
+        return <SpinnerSource />;
+      case "swap-button":
+        return <SwapButtonSource />;
       default:
         return null;
     }
