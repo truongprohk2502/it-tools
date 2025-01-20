@@ -32,6 +32,7 @@ import PaginationIcon from "@/assets/icons/pagination.icon";
 import ProgressIcon from "@/assets/icons/progress.icon";
 import QrIcon from "@/assets/icons/qr.icon";
 import RadioIcon from "@/assets/icons/radio.icon";
+import RatingIcon from "@/assets/icons/rating.icon";
 import ReactIcon from "@/assets/icons/react.icon";
 import RegexIcon from "@/assets/icons/regex.icon";
 import SkeletonIcon from "@/assets/icons/skeleton.icon";
@@ -295,6 +296,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.UIRadio,
         description: "React Radio component with TailwindCSS",
         icon: RadioIcon,
+      },
+      {
+        title: "Rating",
+        href: Route.UIRating,
+        description: "React Rating component with TailwindCSS",
+        icon: RatingIcon,
       },
       {
         title: "Textarea",

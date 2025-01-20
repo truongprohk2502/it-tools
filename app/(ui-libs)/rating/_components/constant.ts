@@ -1,0 +1,72 @@
+import type { UIField } from "@/app/(ui-libs)/_components/ui-docs";
+
+export const ratingProperties: UIField[] = [
+  {
+    name: "total",
+    description: "Total stars of Rating",
+    default: "5",
+    required: false,
+    type: "number",
+  },
+  {
+    name: "value",
+    description: "Value of Rating",
+    default: null,
+    required: true,
+    type: "none",
+  },
+  {
+    name: "size",
+    description: "Size of Rating",
+    default: '"medium"',
+    required: false,
+    type: "radio",
+    radioList: ["small", "medium", "large"],
+  },
+  {
+    name: "color",
+    description: "Color of Rating",
+    default: '"primary"',
+    required: false,
+    type: "radio",
+    radioList: [
+      "primary",
+      "secondary",
+      "success",
+      "danger",
+      "warning",
+      "info",
+      "light",
+      "dark",
+    ],
+  },
+  {
+    name: "hasHalfValue",
+    description: "Whether has half value or not",
+    default: "false",
+    required: false,
+    type: "boolean",
+  },
+  {
+    name: "disabled",
+    description: "Disabled Rating",
+    default: "false",
+    required: false,
+    type: "boolean",
+  },
+  {
+    name: "className",
+    description: "Wrapper class",
+    default: null,
+    required: false,
+    type: "none",
+  },
+  {
+    name: "onChange",
+    description: "Change event",
+    default: null,
+    required: true,
+    type: "none",
+    typeLabel: "(rating: number) => void",
+  },
+];

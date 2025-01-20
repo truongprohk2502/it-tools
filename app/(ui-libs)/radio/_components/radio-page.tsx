@@ -26,8 +26,6 @@ export default function RadioPage() {
   });
 
   const handleCheck = (checked: boolean) => {
-    console.log(checked);
-
     setRadioProps({ ...radioProps, checked });
   };
 
