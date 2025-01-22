@@ -47,4 +47,5 @@ export enum Route {
   UITextarea = "/textarea",
   UIMobileMockup = "/mobile-mockup",
   UISkeleton = "/skeleton",
+  UISwitch = "/switch",
 }
