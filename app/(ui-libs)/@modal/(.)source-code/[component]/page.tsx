@@ -34,6 +34,7 @@ import SwapButtonSource from "@/app/source-code/swap-button/swap-button-source";
 import SwitchSource from "@/app/source-code/switch/switch-source";
 import TerminalSource from "@/app/source-code/terminal/terminal-source";
 import TextareaSource from "@/app/source-code/textarea/textarea-source";
+import TooltipSource from "@/app/source-code/tooltip/tooltip-source";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -124,6 +125,8 @@ export default function Page() {
         return <SwitchSource />;
       case "terminal":
         return <TerminalSource />;
+      case "tooltip":
+        return <TooltipSource />;
       default:
         return null;
     }

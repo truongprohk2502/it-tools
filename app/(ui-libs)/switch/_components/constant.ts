@@ -3,7 +3,7 @@ import type { UIField } from "@/app/(ui-libs)/_components/ui-docs";
 export const switchProperties: UIField[] = [
   {
     name: "color",
-    description: "Color of Swtich",
+    description: "Color of Switch",
     default: '"primary"',
     required: false,
     type: "radio",

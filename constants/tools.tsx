@@ -44,6 +44,7 @@ import SwitchIcon from "@/assets/icons/switch.icon";
 import TerminalIcon from "@/assets/icons/terminal.icon";
 import TextIcon from "@/assets/icons/text.icon";
 import TextareaIcon from "@/assets/icons/textarea.icon";
+import TooltipIcon from "@/assets/icons/tooltip.icon";
 import WebviewIcon from "@/assets/icons/webview.icon";
 import WheelIcon from "@/assets/icons/wheel.icon";
 import { Route } from "./routes";
@@ -350,6 +351,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.UITextarea,
         description: "React Textarea component with TailwindCSS",
         icon: TextareaIcon,
+      },
+      {
+        title: "Tooltip",
+        href: Route.UITooltip,
+        description: "React Tooltip component with TailwindCSS",
+        icon: TooltipIcon,
       },
       {
         title: "Switch",

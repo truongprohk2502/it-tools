@@ -67,7 +67,7 @@ const Terminal: React.FC<TerminalProps> = ({
   return (
     <div
       ref={scrollRef}
-      className={cn(
+      className={clsx(
         "overflow-auto rounded-md bg-neutral-900 px-4 py-6 text-sm font-semibold",
         className,
       )}
@@ -85,7 +85,7 @@ const Terminal: React.FC<TerminalProps> = ({
               {item.outputs.map((output, index) => (
                 <p
                   key={index}
-                  className={cn("whitespace-pre", {
+                  className={clsx("whitespace-pre", {
                     "text-lime-300": output.variant === "success",
                     "text-red-400": output.variant === "error",
                     "text-gray-400": output.variant === "default",

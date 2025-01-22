@@ -80,7 +80,7 @@ const Switch: React.FC<SwitchProps> = ({
     <div
       data-disabled={Boolean(disabled).toString()}
       data-checked={Boolean(checked).toString()}
-      className={cn(switchVariants({ size, color }), className)}
+      className={clsx(switchVariants({ size, color }), className)}
       onClick={handleClick}
     >
       <div
