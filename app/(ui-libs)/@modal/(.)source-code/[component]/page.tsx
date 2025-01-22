@@ -31,6 +31,7 @@ import SkeletonSource from "@/app/source-code/skeleton/skeleton-source";
 import SliderSource from "@/app/source-code/slider/slider-source";
 import SpinnerSource from "@/app/source-code/spinner/spinner-source";
 import SwapButtonSource from "@/app/source-code/swap-button/swap-button-source";
+import TerminalSource from "@/app/source-code/terminal/terminal-source";
 import TextareaSource from "@/app/source-code/textarea/textarea-source";
 import { Button } from "@/components/ui/button";
 import {
@@ -118,6 +119,8 @@ export default function Page() {
         return <SpinnerSource />;
       case "swap-button":
         return <SwapButtonSource />;
+      case "terminal":
+        return <TerminalSource />;
       default:
         return null;
     }

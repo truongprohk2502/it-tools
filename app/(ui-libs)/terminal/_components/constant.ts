@@ -1,6 +1,5 @@
 import type { UIField } from "@/app/(ui-libs)/_components/ui-docs";
 import type { CommandLine, TerminalProps } from "@/components/ui-lib/terminal";
-import { Output } from "@/components/ui-lib/terminal/terminal.types";
 
 export const terminalProperties: UIField[] = [
   {
@@ -43,24 +42,10 @@ export const terminalProperties: UIField[] = [
 ];
 
 export const welcomeText = `Welcome to Terminal
-	- Type 'download' to download resources
 	- Type 'date' to get the current date
 	- Type 'random' to get a random number
 	- Type 'print [text]' to print text
 	- Type 'clear' to clear the terminal`;
-
-const getProgressText = (value: number) => `Downloading resources
-${Array.from({ length: value }).fill("=").join("")}>${Array.from({
-  length: 10 - value,
-})
-  .fill("_")
-  .join("")} ${value}/10
-`;
-
-export const getDownloadProgress = (value: number): Output => {
-  if (value === 10) return { text: "Downloaded resources", variant: "success" };
-  return { text: getProgressText(value), variant: "default" };
-};
 
 export const getNewCommand = (
   command: string,
