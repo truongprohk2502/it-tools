@@ -14,7 +14,7 @@ export default function LeftMenu() {
             priority
             src={logoBackground}
             alt="IT Tools"
-            className="absolute inset-0"
+            className="absolute inset-x-0 -top-32 w-full"
           />
           <div className="absolute inset-0 flex flex-col items-center pt-6 text-neutral-100">
             <Link href="/">

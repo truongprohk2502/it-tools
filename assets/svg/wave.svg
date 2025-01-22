@@ -1,20 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 911" preserveAspectRatio="xMidYMid"
-  width="1920" height="911" xmlns:xlink="http://www.w3.org/1999/xlink"
-  style="shape-rendering:auto;display:block;background-position-x:0%;background-position-y:0%;background-size:auto;background-origin:padding-box;background-clip:border-box;background:scroll rgba(255, 255, 255, 0) none  repeat;width:1920px;height:911px;;animation:none">
-  <g>
-    <linearGradient y2="0" y1="0" x2="1" x1="0" id="lg-6chsh1lfl62">
-      <stop offset="0" stop-color="#0008ff"></stop>
-      <stop offset="1" stop-color="#00a2ff"></stop>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 275" class="gradient">
+  <defs>
+    <linearGradient id="a" x1="13.74" x2="303.96" y1="183.7" y2="45.59" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4166fc"></stop>
+      <stop offset=".6" stop-color="#4e8af9"></stop>
+      <stop offset="1" stop-color="#58a2f7"></stop>
     </linearGradient>
-    <path opacity="0.4" fill="url(#lg-6chsh1lfl62)"
-      d="M 0 0 L 0 798.34 Q 160 889.11 320 853.2 T 640 745.5 T 960 689.76 T 1280 680.01 T 1600 673.48 T 1920 640.69 L 1920 0 Z"
-      style="fill:url('#lg-6chsh1lfl62');opacity:0.4;;animation:none"></path>
-    <path opacity="0.4" fill="url(#lg-6chsh1lfl62)"
-      d="M 0 0 L 0 854.56 Q 160 761.19 320 728.7 T 640 687 T 960 686.44 T 1280 659.66 T 1600 690.87 T 1920 504.06 L 1920 0 Z"
-      style="fill:url('#lg-6chsh1lfl62');opacity:0.4;;animation:none"></path>
-    <path opacity="0.4" fill="url(#lg-6chsh1lfl62)"
-      d="M 0 0 L 0 865.87 Q 160 754.51 320 734.7 T 640 816.25 T 960 792.8 T 1280 712.33 T 1600 552.78 T 1920 586.97 L 1920 0 Z"
-      style="fill:url('#lg-6chsh1lfl62');opacity:0.4;;animation:none"></path>
-    <g></g>
-  </g>
+  </defs>
+  <path fill="#58a2f7" d="M0 187.5v25s0 37.5 50 50S300 225 300 225v-37.5Z" opacity=".49"></path>
+  <path fill="#58a2f7" d="M300 237.5S287.5 275 250 275s-128.95-37.5-188.6-75 134.21 0 134.21 0Z" opacity=".49"></path>
+  <path fill="#58a2f7" d="M0 200v12.5a241.47 241.47 0 0 0 112.5 50c73.6 11.69 130.61-14.86 150-25L300 200Z" opacity=".38"></path>
+  <path fill="url(#a)" d="M0 0v212.5s62.5-12.5 150 25 150 0 150 0V0Z"></path>
 </svg>
