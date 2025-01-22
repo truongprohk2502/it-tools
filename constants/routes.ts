@@ -43,6 +43,7 @@ export enum Route {
   UISlider = "/slider",
   UISpinner = "/spinner",
   UISwapButton = "/swap-button",
+  UITerminal = "/terminal",
   UITextarea = "/textarea",
   UIMobileMockup = "/mobile-mockup",
   UISkeleton = "/skeleton",

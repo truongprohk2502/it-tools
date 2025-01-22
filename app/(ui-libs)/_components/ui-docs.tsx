@@ -10,6 +10,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 
 export interface UIField {
@@ -18,7 +19,7 @@ export interface UIField {
   description: string;
   typeLabel?: string;
   default: string | null;
-  type: "string" | "number" | "boolean" | "radio" | "none";
+  type: "string" | "textarea" | "number" | "boolean" | "radio" | "none";
   radioList?: string[];
 }
 
@@ -87,6 +88,13 @@ function UIDocs<T>({ fields, fieldState, onChange }: Props<T>) {
                   </RadioGroup>
                 ) : item.type === "string" ? (
                   <Input
+                    value={fieldState[item.name as keyof T] as string}
+                    onChange={(e) => changeValue(item.name, e.target.value)}
+                    className="text-xs"
+                  />
+                ) : item.type === "textarea" ? (
+                  <Textarea
+                    rows={5}
                     value={fieldState[item.name as keyof T] as string}
                     onChange={(e) => changeValue(item.name, e.target.value)}
                     className="text-xs"

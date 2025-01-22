@@ -40,6 +40,7 @@ import SkeletonIcon from "@/assets/icons/skeleton.icon";
 import SliderIcon from "@/assets/icons/slider.icon";
 import SpinnerIcon from "@/assets/icons/spinner.icon";
 import SwapIcon from "@/assets/icons/swap.icon";
+import TerminalIcon from "@/assets/icons/terminal.icon";
 import TextIcon from "@/assets/icons/text.icon";
 import TextareaIcon from "@/assets/icons/textarea.icon";
 import WebviewIcon from "@/assets/icons/webview.icon";
@@ -336,6 +337,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.UISwapButton,
         description: "React SwapButton component with TailwindCSS",
         icon: SwapIcon,
+      },
+      {
+        title: "Terminal",
+        href: Route.UITerminal,
+        description: "React Terminal component with TailwindCSS",
+        icon: TerminalIcon,
       },
       {
         title: "Textarea",
