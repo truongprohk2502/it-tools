@@ -49,4 +49,5 @@ export enum Route {
   UISkeleton = "/skeleton",
   UISwitch = "/switch",
   UITooltip = "/tooltip",
+  UITable = "/table",
 }

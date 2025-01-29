@@ -32,6 +32,7 @@ import SliderSource from "@/app/source-code/slider/slider-source";
 import SpinnerSource from "@/app/source-code/spinner/spinner-source";
 import SwapButtonSource from "@/app/source-code/swap-button/swap-button-source";
 import SwitchSource from "@/app/source-code/switch/switch-source";
+import TableSource from "@/app/source-code/table/table-source";
 import TerminalSource from "@/app/source-code/terminal/terminal-source";
 import TextareaSource from "@/app/source-code/textarea/textarea-source";
 import TooltipSource from "@/app/source-code/tooltip/tooltip-source";
@@ -127,6 +128,8 @@ export default function Page() {
         return <TerminalSource />;
       case "tooltip":
         return <TooltipSource />;
+      case "table":
+        return <TableSource />;
       default:
         return null;
     }
