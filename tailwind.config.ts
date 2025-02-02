@@ -176,6 +176,22 @@ export default {
             strokeDashoffset: "-125px",
           },
         },
+        "toast-in": {
+          from: { opacity: "0", transform: "scale(0.9)" },
+          to: { opacity: "1", transform: "scale(1)" },
+        },
+        "toast-out": {
+          from: { opacity: "1", transform: "scale(1)" },
+          to: { opacity: "0", transform: "scale(0.9)" },
+        },
+        "scale-in": {
+          from: { transform: "scale(0)" },
+          to: { transform: "scale(1)" },
+        },
+        "scale-out": {
+          from: { transform: "scale(1)" },
+          to: { transform: "scale(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -197,6 +213,10 @@ export default {
         scale: "scale 0.9s ease-in-out infinite",
         "clip-loader": "clip-loader 2s linear infinite",
         "clip-circle": "clip-circle 1.5s ease-in-out infinite",
+        "toast-in": "toast-in 0.15s ease-in-out",
+        "toast-out": "toast-out 0.15s ease-in-out",
+        "scale-in": "scale-in",
+        "scale-out": "scale-out",
       },
     },
   },

@@ -38,14 +38,21 @@ import RegexIcon from "@/assets/icons/regex.icon";
 import RippleIcon from "@/assets/icons/ripple.icon";
 import SkeletonIcon from "@/assets/icons/skeleton.icon";
 import SliderIcon from "@/assets/icons/slider.icon";
+import SortableListIcon from "@/assets/icons/sortable-list.icon";
+import SpeedDialIcon from "@/assets/icons/speed-dial.icon";
 import SpinnerIcon from "@/assets/icons/spinner.icon";
+import StepsIcon from "@/assets/icons/steps.icon";
 import SwapIcon from "@/assets/icons/swap.icon";
 import SwitchIcon from "@/assets/icons/switch.icon";
 import TableIcon from "@/assets/icons/table.icon";
+import TabsIcon from "@/assets/icons/tabs.icon";
 import TerminalIcon from "@/assets/icons/terminal.icon";
 import TextIcon from "@/assets/icons/text.icon";
 import TextareaIcon from "@/assets/icons/textarea.icon";
+import ToastIcon from "@/assets/icons/toast.icon";
 import TooltipIcon from "@/assets/icons/tooltip.icon";
+import TreeViewIcon from "@/assets/icons/tree-view.icon";
+import WatermarkIcon from "@/assets/icons/watermark.icon";
 import WebviewIcon from "@/assets/icons/webview.icon";
 import WheelIcon from "@/assets/icons/wheel.icon";
 import { Route } from "./routes";
@@ -156,10 +163,70 @@ export const toolGroups: ToolGroup[] = [
     title: "UI Components",
     items: [
       {
-        title: "Accordion",
-        href: Route.UIAccordion,
-        description: "React Accordion component with TailwindCSS",
-        icon: AccordionIcon,
+        title: "Autocomplete",
+        href: Route.UIAutocomplete,
+        description: "React Autocomplete component with TailwindCSS",
+        icon: AutocompleteIcon,
+      },
+      {
+        title: "Input",
+        href: Route.UIInput,
+        description: "React Input component with TailwindCSS",
+        icon: InputIcon,
+      },
+      {
+        title: "Textarea",
+        href: Route.UITextarea,
+        description: "React Textarea component with TailwindCSS",
+        icon: TextareaIcon,
+      },
+      {
+        title: "Radio",
+        href: Route.UIRadio,
+        description: "React Radio component with TailwindCSS",
+        icon: RadioIcon,
+      },
+      {
+        title: "Checkbox",
+        href: Route.UICheckbox,
+        description: "React Checkbox component with TailwindCSS",
+        icon: CheckboxIcon,
+      },
+      {
+        title: "Switch",
+        href: Route.UISwitch,
+        description: "React Switch component with TailwindCSS",
+        icon: SwitchIcon,
+      },
+      {
+        title: "OtpInput",
+        href: Route.UIOtpInput,
+        description: "React OtpInput component with TailwindCSS",
+        icon: OtpInputIcon,
+      },
+      {
+        title: "DatePicker",
+        href: Route.UIDatePicker,
+        description: "React DatePicker component with TailwindCSS",
+        icon: DatePickerIcon,
+      },
+      {
+        title: "Slider",
+        href: Route.UISlider,
+        description: "React Slider component with TailwindCSS",
+        icon: SliderIcon,
+      },
+      {
+        title: "Dropdown",
+        href: Route.UIDropdown,
+        description: "React Dropdown component with TailwindCSS",
+        icon: DropdownIcon,
+      },
+      {
+        title: "ContextMenu",
+        href: Route.UIContextMenu,
+        description: "React ContextMenu component with TailwindCSS",
+        icon: ContextMenuIcon,
       },
       {
         title: "AngleSlider",
@@ -168,10 +235,10 @@ export const toolGroups: ToolGroup[] = [
         icon: AngleSliderIcon,
       },
       {
-        title: "Autocomplete",
-        href: Route.UIAutocomplete,
-        description: "React Autocomplete component with TailwindCSS",
-        icon: AutocompleteIcon,
+        title: "Rating",
+        href: Route.UIRating,
+        description: "React Rating component with TailwindCSS",
+        icon: RatingIcon,
       },
       {
         title: "Avatar",
@@ -192,28 +259,28 @@ export const toolGroups: ToolGroup[] = [
         icon: BreadcrumbIcon,
       },
       {
-        title: "BrowserMockup",
-        href: Route.UIBrowserMockup,
-        description: "React BrowserMockup component with TailwindCSS",
-        icon: BrowserMockupIcon,
-      },
-      {
         title: "Button",
         href: Route.UIButton,
         description: "React Button component with TailwindCSS",
         icon: ButtonIcon,
       },
       {
-        title: "Carousel",
-        href: Route.UICarousel,
-        description: "React Carousel component with TailwindCSS",
-        icon: CarouselIcon,
+        title: "SwapButton",
+        href: Route.UISwapButton,
+        description: "React SwapButton component with TailwindCSS",
+        icon: SwapIcon,
       },
       {
-        title: "Checkbox",
-        href: Route.UICheckbox,
-        description: "React Checkbox component with TailwindCSS",
-        icon: CheckboxIcon,
+        title: "Ripple",
+        href: Route.UIRipple,
+        description: "React Ripple component with TailwindCSS",
+        icon: RippleIcon,
+      },
+      {
+        title: "SpeedDial",
+        href: Route.UISpeedDial,
+        description: "React SpeedDial component with TailwindCSS",
+        icon: SpeedDialIcon,
       },
       {
         title: "Chip",
@@ -228,22 +295,34 @@ export const toolGroups: ToolGroup[] = [
         icon: CodeSnippetIcon,
       },
       {
-        title: "ContextMenu",
-        href: Route.UIContextMenu,
-        description: "React ContextMenu component with TailwindCSS",
-        icon: ContextMenuIcon,
-      },
-      {
         title: "Countdown",
         href: Route.UICountdown,
         description: "React Countdown component with TailwindCSS",
         icon: CountdownIcon,
       },
       {
-        title: "DatePicker",
-        href: Route.UIDatePicker,
-        description: "React DatePicker component with TailwindCSS",
-        icon: DatePickerIcon,
+        title: "Pagination",
+        href: Route.UIPagination,
+        description: "React Pagination component with TailwindCSS",
+        icon: PaginationIcon,
+      },
+      {
+        title: "Tabs",
+        href: Route.UITabs,
+        description: "React Tabs component with TailwindCSS",
+        icon: TabsIcon,
+      },
+      {
+        title: "Tooltip",
+        href: Route.UITooltip,
+        description: "React Tooltip component with TailwindCSS",
+        icon: TooltipIcon,
+      },
+      {
+        title: "Accordion",
+        href: Route.UIAccordion,
+        description: "React Accordion component with TailwindCSS",
+        icon: AccordionIcon,
       },
       {
         title: "Dialog",
@@ -258,10 +337,10 @@ export const toolGroups: ToolGroup[] = [
         icon: DrawerIcon,
       },
       {
-        title: "Dropdown",
-        href: Route.UIDropdown,
-        description: "React Dropdown component with TailwindCSS",
-        icon: DropdownIcon,
+        title: "Carousel",
+        href: Route.UICarousel,
+        description: "React Carousel component with TailwindCSS",
+        icon: CarouselIcon,
       },
       {
         title: "Galleria",
@@ -276,58 +355,10 @@ export const toolGroups: ToolGroup[] = [
         icon: ImageDiffIcon,
       },
       {
-        title: "Input",
-        href: Route.UIInput,
-        description: "React Input component with TailwindCSS",
-        icon: InputIcon,
-      },
-      {
-        title: "OtpInput",
-        href: Route.UIOtpInput,
-        description: "React OtpInput component with TailwindCSS",
-        icon: OtpInputIcon,
-      },
-      {
-        title: "Pagination",
-        href: Route.UIPagination,
-        description: "React Pagination component with TailwindCSS",
-        icon: PaginationIcon,
-      },
-      {
         title: "Progress",
         href: Route.UIProgress,
         description: "React Progress component with TailwindCSS",
         icon: ProgressIcon,
-      },
-      {
-        title: "Radio",
-        href: Route.UIRadio,
-        description: "React Radio component with TailwindCSS",
-        icon: RadioIcon,
-      },
-      {
-        title: "Rating",
-        href: Route.UIRating,
-        description: "React Rating component with TailwindCSS",
-        icon: RatingIcon,
-      },
-      {
-        title: "Ripple",
-        href: Route.UIRipple,
-        description: "React Ripple component with TailwindCSS",
-        icon: RippleIcon,
-      },
-      {
-        title: "Skeleton",
-        href: Route.UISkeleton,
-        description: "React Skeleton component with TailwindCSS",
-        icon: SkeletonIcon,
-      },
-      {
-        title: "Slider",
-        href: Route.UISlider,
-        description: "React Slider component with TailwindCSS",
-        icon: SliderIcon,
       },
       {
         title: "Spinner",
@@ -336,28 +367,10 @@ export const toolGroups: ToolGroup[] = [
         icon: SpinnerIcon,
       },
       {
-        title: "SwapButton",
-        href: Route.UISwapButton,
-        description: "React SwapButton component with TailwindCSS",
-        icon: SwapIcon,
-      },
-      {
         title: "Terminal",
         href: Route.UITerminal,
         description: "React Terminal component with TailwindCSS",
         icon: TerminalIcon,
-      },
-      {
-        title: "Textarea",
-        href: Route.UITextarea,
-        description: "React Textarea component with TailwindCSS",
-        icon: TextareaIcon,
-      },
-      {
-        title: "Tooltip",
-        href: Route.UITooltip,
-        description: "React Tooltip component with TailwindCSS",
-        icon: TooltipIcon,
       },
       {
         title: "Table",
@@ -366,10 +379,46 @@ export const toolGroups: ToolGroup[] = [
         icon: TableIcon,
       },
       {
-        title: "Switch",
-        href: Route.UISwitch,
-        description: "React Switch component with TailwindCSS",
-        icon: SwitchIcon,
+        title: "Toast",
+        href: Route.UIToast,
+        description: "React Toast component with TailwindCSS",
+        icon: ToastIcon,
+      },
+      {
+        title: "Steps",
+        href: Route.UISteps,
+        description: "React Steps component with TailwindCSS",
+        icon: StepsIcon,
+      },
+      {
+        title: "SortableList",
+        href: Route.UISortableList,
+        description: "React SortableList component with TailwindCSS",
+        icon: SortableListIcon,
+      },
+      {
+        title: "Skeleton",
+        href: Route.UISkeleton,
+        description: "React Skeleton component with TailwindCSS",
+        icon: SkeletonIcon,
+      },
+      {
+        title: "TreeView",
+        href: Route.UITreeView,
+        description: "React TreeView component with TailwindCSS",
+        icon: TreeViewIcon,
+      },
+      {
+        title: "Watermark",
+        href: Route.UIWatermark,
+        description: "React Watermark component with TailwindCSS",
+        icon: WatermarkIcon,
+      },
+      {
+        title: "BrowserMockup",
+        href: Route.UIBrowserMockup,
+        description: "React BrowserMockup component with TailwindCSS",
+        icon: BrowserMockupIcon,
       },
       {
         title: "MobileMockup",

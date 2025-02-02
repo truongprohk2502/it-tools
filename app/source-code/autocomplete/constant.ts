@@ -1,4 +1,4 @@
-export const autocompleteUseClickAwayCode = `// useClickAway.ts
+export const autocompleteUseClickAwayCode = `// use-click-away.ts
 import { RefObject, useEffect } from "react";
 
 const defaultEvents = ["mousedown", "touchstart"];

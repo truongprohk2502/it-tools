@@ -48,6 +48,13 @@ export enum Route {
   UIMobileMockup = "/mobile-mockup",
   UISkeleton = "/skeleton",
   UISwitch = "/switch",
+  UISteps = "/steps",
+  UISpeedDial = "/speed-dial",
+  UISortableList = "/sortable-list",
   UITooltip = "/tooltip",
   UITable = "/table",
+  UITabs = "/tabs",
+  UIToast = "/toast",
+  UITreeView = "/tree-view",
+  UIWatermark = "/watermark",
 }

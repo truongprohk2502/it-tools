@@ -51,7 +51,7 @@ export interface ContextMenuProps {
 }
 `;
 
-export const contextMenuUseClickAwayCode = `// useClickAway.ts
+export const contextMenuUseClickAwayCode = `// use-click-away.ts
 import { RefObject, useEffect } from "react";
 
 const defaultEvents = ["mousedown", "touchstart"];

@@ -2,7 +2,7 @@ import CopyButton from "@/components/shared/copy-button";
 import SyntaxHighlighter from "@/components/shared/syntax-highlighter";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
-type DependencyLib = "react-portal" | "dayjs" | "tinycolor2";
+type DependencyLib = "react-portal" | "dayjs" | "tinycolor2" | "zustand";
 
 interface Step {
   title: string;
@@ -63,6 +63,12 @@ const UISourceCode: React.FC<Props> = ({ component, steps, dependencies }) => {
             <code className="text-red-500">tinycolor2 </code>
             is a lightweight library helping get contrast text color based on
             background.
+          </li>
+        )}
+        {dependencies?.includes("zustand") && (
+          <li>
+            <code className="text-red-500">zustand </code>A small, fast, and
+            scalable bear bones state management solution
           </li>
         )}
       </ul>

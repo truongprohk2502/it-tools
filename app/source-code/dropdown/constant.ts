@@ -1,4 +1,4 @@
-export const dropdownUseClickAwayCode = `// dropdown.types.ts
+export const dropdownUseClickAwayCode = `// use-click-away.ts
 import { RefObject, useEffect } from "react";
 
 const defaultEvents = ["mousedown", "touchstart"];
