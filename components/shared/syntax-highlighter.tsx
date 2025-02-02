@@ -12,10 +12,15 @@ ReactSyntaxHighlighter.registerLanguage("jsx", jsx);
 
 interface Props {
   code: string;
+  fullHeight?: boolean;
   showLineNumbers?: boolean;
 }
 
-const SyntaxHighlighter: React.FC<Props> = ({ code, showLineNumbers }) => {
+const SyntaxHighlighter: React.FC<Props> = ({
+  code,
+  fullHeight,
+  showLineNumbers,
+}) => {
   const theme = useSystemTheme();
   const domLoaded = useDomLoaded();
 
@@ -24,7 +29,7 @@ const SyntaxHighlighter: React.FC<Props> = ({ code, showLineNumbers }) => {
       <ReactSyntaxHighlighter
         language="jsx"
         style={theme === Theme.Light ? light : dark}
-        customStyle={{ margin: 0 }}
+        customStyle={{ margin: 0, height: fullHeight ? "100%" : "auto" }}
         showLineNumbers={showLineNumbers}
       >
         {code}

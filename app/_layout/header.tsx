@@ -59,7 +59,7 @@ const Header: React.FC<Props> = ({ isOpenMenu, onToggleMenu }) => {
     <>
       <div
         ref={wrapperRef}
-        className="flex items-center gap-4 bg-main-light px-4 py-3 shadow-sm transition-all duration-150 dark:bg-main-dark"
+        className="flex min-w-[36rem] items-center gap-4 bg-main-light px-4 py-3 shadow-sm transition-all duration-150 dark:bg-main-dark"
       >
         <TooltipButton
           onClick={onToggleMenu}
