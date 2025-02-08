@@ -39,6 +39,7 @@
     "crypto-js": "^4.2.0",
     "dayjs": "^1.11.13",
     "file-saver": "^2.0.5",
+    "generate-schema": "^2.6.0",
     "get-blob-duration": "^1.2.0",
     "howler": "^2.2.4",
     "image-js": "^0.36.0",

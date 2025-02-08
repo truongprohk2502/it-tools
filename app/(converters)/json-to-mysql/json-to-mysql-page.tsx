@@ -1,23 +1,23 @@
 "use client";
 
-import transform from "transform-json-types-fixed";
+import gs from "generate-schema";
 import ConverterLayout, {
   type TransformerResponse,
 } from "../_components/converter-layout";
-import { IOTS_SOURCE, JSON_SOURCE } from "./constants";
+import { JSON_SOURCE, MYSQL_SOURCE } from "./constants";
 
-const JsonToIOTSPage: React.FC = () => {
+const JsonToMySqlPage: React.FC = () => {
   const transformer = (code: string): Promise<TransformerResponse> => {
     try {
-      const iots = transform(code, {
-        lang: "io-ts",
-      });
-      const transformed = `import * as t from "io-ts";\n\n${iots}`.trim();
+      const transformed = gs.mysql(JSON.parse(code));
       return Promise.resolve({ type: "success", code: transformed });
-    } catch {
+    } catch (err: unknown) {
       return Promise.resolve({
         type: "failed",
-        error: "invalid",
+        error:
+          err instanceof Error && err.name === "TomlError"
+            ? "invalid"
+            : "unknown",
       });
     }
   };
@@ -25,14 +25,14 @@ const JsonToIOTSPage: React.FC = () => {
   return (
     <ConverterLayout
       from="JSON"
-      to="IO-TS"
+      to="MySQL"
       sourceLanguage="json"
-      targetLanguage="js"
+      targetLanguage="sql"
       initSource={JSON_SOURCE}
-      initTarget={IOTS_SOURCE}
+      initTarget={MYSQL_SOURCE}
       onTransform={transformer}
     />
   );
 };
 
-export default JsonToIOTSPage;
+export default JsonToMySqlPage;

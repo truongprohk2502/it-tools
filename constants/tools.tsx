@@ -185,6 +185,12 @@ export const toolGroups: ToolGroup[] = [
         icon: JsonTextIcon,
       },
       {
+        title: "JSON to MySQL",
+        href: Route.JsonToMySql,
+        description: "Convert JSON to MySQL query",
+        icon: JsonTextIcon,
+      },
+      {
         title: "JSON to TypeScript",
         href: Route.JsonToTypescript,
         description: "Convert JSON to TypeScript type",

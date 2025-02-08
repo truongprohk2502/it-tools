@@ -12,3 +12,14 @@ declare module "save-svg-as-png" {
     options?: SaveSvgOptions,
   ): void;
 }
+
+declare module "transform-json-types-fixed" {
+  function transform(input: string, setting: { lang: "io-ts" }): string;
+  export default TransformFn;
+}
+
+declare module "generate-schema" {
+  export function bigquery(obj: any): string;
+  export function mysql(obj: any): string;
+  export function mongoose(obj: any): string;
+}

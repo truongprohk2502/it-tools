@@ -23,6 +23,7 @@ export enum Route {
   JsonToToml = "/json-to-toml",
   JsonToYaml = "/json-to-yaml",
   JsonToXml = "/json-to-xml",
+  JsonToMySql = "/json-to-mysql",
   JsonToTypescript = "/json-to-typescript",
   JsonToIOTS = "/json-to-io-ts",
   UIAccordion = "/accordion",

@@ -6,6 +6,7 @@ import useSystemTheme from "@/hooks/use-system-theme";
 import { PrismLight as ReactSyntaxHighlighter } from "react-syntax-highlighter";
 import json from "react-syntax-highlighter/dist/esm/languages/prism/json";
 import jsx from "react-syntax-highlighter/dist/esm/languages/prism/jsx";
+import sql from "react-syntax-highlighter/dist/esm/languages/prism/sql";
 import toml from "react-syntax-highlighter/dist/esm/languages/prism/toml";
 import ts from "react-syntax-highlighter/dist/esm/languages/prism/typescript";
 import yaml from "react-syntax-highlighter/dist/esm/languages/prism/yaml";
@@ -17,6 +18,7 @@ ReactSyntaxHighlighter.registerLanguage("jsx", jsx);
 ReactSyntaxHighlighter.registerLanguage("json", json);
 ReactSyntaxHighlighter.registerLanguage("toml", toml);
 ReactSyntaxHighlighter.registerLanguage("yaml", yaml);
+ReactSyntaxHighlighter.registerLanguage("sql", sql);
 
 export type SyntaxHighlighterLanguage =
   | "ts"
@@ -25,7 +27,8 @@ export type SyntaxHighlighterLanguage =
   | "json"
   | "toml"
   | "yaml"
-  | "xml";
+  | "xml"
+  | "sql";
 
 interface Props {
   code: string;
