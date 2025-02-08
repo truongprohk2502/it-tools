@@ -203,6 +203,12 @@ export const toolGroups: ToolGroup[] = [
         icon: JsonTextIcon,
       },
       {
+        title: "JSON to JsDoc",
+        href: Route.JsonToJsDoc,
+        description: "Convert JSON to JsDoc",
+        icon: JsonTextIcon,
+      },
+      {
         title: "JSON to TypeScript",
         href: Route.JsonToTypescript,
         description: "Convert JSON to TypeScript type",

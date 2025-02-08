@@ -69,6 +69,7 @@
     "react-use": "^17.6.0",
     "regexpp": "^3.2.0",
     "save-svg-as-png": "^1.4.17",
+    "simple-json-to-jsdoc": "^1.0.1",
     "sonner": "^1.7.1",
     "string-format": "^2.0.0",
     "string-similarity": "^4.0.4",

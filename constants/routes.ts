@@ -26,6 +26,7 @@ export enum Route {
   JsonToMySql = "/json-to-mysql",
   JsonToMongoose = "/json-to-mongoose",
   JsonToBigQuery = "/json-to-big-query",
+  JsonToJsDoc = "/json-to-jsdoc",
   JsonToTypescript = "/json-to-typescript",
   JsonToIOTS = "/json-to-io-ts",
   UIAccordion = "/accordion",
