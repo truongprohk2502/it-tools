@@ -15,6 +15,7 @@ export enum Route {
   NumberConverter = "/number-converter",
   RandomWheel = "/random-wheel",
   TomlToJson = "/toml-to-json",
+  JsonToToml = "/json-to-toml",
   UIAccordion = "/accordion",
   UIAngleSlider = "/angle-slider",
   UIAutocomplete = "/autocomplete",

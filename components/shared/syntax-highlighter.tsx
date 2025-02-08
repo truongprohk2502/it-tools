@@ -6,13 +6,15 @@ import useSystemTheme from "@/hooks/use-system-theme";
 import { PrismLight as ReactSyntaxHighlighter } from "react-syntax-highlighter";
 import json from "react-syntax-highlighter/dist/esm/languages/prism/json";
 import jsx from "react-syntax-highlighter/dist/esm/languages/prism/jsx";
+import toml from "react-syntax-highlighter/dist/esm/languages/prism/toml";
 import dark from "react-syntax-highlighter/dist/esm/styles/prism/duotone-dark";
 import light from "react-syntax-highlighter/dist/esm/styles/prism/duotone-light";
 
 ReactSyntaxHighlighter.registerLanguage("jsx", jsx);
 ReactSyntaxHighlighter.registerLanguage("json", json);
+ReactSyntaxHighlighter.registerLanguage("toml", toml);
 
-export type SyntaxHighlighterLanguage = "jsx" | "json";
+export type SyntaxHighlighterLanguage = "jsx" | "json" | "toml";
 
 interface Props {
   code: string;

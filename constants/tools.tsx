@@ -23,6 +23,7 @@ import GalleriaIcon from "@/assets/icons/galleria.icon";
 import ImageCropIcon from "@/assets/icons/image-crop.icon";
 import ImageDiffIcon from "@/assets/icons/image-diff.icon";
 import InputIcon from "@/assets/icons/input.icon";
+import JsonTextIcon from "@/assets/icons/json-text.icon";
 import JsonIcon from "@/assets/icons/json.icon";
 import JwtIcon from "@/assets/icons/jwt.icon";
 import MobileMockupIcon from "@/assets/icons/mobile-mockup.icon";
@@ -159,12 +160,6 @@ export const toolGroups: ToolGroup[] = [
         description: "Random name picker",
         icon: WheelIcon,
       },
-      // {
-      //   title: "Markdown",
-      //   href: Route.Markdown,
-      //   description: "The markdown documents live preview",
-      //   icon: MarkdownIcon,
-      // },
     ],
   },
   {
@@ -175,6 +170,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.TomlToJson,
         description: "Convert TOML to JSON source code",
         icon: TomlIcon,
+      },
+      {
+        title: "JSON to TOML",
+        href: Route.JsonToToml,
+        description: "Convert JSON to TOML source code",
+        icon: JsonTextIcon,
       },
     ],
   },
