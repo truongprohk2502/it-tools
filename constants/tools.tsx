@@ -52,6 +52,7 @@ import TextareaIcon from "@/assets/icons/textarea.icon";
 import ToastIcon from "@/assets/icons/toast.icon";
 import TooltipIcon from "@/assets/icons/tooltip.icon";
 import TreeViewIcon from "@/assets/icons/tree-view.icon";
+import VoiceRecorderIcon from "@/assets/icons/voice-recorder.icon";
 import WatermarkIcon from "@/assets/icons/watermark.icon";
 import WebviewIcon from "@/assets/icons/webview.icon";
 import WheelIcon from "@/assets/icons/wheel.icon";
@@ -73,6 +74,12 @@ export const toolGroups: ToolGroup[] = [
   {
     title: "Tools",
     items: [
+      {
+        title: "Voice Recorder",
+        href: Route.VoiceRecorder,
+        description: "Record audio from microphone",
+        icon: VoiceRecorderIcon,
+      },
       {
         title: "Compare Texts",
         href: Route.CompareTexts,

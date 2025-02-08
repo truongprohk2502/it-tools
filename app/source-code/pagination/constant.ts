@@ -25,9 +25,6 @@ const Pagination: React.FC<PaginationProps> = ({
   onChange,
 }) => {
   const cells = useMemo(() => {
-    console.log(siblings, showControls, current, total);
-    console.log(typeof siblings);
-
     const maxSequentialPages = siblings * 2 + 1;
 
     const paginationList: Array<string | number> = [];
@@ -54,7 +51,6 @@ const Pagination: React.FC<PaginationProps> = ({
     }
 
     if (showControls) paginationList.push(">");
-    console.log(paginationList);
 
     return paginationList;
   }, [siblings, showControls, current, total]);
