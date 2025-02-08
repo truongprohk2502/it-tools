@@ -58,6 +58,7 @@ import VoiceRecorderIcon from "@/assets/icons/voice-recorder.icon";
 import WatermarkIcon from "@/assets/icons/watermark.icon";
 import WebviewIcon from "@/assets/icons/webview.icon";
 import WheelIcon from "@/assets/icons/wheel.icon";
+import YamlIcon from "@/assets/icons/yaml.icon";
 import { Route } from "./routes";
 
 interface Tool {
@@ -170,6 +171,18 @@ export const toolGroups: ToolGroup[] = [
         href: Route.TomlToJson,
         description: "Convert TOML to JSON source code",
         icon: TomlIcon,
+      },
+      {
+        title: "TOML to YAML",
+        href: Route.TomlToYaml,
+        description: "Convert TOML to YAML source code",
+        icon: TomlIcon,
+      },
+      {
+        title: "YAML to TOML",
+        href: Route.YamlToToml,
+        description: "Convert YAML to TOML source code",
+        icon: YamlIcon,
       },
       {
         title: "JSON to TOML",

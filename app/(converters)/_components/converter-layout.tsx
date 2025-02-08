@@ -17,7 +17,7 @@ import { useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
 import SettingDialog, { type Configs } from "./setting-dialog";
 
-type Language = "json" | "xml" | "toml";
+type Language = "json" | "xml" | "toml" | "yaml";
 
 type TransformerSuccess = {
   type: "success";
@@ -65,7 +65,7 @@ const ConverterLayout: React.FC<Props> = ({
   const [invalidSource, setInvalidSource] = useState<boolean>(false);
 
   const sourceSupportedLanguage = useMemo(() => {
-    if (sourceLanguage === "toml") return "ruby";
+    if (sourceLanguage === "toml" || sourceLanguage === "yaml") return "ruby";
     return sourceLanguage;
   }, [sourceLanguage]);
 
