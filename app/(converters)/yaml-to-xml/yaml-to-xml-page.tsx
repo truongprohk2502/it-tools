@@ -21,7 +21,7 @@ const YamlToXmlPage: React.FC = () => {
       const transformed = builder.buildObject(yaml.parse(code));
 
       return Promise.resolve({ type: "success", code: transformed });
-    } catch (err: unknown) {
+    } catch {
       return Promise.resolve({
         type: "failed",
         error: "invalid",

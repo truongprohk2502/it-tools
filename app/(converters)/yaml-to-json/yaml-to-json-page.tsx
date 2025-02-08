@@ -11,7 +11,7 @@ const YamlToJsonPage: React.FC = () => {
     try {
       const transformed = JSON.stringify(yaml.parse(code), undefined, 2);
       return Promise.resolve({ type: "success", code: transformed });
-    } catch (err: unknown) {
+    } catch {
       return Promise.resolve({
         type: "failed",
         error: "invalid",

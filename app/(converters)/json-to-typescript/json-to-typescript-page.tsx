@@ -11,7 +11,7 @@ const JsonToTypescriptPage: React.FC = () => {
     try {
       const transformed = json2ts(code);
       return Promise.resolve({ type: "success", code: transformed });
-    } catch (err: unknown) {
+    } catch {
       return Promise.resolve({
         type: "failed",
         error: "invalid",

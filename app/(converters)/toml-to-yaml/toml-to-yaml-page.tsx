@@ -12,7 +12,7 @@ const TomlToYamlPage: React.FC = () => {
     try {
       const transformed = yaml.stringify(toml.parse(code));
       return Promise.resolve({ type: "success", code: transformed });
-    } catch (err: unknown) {
+    } catch {
       return Promise.resolve({
         type: "failed",
         error: "invalid",

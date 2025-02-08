@@ -15,7 +15,7 @@ const JsonToIOTSPage: React.FC = () => {
       });
       const transformed = `import * as t from "io-ts";\n\n${iots}`.trim();
       return Promise.resolve({ type: "success", code: transformed });
-    } catch (err: unknown) {
+    } catch {
       return Promise.resolve({
         type: "failed",
         error: "invalid",
