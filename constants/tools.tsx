@@ -191,6 +191,18 @@ export const toolGroups: ToolGroup[] = [
         icon: JsonTextIcon,
       },
       {
+        title: "JSON to Mongoose",
+        href: Route.JsonToMongoose,
+        description: "Convert JSON to Mongoose schema",
+        icon: JsonTextIcon,
+      },
+      {
+        title: "JSON to BigQuery",
+        href: Route.JsonToBigQuery,
+        description: "Convert JSON to BigQuery schema",
+        icon: JsonTextIcon,
+      },
+      {
         title: "JSON to TypeScript",
         href: Route.JsonToTypescript,
         description: "Convert JSON to TypeScript type",
