@@ -164,7 +164,18 @@ export const toolGroups: ToolGroup[] = [
     ],
   },
   {
-    title: "Transformers",
+    title: "JSON Transformers",
+    items: [
+      {
+        title: "JSON to TOML",
+        href: Route.JsonToToml,
+        description: "Convert JSON to TOML source code",
+        icon: JsonTextIcon,
+      },
+    ],
+  },
+  {
+    title: "TOML Transformers",
     items: [
       {
         title: "TOML to JSON",
@@ -179,16 +190,21 @@ export const toolGroups: ToolGroup[] = [
         icon: TomlIcon,
       },
       {
+        title: "TOML to XML",
+        href: Route.TomlToXml,
+        description: "Convert TOML to XML source code",
+        icon: TomlIcon,
+      },
+    ],
+  },
+  {
+    title: "YAML Transformers",
+    items: [
+      {
         title: "YAML to TOML",
         href: Route.YamlToToml,
         description: "Convert YAML to TOML source code",
         icon: YamlIcon,
-      },
-      {
-        title: "JSON to TOML",
-        href: Route.JsonToToml,
-        description: "Convert JSON to TOML source code",
-        icon: JsonTextIcon,
       },
     ],
   },

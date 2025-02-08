@@ -16,7 +16,12 @@ ReactSyntaxHighlighter.registerLanguage("json", json);
 ReactSyntaxHighlighter.registerLanguage("toml", toml);
 ReactSyntaxHighlighter.registerLanguage("yaml", yaml);
 
-export type SyntaxHighlighterLanguage = "jsx" | "json" | "toml" | "yaml";
+export type SyntaxHighlighterLanguage =
+  | "jsx"
+  | "json"
+  | "toml"
+  | "yaml"
+  | "xml";
 
 interface Props {
   code: string;

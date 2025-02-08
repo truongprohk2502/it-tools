@@ -16,6 +16,7 @@ export enum Route {
   RandomWheel = "/random-wheel",
   TomlToJson = "/toml-to-json",
   TomlToYaml = "/toml-to-yaml",
+  TomlToXml = "/toml-to-xml",
   YamlToToml = "/yaml-to-toml",
   JsonToToml = "/json-to-toml",
   UIAccordion = "/accordion",
