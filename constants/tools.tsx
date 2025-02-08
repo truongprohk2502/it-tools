@@ -212,6 +212,12 @@ export const toolGroups: ToolGroup[] = [
         description: "Convert YAML to JSON source code",
         icon: YamlIcon,
       },
+      {
+        title: "YAML to XML",
+        href: Route.YamlToXml,
+        description: "Convert YAML to XML source code",
+        icon: YamlIcon,
+      },
     ],
   },
   {

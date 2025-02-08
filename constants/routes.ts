@@ -19,6 +19,7 @@ export enum Route {
   TomlToXml = "/toml-to-xml",
   YamlToJson = "/yaml-to-json",
   YamlToToml = "/yaml-to-toml",
+  YamlToXml = "/yaml-to-xml",
   JsonToToml = "/json-to-toml",
   UIAccordion = "/accordion",
   UIAngleSlider = "/angle-slider",
