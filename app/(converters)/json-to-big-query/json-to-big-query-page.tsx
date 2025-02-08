@@ -4,13 +4,13 @@ import gs from "generate-schema";
 import ConverterLayout, {
   type TransformerResponse,
 } from "../_components/converter-layout";
-import { JSON_SOURCE, MONGOOSE_SOURCE } from "./constants";
+import { BIGQUERY_SOURCE, JSON_SOURCE } from "./constants";
 
-const JsonToMongoosePage: React.FC = () => {
+const JsonToBigQueryPage: React.FC = () => {
   const transformer = (code: string): Promise<TransformerResponse> => {
     try {
       const transformed = JSON.stringify(
-        gs.mongoose(JSON.parse(code)),
+        gs.bigquery(JSON.parse(code)),
         null,
         2,
       );
@@ -26,14 +26,14 @@ const JsonToMongoosePage: React.FC = () => {
   return (
     <ConverterLayout
       from="JSON"
-      to="Mongoose schema"
+      to="BigQuery schema"
       sourceLanguage="json"
       targetLanguage="json"
       initSource={JSON_SOURCE}
-      initTarget={MONGOOSE_SOURCE}
+      initTarget={BIGQUERY_SOURCE}
       onTransform={transformer}
     />
   );
 };
 
-export default JsonToMongoosePage;
+export default JsonToBigQueryPage;

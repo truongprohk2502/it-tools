@@ -11,13 +11,10 @@ const JsonToMySqlPage: React.FC = () => {
     try {
       const transformed = gs.mysql(JSON.parse(code));
       return Promise.resolve({ type: "success", code: transformed });
-    } catch (err: unknown) {
+    } catch {
       return Promise.resolve({
         type: "failed",
-        error:
-          err instanceof Error && err.name === "TomlError"
-            ? "invalid"
-            : "unknown",
+        error: "invalid",
       });
     }
   };
