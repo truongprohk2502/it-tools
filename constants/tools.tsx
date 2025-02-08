@@ -184,6 +184,12 @@ export const toolGroups: ToolGroup[] = [
         description: "Convert JSON to XML source code",
         icon: JsonTextIcon,
       },
+      {
+        title: "JSON to TypeScript",
+        href: Route.JsonToTypescript,
+        description: "Convert JSON to TypeScript type",
+        icon: JsonTextIcon,
+      },
     ],
   },
   {
