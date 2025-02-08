@@ -20,6 +20,7 @@ ReactSyntaxHighlighter.registerLanguage("yaml", yaml);
 
 export type SyntaxHighlighterLanguage =
   | "ts"
+  | "js"
   | "jsx"
   | "json"
   | "toml"

@@ -190,6 +190,12 @@ export const toolGroups: ToolGroup[] = [
         description: "Convert JSON to TypeScript type",
         icon: JsonTextIcon,
       },
+      {
+        title: "JSON to IO-TS",
+        href: Route.JsonToIOTS,
+        description: "Convert JSON to IO-TS format",
+        icon: JsonTextIcon,
+      },
     ],
   },
   {
