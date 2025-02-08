@@ -50,6 +50,7 @@ import TerminalIcon from "@/assets/icons/terminal.icon";
 import TextIcon from "@/assets/icons/text.icon";
 import TextareaIcon from "@/assets/icons/textarea.icon";
 import ToastIcon from "@/assets/icons/toast.icon";
+import TomlIcon from "@/assets/icons/toml.icon";
 import TooltipIcon from "@/assets/icons/tooltip.icon";
 import TreeViewIcon from "@/assets/icons/tree-view.icon";
 import VoiceRecorderIcon from "@/assets/icons/voice-recorder.icon";
@@ -164,6 +165,17 @@ export const toolGroups: ToolGroup[] = [
       //   description: "The markdown documents live preview",
       //   icon: MarkdownIcon,
       // },
+    ],
+  },
+  {
+    title: "Transformers",
+    items: [
+      {
+        title: "TOML to JSON",
+        href: Route.TomlToJson,
+        description: "Convert TOML to JSON source code",
+        icon: TomlIcon,
+      },
     ],
   },
   {
