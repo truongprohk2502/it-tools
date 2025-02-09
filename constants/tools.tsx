@@ -4,6 +4,7 @@ import ApiIcon from "@/assets/icons/api.icon";
 import AutocompleteIcon from "@/assets/icons/autocomplete.icon";
 import AvatarIcon from "@/assets/icons/avatar.icon";
 import BadgeIcon from "@/assets/icons/badge.icon";
+import BigQueryIcon from "@/assets/icons/big-query.icon";
 import BreadcrumbIcon from "@/assets/icons/breadcrumb.icon";
 import BrowserMockupIcon from "@/assets/icons/browser-mockup.icon";
 import ButtonIcon from "@/assets/icons/button.icon";
@@ -15,22 +16,30 @@ import ColorIcon from "@/assets/icons/color.icon";
 import CompareIcon from "@/assets/icons/compare.icon";
 import ContextMenuIcon from "@/assets/icons/context-menu.icon";
 import CountdownIcon from "@/assets/icons/countdown.icon";
+import CsvIcon from "@/assets/icons/csv.icon";
 import DatePickerIcon from "@/assets/icons/date-picker.icon";
 import DialogIcon from "@/assets/icons/dialog.icon";
 import DrawerIcon from "@/assets/icons/drawer.icon";
 import DropdownIcon from "@/assets/icons/dropdown.icon";
 import GalleriaIcon from "@/assets/icons/galleria.icon";
+import GraphqlIcon from "@/assets/icons/graphql.icon";
 import ImageCropIcon from "@/assets/icons/image-crop.icon";
 import ImageDiffIcon from "@/assets/icons/image-diff.icon";
 import InputIcon from "@/assets/icons/input.icon";
-import JsonTextIcon from "@/assets/icons/json-text.icon";
+import IotsIcon from "@/assets/icons/iots.icon";
+import JsDocIcon from "@/assets/icons/js-doc.icon";
+import JsonSchemaIcon from "@/assets/icons/json-schema.icon";
 import JsonIcon from "@/assets/icons/json.icon";
 import JwtIcon from "@/assets/icons/jwt.icon";
 import MobileMockupIcon from "@/assets/icons/mobile-mockup.icon";
+import MobxIcon from "@/assets/icons/mobx.icon";
+import MongooseIcon from "@/assets/icons/mongoose.icon";
+import MysqlIcon from "@/assets/icons/mysql.icon";
 import NumberIcon from "@/assets/icons/number.icon";
 import OtpInputIcon from "@/assets/icons/otp-input.icon";
 import PaginationIcon from "@/assets/icons/pagination.icon";
 import ProgressIcon from "@/assets/icons/progress.icon";
+import PropTypesIcon from "@/assets/icons/prop-types.icon";
 import QrIcon from "@/assets/icons/qr.icon";
 import RadioIcon from "@/assets/icons/radio.icon";
 import RatingIcon from "@/assets/icons/rating.icon";
@@ -54,11 +63,14 @@ import ToastIcon from "@/assets/icons/toast.icon";
 import TomlIcon from "@/assets/icons/toml.icon";
 import TooltipIcon from "@/assets/icons/tooltip.icon";
 import TreeViewIcon from "@/assets/icons/tree-view.icon";
+import TypescriptIcon from "@/assets/icons/typescript.icon";
 import VoiceRecorderIcon from "@/assets/icons/voice-recorder.icon";
 import WatermarkIcon from "@/assets/icons/watermark.icon";
 import WebviewIcon from "@/assets/icons/webview.icon";
 import WheelIcon from "@/assets/icons/wheel.icon";
+import XmlIcon from "@/assets/icons/xml.icon";
 import YamlIcon from "@/assets/icons/yaml.icon";
+import ZodIcon from "@/assets/icons/zod.icon";
 import { Route } from "./routes";
 
 interface Tool {
@@ -170,91 +182,91 @@ export const toolGroups: ToolGroup[] = [
         title: "JSON to TOML",
         href: Route.JsonToToml,
         description: "Convert JSON to TOML source code",
-        icon: JsonTextIcon,
+        icon: TomlIcon,
       },
       {
         title: "JSON to YAML",
         href: Route.JsonToYaml,
         description: "Convert JSON to YAML source code",
-        icon: JsonTextIcon,
+        icon: YamlIcon,
       },
       {
         title: "JSON to XML",
         href: Route.JsonToXml,
         description: "Convert JSON to XML source code",
-        icon: JsonTextIcon,
+        icon: XmlIcon,
       },
       {
         title: "JSON to CSV",
         href: Route.JsonToCsv,
         description: "Convert JSON to CSV source code",
-        icon: JsonTextIcon,
+        icon: CsvIcon,
       },
       {
         title: "JSON to GraphQL",
         href: Route.JsonToGraphQL,
         description: "Convert JSON to GraphQL schema",
-        icon: JsonTextIcon,
+        icon: GraphqlIcon,
       },
       {
         title: "JSON to MySQL",
         href: Route.JsonToMySql,
         description: "Convert JSON to MySQL query",
-        icon: JsonTextIcon,
+        icon: MysqlIcon,
       },
       {
         title: "JSON to Mongoose",
         href: Route.JsonToMongoose,
         description: "Convert JSON to Mongoose schema",
-        icon: JsonTextIcon,
+        icon: MongooseIcon,
       },
       {
         title: "JSON to BigQuery",
         href: Route.JsonToBigQuery,
         description: "Convert JSON to BigQuery schema",
-        icon: JsonTextIcon,
+        icon: BigQueryIcon,
       },
       {
         title: "JSON to JsDoc",
         href: Route.JsonToJsDoc,
         description: "Convert JSON to JsDoc",
-        icon: JsonTextIcon,
+        icon: JsDocIcon,
       },
       {
         title: "JSON to TypeScript",
         href: Route.JsonToTypescript,
         description: "Convert JSON to TypeScript type",
-        icon: JsonTextIcon,
+        icon: TypescriptIcon,
       },
       {
         title: "JSON to IO-TS",
         href: Route.JsonToIOTS,
         description: "Convert JSON to IO-TS format",
-        icon: JsonTextIcon,
+        icon: IotsIcon,
       },
       {
         title: "JSON to Zod",
         href: Route.JsonToZod,
         description: "Convert JSON to Zod schema",
-        icon: JsonTextIcon,
+        icon: ZodIcon,
       },
       {
         title: "JSON to MobX",
         href: Route.JsonToMobX,
         description: "Convert JSON to MobX model",
-        icon: JsonTextIcon,
+        icon: MobxIcon,
       },
       {
         title: "JSON to PropTypes",
         href: Route.JsonToPropTypes,
         description: "Convert JSON to React Prop Types",
-        icon: JsonTextIcon,
+        icon: PropTypesIcon,
       },
       {
         title: "JSON to JSON Schema",
         href: Route.JsonToJsonSchema,
         description: "Convert JSON to JSON Schema",
-        icon: JsonTextIcon,
+        icon: JsonSchemaIcon,
       },
     ],
   },
@@ -265,19 +277,19 @@ export const toolGroups: ToolGroup[] = [
         title: "TOML to JSON",
         href: Route.TomlToJson,
         description: "Convert TOML to JSON source code",
-        icon: TomlIcon,
+        icon: JsonIcon,
       },
       {
         title: "TOML to YAML",
         href: Route.TomlToYaml,
         description: "Convert TOML to YAML source code",
-        icon: TomlIcon,
+        icon: YamlIcon,
       },
       {
         title: "TOML to XML",
         href: Route.TomlToXml,
         description: "Convert TOML to XML source code",
-        icon: TomlIcon,
+        icon: XmlIcon,
       },
     ],
   },
@@ -288,19 +300,19 @@ export const toolGroups: ToolGroup[] = [
         title: "YAML to TOML",
         href: Route.YamlToToml,
         description: "Convert YAML to TOML source code",
-        icon: YamlIcon,
+        icon: TomlIcon,
       },
       {
         title: "YAML to JSON",
         href: Route.YamlToJson,
         description: "Convert YAML to JSON source code",
-        icon: YamlIcon,
+        icon: JsonIcon,
       },
       {
         title: "YAML to XML",
         href: Route.YamlToXml,
         description: "Convert YAML to XML source code",
-        icon: YamlIcon,
+        icon: XmlIcon,
       },
     ],
   },
