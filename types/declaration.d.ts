@@ -27,3 +27,7 @@ declare module "generate-schema" {
 declare module "babel-plugin-js-to-mobx-state-tree" {
   export default PluginItem;
 }
+
+declare module "babel-plugin-json-to-proptypes" {
+  export default PluginItem;
+}

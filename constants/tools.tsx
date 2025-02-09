@@ -245,6 +245,12 @@ export const toolGroups: ToolGroup[] = [
         icon: JsonTextIcon,
       },
       {
+        title: "JSON to PropTypes",
+        href: Route.JsonToPropTypes,
+        description: "Convert JSON to React Prop Types",
+        icon: JsonTextIcon,
+      },
+      {
         title: "JSON to JSON Schema",
         href: Route.JsonToJsonSchema,
         description: "Convert JSON to JSON Schema",
