@@ -63,6 +63,7 @@ const ConverterLayout: React.FC<Props> = ({
   const [configs, setConfigs] = useState<Configs>(settings);
   const [loading, setLoading] = useState<boolean>(false);
   const [invalidSource, setInvalidSource] = useState<boolean>(false);
+  const [configChanged, setConfigChanged] = useState<boolean>(false);
 
   const sourceSupportedLanguage = useMemo(() => {
     if (sourceLanguage === "toml" || sourceLanguage === "yaml") return "ruby";
@@ -70,7 +71,7 @@ const ConverterLayout: React.FC<Props> = ({
   }, [sourceLanguage]);
 
   const disabledTransformButton =
-    !sourceCode.trim() || latestCode === sourceCode;
+    !configChanged && (!sourceCode.trim() || latestCode === sourceCode);
 
   useEffect(() => {
     if (!invalidSource) return;
@@ -93,6 +94,7 @@ const ConverterLayout: React.FC<Props> = ({
       };
     }, {});
 
+    setConfigChanged(false);
     setLatestCode(sourceCode);
     const response = await onTransform(sourceCode, configsData);
 
@@ -105,6 +107,11 @@ const ConverterLayout: React.FC<Props> = ({
     }
 
     if (runOnServer) setLoading(false);
+  };
+
+  const changeConfigs = (configs: Configs) => {
+    setConfigs(configs);
+    setConfigChanged(true);
   };
 
   return (
@@ -124,7 +131,7 @@ const ConverterLayout: React.FC<Props> = ({
           </div>
           <div className="flex items-center gap-3">
             {configs.length > 0 && (
-              <SettingDialog configs={configs} setConfigs={setConfigs} />
+              <SettingDialog configs={configs} setConfigs={changeConfigs} />
             )}
             <UploadButton onUpload={setSourceCode} />
             <Button size="icon" variant="ghost" onClick={clearSourceCode}>

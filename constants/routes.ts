@@ -30,6 +30,8 @@ export enum Route {
   JsonToJsDoc = "/json-to-jsdoc",
   JsonToTypescript = "/json-to-typescript",
   JsonToIOTS = "/json-to-io-ts",
+  JsonToJsonSchema = "/json-to-json-schema",
+  JsonToZod = "/json-to-zod",
   UIAccordion = "/accordion",
   UIAngleSlider = "/angle-slider",
   UIAutocomplete = "/autocomplete",

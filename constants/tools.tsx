@@ -226,6 +226,18 @@ export const toolGroups: ToolGroup[] = [
         description: "Convert JSON to IO-TS format",
         icon: JsonTextIcon,
       },
+      {
+        title: "JSON to Zod",
+        href: Route.JsonToZod,
+        description: "Convert JSON to Zod schema",
+        icon: JsonTextIcon,
+      },
+      {
+        title: "JSON to JSON Schema",
+        href: Route.JsonToJsonSchema,
+        description: "Convert JSON to JSON Schema",
+        icon: JsonTextIcon,
+      },
     ],
   },
   {

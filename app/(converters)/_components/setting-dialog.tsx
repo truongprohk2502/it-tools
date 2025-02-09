@@ -23,7 +23,7 @@ export type Configs = [string, ConfigType][];
 interface Props {
   settingTitle?: string;
   configs: Configs;
-  setConfigs: React.Dispatch<React.SetStateAction<Configs>>;
+  setConfigs: (configs: Configs) => void;
 }
 
 const SettingDialog: React.FC<Props> = ({
@@ -32,8 +32,8 @@ const SettingDialog: React.FC<Props> = ({
   setConfigs,
 }) => {
   const handleToggleSetting = (field: string, checked: boolean) => {
-    setConfigs((prevConfigs) =>
-      prevConfigs.map((item) => {
+    setConfigs(
+      configs.map((item) => {
         if (item[0] === field) {
           item[1].value = checked;
         }
