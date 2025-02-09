@@ -23,3 +23,7 @@ declare module "generate-schema" {
   export function mysql(obj: any): string;
   export function mongoose(obj: any): string;
 }
+
+declare module "babel-plugin-js-to-mobx-state-tree" {
+  export default PluginItem;
+}

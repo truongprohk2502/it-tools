@@ -239,6 +239,12 @@ export const toolGroups: ToolGroup[] = [
         icon: JsonTextIcon,
       },
       {
+        title: "JSON to MobX",
+        href: Route.JsonToMobX,
+        description: "Convert JSON to MobX model",
+        icon: JsonTextIcon,
+      },
+      {
         title: "JSON to JSON Schema",
         href: Route.JsonToJsonSchema,
         description: "Convert JSON to JSON Schema",
