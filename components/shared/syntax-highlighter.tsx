@@ -31,7 +31,8 @@ export type SyntaxHighlighterLanguage =
   | "yaml"
   | "xml"
   | "graphql"
-  | "sql";
+  | "sql"
+  | "csv";
 
 interface Props {
   code: string;
@@ -49,10 +50,15 @@ const SyntaxHighlighter: React.FC<Props> = ({
   const theme = useSystemTheme();
   const domLoaded = useDomLoaded();
 
+  const getSupportedLanguage = (language: SyntaxHighlighterLanguage) => {
+    if (language === "csv") return undefined;
+    return language;
+  };
+
   return (
     domLoaded && (
       <ReactSyntaxHighlighter
-        language={language}
+        language={getSupportedLanguage(language)}
         style={theme === Theme.Light ? light : dark}
         customStyle={{ margin: 0, height: fullHeight ? "100%" : "auto" }}
         showLineNumbers={showLineNumbers}

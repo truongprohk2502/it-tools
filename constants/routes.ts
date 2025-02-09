@@ -23,6 +23,7 @@ export enum Route {
   JsonToToml = "/json-to-toml",
   JsonToYaml = "/json-to-yaml",
   JsonToXml = "/json-to-xml",
+  JsonToCsv = "/json-to-csv",
   JsonToGraphQL = "/json-to-graphql",
   JsonToMySql = "/json-to-mysql",
   JsonToMongoose = "/json-to-mongoose",

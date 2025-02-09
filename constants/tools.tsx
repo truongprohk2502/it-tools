@@ -185,6 +185,12 @@ export const toolGroups: ToolGroup[] = [
         icon: JsonTextIcon,
       },
       {
+        title: "JSON to CSV",
+        href: Route.JsonToCsv,
+        description: "Convert JSON to CSV source code",
+        icon: JsonTextIcon,
+      },
+      {
         title: "JSON to GraphQL",
         href: Route.JsonToGraphQL,
         description: "Convert JSON to GraphQL schema",
