@@ -11,6 +11,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["var(--font-geist)"],
+        inter: ["var(--font-inter)"],
       },
       colors: {
         "main-light": "#EAEDFF",

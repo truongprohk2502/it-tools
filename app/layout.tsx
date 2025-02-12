@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/providers/theme-provider";
 import type { Metadata, Viewport } from "next";
-import { Geist } from "next/font/google";
+import { Geist, Open_Sans } from "next/font/google";
 import { PropsWithChildren } from "react";
 import MainLayout from "./_layout/main-layout";
 import "./globals.css";
@@ -10,6 +10,11 @@ import "./globals.css";
 const geist = Geist({
   subsets: ["latin"],
   variable: "--font-geist",
+});
+
+const inter = Open_Sans({
+  subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 export const viewport: Viewport = {
@@ -52,7 +57,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn(geist.variable, "font-sans")}>
+      <body className={cn(geist.variable, inter.variable, "font-sans")}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

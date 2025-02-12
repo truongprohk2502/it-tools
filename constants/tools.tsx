@@ -52,6 +52,7 @@ import SliderIcon from "@/assets/icons/slider.icon";
 import SortableListIcon from "@/assets/icons/sortable-list.icon";
 import SpeedDialIcon from "@/assets/icons/speed-dial.icon";
 import SpinnerIcon from "@/assets/icons/spinner.icon";
+import SqliteIcon from "@/assets/icons/sqlite.icon";
 import StepsIcon from "@/assets/icons/steps.icon";
 import SwapIcon from "@/assets/icons/swap.icon";
 import SwitchIcon from "@/assets/icons/switch.icon";
@@ -101,6 +102,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.VoiceRecorder,
         description: "Record audio from microphone",
         icon: VoiceRecorderIcon,
+      },
+      {
+        title: "SQLite Preview",
+        href: Route.SqlitePreview,
+        description: "SQLite file preview",
+        icon: SqliteIcon,
       },
       {
         title: "Compare Texts",
