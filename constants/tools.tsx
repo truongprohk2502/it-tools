@@ -46,6 +46,7 @@ import RatingIcon from "@/assets/icons/rating.icon";
 import ReactIcon from "@/assets/icons/react.icon";
 import RegexIcon from "@/assets/icons/regex.icon";
 import RippleIcon from "@/assets/icons/ripple.icon";
+import ScreenRecorderIcon from "@/assets/icons/screen-recorder.icon";
 import SkeletonIcon from "@/assets/icons/skeleton.icon";
 import SliderIcon from "@/assets/icons/slider.icon";
 import SortableListIcon from "@/assets/icons/sortable-list.icon";
@@ -89,6 +90,12 @@ export const toolGroups: ToolGroup[] = [
   {
     title: "Tools",
     items: [
+      {
+        title: "Screen Recorder",
+        href: Route.ScreenRecorder,
+        description: "Record screen with microphone",
+        icon: ScreenRecorderIcon,
+      },
       {
         title: "Voice Recorder",
         href: Route.VoiceRecorder,

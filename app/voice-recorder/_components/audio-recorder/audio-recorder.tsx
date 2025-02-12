@@ -92,12 +92,7 @@ const AudioRecorder: React.FC<Props> = ({ onFinish }) => {
   };
 
   return (
-    <div
-      className="relative h-full w-full"
-      style={{
-        background: "linear-gradient(135deg, #bb71f3 0%, #3d4d91 100%)",
-      }}
-    >
+    <>
       {errorMessage ? (
         <div className="flex h-full w-full items-center justify-center p-6">
           <span className="text-neutral-200">{errorMessage}</span>
@@ -163,7 +158,7 @@ const AudioRecorder: React.FC<Props> = ({ onFinish }) => {
           </div>
         </>
       )}
-    </div>
+    </>
   );
 };
 

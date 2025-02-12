@@ -3,6 +3,7 @@ export enum Route {
   JwtIO = "/jwt-io",
   Regex = "/regex",
   VoiceRecorder = "/voice-recorder",
+  ScreenRecorder = "/screen-recorder",
   ColorPicker = "/color-picker",
   ImageCrop = "/image-crop",
   ReactPlayground = "/react-playground",

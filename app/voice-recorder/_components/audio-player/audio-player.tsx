@@ -93,12 +93,7 @@ const AudioPlayer: React.FC<Props> = ({ blob, onDownload, onRemove }) => {
   };
 
   return (
-    <div
-      className="relative h-full w-full"
-      style={{
-        background: "linear-gradient(135deg, #bb71f3 0%, #3d4d91 100%)",
-      }}
-    >
+    <>
       <div
         ref={progressRef}
         className="absolute inset-y-0 left-0 bg-black bg-opacity-10"
@@ -112,7 +107,7 @@ const AudioPlayer: React.FC<Props> = ({ blob, onDownload, onRemove }) => {
         onVolumeChange={handleSetVolume}
         onReset={handleReset}
       />
-    </div>
+    </>
   );
 };
 
