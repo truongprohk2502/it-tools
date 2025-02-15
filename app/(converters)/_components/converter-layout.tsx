@@ -17,7 +17,7 @@ import { useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
 import SettingDialog, { type Configs } from "./setting-dialog";
 
-type Language = "json" | "xml" | "toml" | "yaml";
+type Language = "javascript" | "json" | "xml" | "toml" | "yaml";
 
 type TransformerSuccess = {
   type: "success";
@@ -164,6 +164,15 @@ const ConverterLayout: React.FC<Props> = ({
             value={sourceCode}
             asSimple={false}
             hideMinimap
+            options={{
+              tabSize: 2,
+              codeLens: false,
+              minimap: {
+                enabled: false,
+              },
+              quickSuggestions: false,
+              renderValidationDecorations: "off",
+            }}
             onChange={(val) => setSourceCode(val || "")}
           />
           {loading && (

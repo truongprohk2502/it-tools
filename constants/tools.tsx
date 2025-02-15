@@ -285,6 +285,17 @@ export const toolGroups: ToolGroup[] = [
     ],
   },
   {
+    title: "JavaScript Transformers",
+    items: [
+      {
+        title: "JavaScript to JSON",
+        href: Route.JavascriptToJson,
+        description: "Convert JavaScript to JSON source code",
+        icon: JsonIcon,
+      },
+    ],
+  },
+  {
     title: "TOML Transformers",
     items: [
       {
