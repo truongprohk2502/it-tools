@@ -1,8 +1,9 @@
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
-import { ThemeProvider } from "@/providers/theme-provider";
+import ThemeProvider from "@/providers/theme-provider";
 import type { Metadata, Viewport } from "next";
 import { Geist, Open_Sans } from "next/font/google";
+import NextTopLoader from "nextjs-toploader";
 import { PropsWithChildren } from "react";
 import MainLayout from "./_layout/main-layout";
 import "./globals.css";
@@ -58,6 +59,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn(geist.variable, inter.variable, "font-sans")}>
+        <NextTopLoader height={5} color="#3645f2" showSpinner={false} />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
