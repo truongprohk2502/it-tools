@@ -22,6 +22,7 @@ export enum Route {
   YamlToJson = "/yaml-to-json",
   YamlToToml = "/yaml-to-toml",
   YamlToXml = "/yaml-to-xml",
+  CssToJs = "/css-to-js",
   JsToJson = "/js-to-json",
   JsToTSType = "/js-to-typescript-type",
   JsonToToml = "/json-to-toml",

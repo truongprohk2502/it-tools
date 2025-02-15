@@ -17,7 +17,7 @@ import { useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
 import SettingDialog, { type Configs } from "./setting-dialog";
 
-type Language = "javascript" | "json" | "xml" | "toml" | "yaml";
+type Language = "javascript" | "json" | "xml" | "toml" | "yaml" | "css";
 
 type TransformerSuccess = {
   type: "success";

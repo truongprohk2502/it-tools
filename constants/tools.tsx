@@ -285,6 +285,17 @@ export const toolGroups: ToolGroup[] = [
     ],
   },
   {
+    title: "CSS Transformers",
+    items: [
+      {
+        title: "CSS to JS",
+        href: Route.CssToJs,
+        description: "Convert CSS to JavaScript object",
+        icon: JsonIcon,
+      },
+    ],
+  },
+  {
     title: "JavaScript Transformers",
     items: [
       {
