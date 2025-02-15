@@ -289,9 +289,15 @@ export const toolGroups: ToolGroup[] = [
     items: [
       {
         title: "JavaScript to JSON",
-        href: Route.JavascriptToJson,
+        href: Route.JsToJson,
         description: "Convert JavaScript to JSON source code",
         icon: JsonIcon,
+      },
+      {
+        title: "JavaScript to TypeScript type",
+        href: Route.JsToTSType,
+        description: "Convert JavaScript to TypeScript type",
+        icon: TypescriptIcon,
       },
     ],
   },
