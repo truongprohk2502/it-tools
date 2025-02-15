@@ -31,3 +31,7 @@ declare module "babel-plugin-js-to-mobx-state-tree" {
 declare module "babel-plugin-json-to-proptypes" {
   export default PluginItem;
 }
+
+declare module "babel-plugin-object-styles-to-template" {
+  export default PluginItem;
+}

@@ -16,6 +16,7 @@ import ColorIcon from "@/assets/icons/color.icon";
 import CompareIcon from "@/assets/icons/compare.icon";
 import ContextMenuIcon from "@/assets/icons/context-menu.icon";
 import CountdownIcon from "@/assets/icons/countdown.icon";
+import CssIcon from "@/assets/icons/css.icon";
 import CsvIcon from "@/assets/icons/csv.icon";
 import DatePickerIcon from "@/assets/icons/date-picker.icon";
 import DialogIcon from "@/assets/icons/dialog.icon";
@@ -27,6 +28,7 @@ import ImageCropIcon from "@/assets/icons/image-crop.icon";
 import ImageDiffIcon from "@/assets/icons/image-diff.icon";
 import InputIcon from "@/assets/icons/input.icon";
 import IotsIcon from "@/assets/icons/iots.icon";
+import JavascriptIcon from "@/assets/icons/javascript.icon";
 import JsDocIcon from "@/assets/icons/js-doc.icon";
 import JsonSchemaIcon from "@/assets/icons/json-schema.icon";
 import JsonIcon from "@/assets/icons/json.icon";
@@ -291,7 +293,13 @@ export const toolGroups: ToolGroup[] = [
         title: "CSS to JS",
         href: Route.CssToJs,
         description: "Convert CSS to JavaScript object",
-        icon: JsonIcon,
+        icon: JavascriptIcon,
+      },
+      {
+        title: "CSS to Template",
+        href: Route.CssToTemplate,
+        description: "Convert CSS to Template literal",
+        icon: CssIcon,
       },
     ],
   },

@@ -34,6 +34,7 @@
     "@walmartlabs/json-to-simple-graphql-schema": "^3.0.1",
     "babel-plugin-js-to-mobx-state-tree": "^1.0.0",
     "babel-plugin-json-to-proptypes": "^0.1.0",
+    "babel-plugin-object-styles-to-template": "^0.2.2",
     "base-64": "^1.0.0",
     "big-integer": "^1.6.52",
     "browserify-fs": "^1.0.0",
