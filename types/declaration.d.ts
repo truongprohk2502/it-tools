@@ -35,3 +35,7 @@ declare module "babel-plugin-json-to-proptypes" {
 declare module "babel-plugin-object-styles-to-template" {
   export default PluginItem;
 }
+
+declare module "audiobuffer-to-wav" {
+  export default function audioToWav(buffer: AudioBuffer): Blob;
+}

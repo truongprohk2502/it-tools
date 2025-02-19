@@ -2,6 +2,7 @@ export enum Route {
   CompareTexts = "/compare-texts",
   JwtIO = "/jwt-io",
   Regex = "/regex",
+  AudioCutter = "audio-cutter",
   VoiceRecorder = "/voice-recorder",
   ScreenRecorder = "/screen-recorder",
   SqlitePreview = "/sqlite-preview",

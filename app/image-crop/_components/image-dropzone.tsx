@@ -1,9 +1,9 @@
 "use client";
 
+import { ACCEPTED_IMAGE_EXTENSIONS } from "@/constants/files";
 import { ImageIcon, LoaderCircleIcon } from "lucide-react";
 import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
-import { ACCEPTED_IMAGE_EXTENSIONS } from "../constants";
 
 interface Props {
   isLoading: boolean;

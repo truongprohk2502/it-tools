@@ -1,6 +1,7 @@
 import AccordionIcon from "@/assets/icons/accordion.icon";
 import AngleSliderIcon from "@/assets/icons/angle-slider.icon";
 import ApiIcon from "@/assets/icons/api.icon";
+import AudioCutterIcon from "@/assets/icons/audio-cutter.icon";
 import AutocompleteIcon from "@/assets/icons/autocomplete.icon";
 import AvatarIcon from "@/assets/icons/avatar.icon";
 import BadgeIcon from "@/assets/icons/badge.icon";
@@ -104,6 +105,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.VoiceRecorder,
         description: "Record audio from microphone",
         icon: VoiceRecorderIcon,
+      },
+      {
+        title: "Audio Cutter",
+        href: Route.AudioCutter,
+        description: "Cut audio file and download",
+        icon: AudioCutterIcon,
       },
       {
         title: "SQLite Preview",
