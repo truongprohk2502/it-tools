@@ -1,5 +1,5 @@
 import { Collapsible, CollapsibleContent } from "@/components/ui/collapsible";
-import { KeyRoundIcon } from "lucide-react";
+import { KeyRoundIcon, KeySquareIcon } from "lucide-react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import type { TableInfo } from "../types";
 
@@ -27,9 +27,11 @@ const TablesInformation: React.FC<Props> = ({ open, data }) => {
                     {table.columns.map((col) => (
                       <div key={col.name} className="flex">
                         <div className="w-6 flex-shrink-0">
-                          {col.type.includes("PRIMARY KEY") && (
+                          {col.type.includes("FOREIGN KEY") ? (
+                            <KeySquareIcon className="mt-1 h-4 w-4 text-orange-500" />
+                          ) : col.type.includes("PRIMARY KEY") ? (
                             <KeyRoundIcon className="mt-1 h-4 w-4 text-black dark:text-white" />
-                          )}
+                          ) : null}
                         </div>
                         <div className="flex-auto">
                           <div className="font-semibold">

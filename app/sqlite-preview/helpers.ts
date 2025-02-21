@@ -1,4 +1,4 @@
-import type { Database, SqlValue, Statement } from "sql.js";
+import type { Database, QueryExecResult, SqlValue, Statement } from "sql.js";
 import type { Column } from "./types";
 
 const SQL_FROM_REGEX = /FROM\s+((?=['"])((["'])(?<g1>[^'"]+))|(?<g2>\w+))/im;
@@ -21,12 +21,22 @@ export const formatBytes = (bytes: number, decimals?: number) => {
   return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
 };
 
+const checkIsForeignKey = (data: QueryExecResult[], keyName: string) => {
+  for (const result of data) {
+    const fk = result.values.find((v) => v[3] === keyName);
+    if (fk) return true;
+  }
+  return false;
+};
+
 export const getTableColumnTypes = (db: Database, tableName: string) => {
   const result = new Map();
   const sel = db.prepare(`PRAGMA table_info('${tableName}')`);
+  const foreignKeyList = db.exec(`PRAGMA foreign_key_list('${tableName}')`);
 
   while (sel.step()) {
     const obj = sel.getAsObject();
+    const fk = checkIsForeignKey(foreignKeyList, obj.name as string);
 
     let type = obj["type"];
     if (obj["notnull"] === 1) {
@@ -34,6 +44,9 @@ export const getTableColumnTypes = (db: Database, tableName: string) => {
     }
     if (obj["pk"] === 1) {
       type += " PRIMARY KEY";
+    }
+    if (fk) {
+      type += " FOREIGN KEY";
     }
     result.set(obj.name, type);
   }
