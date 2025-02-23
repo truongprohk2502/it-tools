@@ -13,11 +13,23 @@ import { useState } from "react";
 import ReactAce, { type IAceEditorProps } from "react-ace";
 
 interface Props extends IAceEditorProps {
-  value: string;
-  onChange: (value: string) => void;
+  rounded?: boolean;
+  noPadding?: boolean;
+  noBorder?: boolean;
+  value?: string;
+  className?: string;
+  onChange?: (value: string) => void;
 }
 
-const AceEditor: React.FC<Props> = ({ value, onChange, ...props }) => {
+const AceEditor: React.FC<Props> = ({
+  rounded = true,
+  noPadding,
+  noBorder,
+  value,
+  className,
+  onChange,
+  ...props
+}) => {
   const [focusing, setFocusing] = useState<boolean>(false);
 
   const theme = useSystemTheme();
@@ -28,11 +40,17 @@ const AceEditor: React.FC<Props> = ({ value, onChange, ...props }) => {
   return (
     <div
       className={cn(
-        "rounded-md border bg-white px-2 py-2",
+        "bg-white",
         theme === Theme.Dark ? "bg-[#181818]" : "bg-[#fbfbfb]",
         focusing
           ? "border-neutral-700 dark:border-neutral-300"
           : "border-neutral-300 dark:border-neutral-700",
+        {
+          "rounded-md": rounded,
+          "px-2 py-2": !noPadding,
+          border: !noBorder,
+        },
+        className,
       )}
     >
       <ReactAce

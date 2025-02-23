@@ -6,6 +6,7 @@ export enum Route {
   VoiceRecorder = "/voice-recorder",
   ScreenRecorder = "/screen-recorder",
   SqlitePreview = "/sqlite-preview",
+  SqlPractice = "/sql-practice",
   ColorPicker = "/color-picker",
   ImageCrop = "/image-crop",
   ReactPlayground = "/react-playground",

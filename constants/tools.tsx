@@ -55,6 +55,7 @@ import SliderIcon from "@/assets/icons/slider.icon";
 import SortableListIcon from "@/assets/icons/sortable-list.icon";
 import SpeedDialIcon from "@/assets/icons/speed-dial.icon";
 import SpinnerIcon from "@/assets/icons/spinner.icon";
+import SqlPracticeIcon from "@/assets/icons/sql-practice.icon";
 import SqliteIcon from "@/assets/icons/sqlite.icon";
 import StepsIcon from "@/assets/icons/steps.icon";
 import SwapIcon from "@/assets/icons/swap.icon";
@@ -94,6 +95,12 @@ export const toolGroups: ToolGroup[] = [
   {
     title: "Tools",
     items: [
+      {
+        title: "SQL Practice",
+        href: Route.SqlPractice,
+        description: "SQL Practice online with editor",
+        icon: SqlPracticeIcon,
+      },
       {
         title: "Screen Recorder",
         href: Route.ScreenRecorder,

@@ -65,6 +65,7 @@
     "nextjs-toploader": "^3.7.15",
     "postcss-js": "^4.0.1",
     "prettier": "^3.4.2",
+    "prettier-plugin-sql": "^0.18.1",
     "prism-react-renderer": "^2.4.1",
     "qrcode.react": "^4.2.0",
     "react": "^19.0.0",

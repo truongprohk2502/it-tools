@@ -3,4 +3,5 @@ export enum StorageKeys {
   CropImageAspects = "CropImageAspects",
   QrLogos = "QrLogos",
   RequireMicrophone = "RequireMicrophone",
+  CompleteSqlQuestions = "CompleteSqlQuestions",
 }

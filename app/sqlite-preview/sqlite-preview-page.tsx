@@ -5,6 +5,11 @@ import ToolHeader from "@/components/shared/tool-header";
 import { Button } from "@/components/ui/button";
 import { Route } from "@/constants/routes";
 import { cn } from "@/lib/utils";
+import {
+  getColumns,
+  getDefaultQuery,
+  getTableNameFromQuery,
+} from "@/utils/sql";
 import { saveAs } from "file-saver";
 import JSZip from "jszip";
 import { useEffect, useRef, useState } from "react";
@@ -22,13 +27,7 @@ import TableSelect, {
   type TableSelectOption,
 } from "./_components/table-select";
 import TablesInformation from "./_components/tables-information";
-import {
-  convertArrayToCsv,
-  exportCsvTableQuery,
-  getColumns,
-  getDefaultQuery,
-  getTableNameFromQuery,
-} from "./helpers";
+import { convertArrayToCsv, exportCsvTableQuery } from "./helpers";
 import type { Column, DatabaseRecord, TableInfo } from "./types";
 
 const SqlitePreviewPage: React.FC = () => {
