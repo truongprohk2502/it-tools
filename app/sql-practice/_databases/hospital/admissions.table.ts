@@ -8,11 +8,12 @@ export const createAdmissionsTable = (db: Database) => {
 
   // Create table
   db.run(`CREATE TABLE admissions (
-    patient_id INTEGER NOT NULL PRIMARY KEY,
+    patient_id INTEGER NOT NULL,
     admission_date DATE NOT NULL,
     discharge_date DATE NOT NULL,
     diagnosis TEXT NOT NULL,
     attending_doctor_id INTEGER NOT NULL,
+    FOREIGN KEY(patient_id) REFERENCES patients(patient_id),
     FOREIGN KEY(attending_doctor_id) REFERENCES doctors(doctor_id)
   )`);
 
@@ -59,7 +60,7 @@ export const createAdmissionsTable = (db: Database) => {
     (39, '2023-02-08', '2023-02-12', 'Headache', 16),
     (40, '2023-02-09', '2023-02-13', 'Flu', 12),
     (41, '2023-02-10', '2023-02-14', 'Cold', 17),
-    (42, '2023-02-11', '2023-02-15', 'Anxiety', 22),
+    (42, '2023-02-11', '2023-02-15', 'Anxiety', 2),
     (43, '2023-02-12', '2023-02-16', 'Headache', 5),
     (44, '2023-02-13', '2023-02-17', 'Back Pain', 3),
     (45, '2023-02-14', '2023-02-18', 'Cold', 2),
@@ -67,6 +68,8 @@ export const createAdmissionsTable = (db: Database) => {
     (47, '2023-02-16', '2023-02-20', 'Anxiety', 18),
     (48, '2023-02-17', '2023-02-21', 'Flu', 9),
     (49, '2023-02-18', '2023-02-22', 'Cold', 11),
-    (50, '2023-02-19', '2023-02-23', 'Back Pain', 4)
+    (1, '2023-02-19', '2023-02-23', 'Back Pain', 4),
+    (2, '2023-03-19', '2023-04-23', 'Cold', 4),
+    (4, '2023-02-25', '2023-02-28', 'Headache', 4)
   `);
 };

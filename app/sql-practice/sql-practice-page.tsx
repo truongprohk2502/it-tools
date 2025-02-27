@@ -149,7 +149,6 @@ const SqlPracticePage: React.FC = () => {
       const query = sqlEditorRef.current!.getQueryString();
       const result = await db.current.exec(query);
       const data = result?.[0] || null;
-
       setData(data);
       checkResult(data);
     } catch (err: unknown) {
@@ -306,7 +305,7 @@ const SqlPracticePage: React.FC = () => {
               />
             )}
             {currentQuestion && (
-              <div className="mt-2 rounded-md border border-input px-2 py-1 text-sm">
+              <div className="mt-2 whitespace-pre-line rounded-md border border-input px-2 py-1 text-sm">
                 {currentQuestion.question}
               </div>
             )}

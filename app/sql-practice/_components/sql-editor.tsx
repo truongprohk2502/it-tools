@@ -53,11 +53,13 @@ const SqlEditor: React.FC<Props> = ({ ref }) => {
   }, []);
 
   const handleFormat = async () => {
-    if (isFormatting.current) return;
-    isFormatting.current = true;
-    const formattedQuery = await formatSqlCode(queryRef.current as string);
-    isFormatting.current = false;
-    setQuery(formattedQuery);
+    try {
+      if (isFormatting.current) return;
+      isFormatting.current = true;
+      const formattedQuery = await formatSqlCode(queryRef.current as string);
+      isFormatting.current = false;
+      setQuery(formattedQuery);
+    } catch {}
   };
 
   const handleChange = (query: string) => {

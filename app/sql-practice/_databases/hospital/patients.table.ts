@@ -54,7 +54,7 @@ export const createPatientsTable = (db: Database) => {
     (29, "Tina", "Martinez", "F", "1985-01-19", "Quebec City", "QC", NULL, 145, 64),
     (30, "Edward", "King", "M", "1976-03-23", "Saskatoon", "SK", "Eggs", 165, 67),
     (31, "Gina", "Carter", "F", "1989-09-09", "Barrie", "YT", "Wheat", 128, 59),
-    (32, "Zachary", "Evans", "M", "1984-04-14", "Toronto", "AB", "Corn", 180, 70),
+    (32, "William", "Lopez", "M", "1984-04-14", "Toronto", "AB", "Corn", 180, 70),
     (33, "Christina", "Tucker", "F", "1991-06-05", "Vancouver", "BC", NULL, 112, 56),
     (34, "Joshua", "Nelson", "M", "1962-12-01", "Winnipeg", "MB", "Dairy", 190, 72),
     (35, "Hannah", "Perry", "F", "1992-11-12", "Moncton", "NB", "Peanuts", 138, 61),
