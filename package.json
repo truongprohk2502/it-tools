@@ -87,6 +87,7 @@
     "react-use": "^17.6.0",
     "regexpp": "^3.2.0",
     "save-svg-as-png": "^1.4.17",
+    "sharp": "^0.33.5",
     "simple-json-to-jsdoc": "^1.0.1",
     "sonner": "^1.7.1",
     "sql.js": "^1.12.0",

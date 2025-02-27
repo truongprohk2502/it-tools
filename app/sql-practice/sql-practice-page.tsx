@@ -1,6 +1,5 @@
 "use client";
 
-import { Accordion } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import {
@@ -12,8 +11,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { StorageKeys } from "@/constants/storage";
-import { cn } from "@/lib/utils";
-import { getColumns } from "@/utils/sql";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocalStorage } from "react-use";
 import { toast } from "sonner";
@@ -22,21 +19,20 @@ import initSqlJs, {
   type Database,
   type SqlJsStatic,
 } from "sql.js";
+import DbDiagram from "./_components/db-diagram";
 import ExpectedResult from "./_components/expected-result";
 import QuestionDialog from "./_components/question-dialog";
 import ResultBadge from "./_components/result-badge";
 import SqlEditor, { type SqlEditorRef } from "./_components/sql-editor";
 import SqlResult from "./_components/sql-result";
 import SqlSolution from "./_components/sql-solution";
-import TableAccordion from "./_components/table-accordion";
 import { initHospitalDatabaseFunctions } from "./_databases/hospital";
 import { hospitalQuestions } from "./_questions/hospital";
 import { Level, QuestionStatus } from "./constants";
 import { checkQueryResultIsCorrect } from "./helpers";
-import type { DatabaseTable } from "./types";
 
 const SqlPracticePage: React.FC = () => {
-  const [openingDatabases, setOpeningDatabases] = useState<boolean>(false);
+  const [openingDbDiagram, setOpeningDbDiagram] = useState<boolean>(false);
   const [openingSolution, setOpeningSolution] = useState<boolean>(false);
   const [queried, setQueried] = useState<boolean>(false);
   const [questionId, setQuestionId] = useState<number | null>(null);
@@ -44,7 +40,6 @@ const SqlPracticePage: React.FC = () => {
     QuestionStatus.Unanswered,
   );
   const [level, setLevel] = useState<Level>(Level.Easy);
-  const [tables, setTables] = useState<DatabaseTable[]>([]);
   const [data, setData] = useState<QueryExecResult | null>(null);
 
   const [completeSqlQuestions, setCompleteSqlQuestions] = useLocalStorage<
@@ -60,26 +55,6 @@ const SqlPracticePage: React.FC = () => {
     [questionId],
   );
 
-  const initializeTables = () => {
-    const tableQuery = db.current!.prepare(
-      "SELECT * FROM sqlite_master WHERE type='table' OR type='view' ORDER BY name",
-    );
-
-    const tables: DatabaseTable[] = [];
-
-    while (tableQuery.step()) {
-      const rowObj = tableQuery.getAsObject();
-      const tableName = rowObj["name"] as string;
-
-      const { columns } = getColumns(db.current!, tableName);
-
-      tables.push({ tableName, columns });
-    }
-
-    tableQuery.free();
-    setTables(tables);
-  };
-
   const initDatabase = async () => {
     if (!sql.current) return;
 
@@ -92,8 +67,6 @@ const SqlPracticePage: React.FC = () => {
         console.error(err);
       }
     }
-
-    initializeTables();
   };
 
   useEffect(() => {
@@ -109,8 +82,9 @@ const SqlPracticePage: React.FC = () => {
       });
   }, []);
 
-  const handleToggleOpenDatabases = () =>
-    setOpeningDatabases(!openingDatabases);
+  const handleOpenDbDiagram = () => setOpeningDbDiagram(true);
+
+  const handleCloseDbDiagram = () => setOpeningDbDiagram(false);
 
   const handleChangeLevel = (value: string) => {
     setLevel(value as Level);
@@ -218,34 +192,7 @@ const SqlPracticePage: React.FC = () => {
 
   return (
     <div className="relative -mx-6 -my-8 h-[calc(100vh-4rem)] min-w-[60rem]">
-      <div
-        className={cn(
-          "absolute inset-y-0 left-0 w-[20rem] border-r border-gray-200 dark:border-[#1c1c1c]",
-          { invisible: !openingDatabases },
-        )}
-      >
-        <ScrollArea
-          className={cn(
-            "w-full",
-            openingDatabases ? "h-[calc(100vh-4rem)]" : "h-0",
-          )}
-        >
-          <div className="flex h-16 items-center justify-center border-b border-gray-200 dark:border-[#1c1c1c]">
-            <span className="text-2xl font-bold">SQL Database</span>
-          </div>
-          <Accordion type="multiple">
-            {tables.map((table) => (
-              <TableAccordion key={table.tableName} data={table} />
-            ))}
-          </Accordion>
-        </ScrollArea>
-      </div>
-      <div
-        className={cn(
-          "absolute inset-y-0 right-[20rem] flex",
-          openingDatabases ? "left-[20rem]" : "left-0",
-        )}
-      >
+      <div className="absolute inset-y-0 left-0 right-[20rem] flex">
         <div className="h-[calc(100vh-4rem)] flex-auto">
           <div className="h-[calc(100%-16rem)]">
             <SqlEditor ref={sqlEditorRef} onQuery={handleQuery} />
@@ -265,9 +212,9 @@ const SqlPracticePage: React.FC = () => {
               <Button
                 variant="secondary"
                 size="lg"
-                onClick={handleToggleOpenDatabases}
+                onClick={handleOpenDbDiagram}
               >
-                {openingDatabases ? "Hide database" : "Show databases"}
+                Show database
               </Button>
             </div>
             <QuestionDialog
@@ -321,6 +268,7 @@ const SqlPracticePage: React.FC = () => {
           </div>
         </ScrollArea>
       </div>
+      <DbDiagram open={openingDbDiagram} onClose={handleCloseDbDiagram} />
     </div>
   );
 };
