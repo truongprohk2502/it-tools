@@ -11,6 +11,7 @@ import BrowserMockupIcon from "@/assets/icons/browser-mockup.icon";
 import ButtonIcon from "@/assets/icons/button.icon";
 import CarouselIcon from "@/assets/icons/carousel.icon";
 import CheckboxIcon from "@/assets/icons/checkbox.icon";
+import ChessIcon from "@/assets/icons/chess.icon";
 import ChipIcon from "@/assets/icons/chip.icon";
 import CodeSnippetIcon from "@/assets/icons/code-snippet.icon";
 import ColorIcon from "@/assets/icons/color.icon";
@@ -202,6 +203,17 @@ export const toolGroups: ToolGroup[] = [
         href: Route.RandomWheel,
         description: "Random name picker",
         icon: WheelIcon,
+      },
+    ],
+  },
+  {
+    title: "Games",
+    items: [
+      {
+        title: "Chess Game",
+        href: Route.ChessGame,
+        description: "Play chess game with computer",
+        icon: ChessIcon,
       },
     ],
   },
