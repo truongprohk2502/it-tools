@@ -18,6 +18,7 @@ export enum Route {
   JsonFormatter = "/json-formatter",
   NumberConverter = "/number-converter",
   RandomWheel = "/random-wheel",
+  ChessGame = "/chess-game",
   TomlToJson = "/toml-to-json",
   TomlToYaml = "/toml-to-yaml",
   TomlToXml = "/toml-to-xml",
