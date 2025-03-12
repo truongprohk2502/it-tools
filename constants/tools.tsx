@@ -25,6 +25,7 @@ import DialogIcon from "@/assets/icons/dialog.icon";
 import DrawerIcon from "@/assets/icons/drawer.icon";
 import DropdownIcon from "@/assets/icons/dropdown.icon";
 import GalleriaIcon from "@/assets/icons/galleria.icon";
+import GomokuIcon from "@/assets/icons/gomoku.icon";
 import GraphqlIcon from "@/assets/icons/graphql.icon";
 import ImageCropIcon from "@/assets/icons/image-crop.icon";
 import ImageDiffIcon from "@/assets/icons/image-diff.icon";
@@ -214,6 +215,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.ChessGame,
         description: "Play chess game with computer",
         icon: ChessIcon,
+      },
+      {
+        title: "Gomoku Game",
+        href: Route.GomokuGame,
+        description: "Play gomoku game with computer",
+        icon: GomokuIcon,
       },
     ],
   },

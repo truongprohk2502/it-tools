@@ -34,7 +34,6 @@ const ChessGamePage: React.FC = () => {
 
   const checkIsPlaying = () => {
     if (gameRef.current.isDraw() || gameRef.current.isDrawByFiftyMoves()) {
-      toast.info("Draw!");
       setResult(ChessResult.Draw);
       return false;
     }
@@ -42,10 +41,8 @@ const ChessGamePage: React.FC = () => {
     if (gameRef.current.isGameOver()) {
       if (gameRef.current.turn() === "w") {
         setResult(ChessResult.ComputerWin);
-        toast.info("Computer win!");
       } else {
         setResult(ChessResult.YouWin);
-        toast.success("You win!");
       }
       return false;
     }
