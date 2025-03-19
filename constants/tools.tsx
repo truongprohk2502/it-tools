@@ -25,6 +25,7 @@ import DialogIcon from "@/assets/icons/dialog.icon";
 import DrawerIcon from "@/assets/icons/drawer.icon";
 import DropdownIcon from "@/assets/icons/dropdown.icon";
 import GalleriaIcon from "@/assets/icons/galleria.icon";
+import GomokuIcon from "@/assets/icons/gomoku.icon";
 import GraphqlIcon from "@/assets/icons/graphql.icon";
 import ImageCropIcon from "@/assets/icons/image-crop.icon";
 import ImageDiffIcon from "@/assets/icons/image-diff.icon";
@@ -42,6 +43,7 @@ import MysqlIcon from "@/assets/icons/mysql.icon";
 import NumberIcon from "@/assets/icons/number.icon";
 import OtpInputIcon from "@/assets/icons/otp-input.icon";
 import PaginationIcon from "@/assets/icons/pagination.icon";
+import PicturePuzzleIcon from "@/assets/icons/picture-puzzle.icon";
 import ProgressIcon from "@/assets/icons/progress.icon";
 import PropTypesIcon from "@/assets/icons/prop-types.icon";
 import QrIcon from "@/assets/icons/qr.icon";
@@ -214,6 +216,18 @@ export const toolGroups: ToolGroup[] = [
         href: Route.ChessGame,
         description: "Play chess game with computer",
         icon: ChessIcon,
+      },
+      {
+        title: "Gomoku Game",
+        href: Route.GomokuGame,
+        description: "Play gomoku game with computer",
+        icon: GomokuIcon,
+      },
+      {
+        title: "Picture Puzzle Game",
+        href: Route.PicturePuzzle,
+        description: "Play picture puzzle game",
+        icon: PicturePuzzleIcon,
       },
     ],
   },
