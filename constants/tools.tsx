@@ -24,6 +24,7 @@ import DatePickerIcon from "@/assets/icons/date-picker.icon";
 import DialogIcon from "@/assets/icons/dialog.icon";
 import DrawerIcon from "@/assets/icons/drawer.icon";
 import DropdownIcon from "@/assets/icons/dropdown.icon";
+import EmojiIcon from "@/assets/icons/emoji.icon";
 import GalleriaIcon from "@/assets/icons/galleria.icon";
 import GomokuIcon from "@/assets/icons/gomoku.icon";
 import GraphqlIcon from "@/assets/icons/graphql.icon";
@@ -516,6 +517,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.UISwapButton,
         description: "React SwapButton component with TailwindCSS",
         icon: SwapIcon,
+      },
+      {
+        title: "EmojiReaction",
+        href: Route.UIEmojiReaction,
+        description: "React EmojiReaction component with TailwindCSS",
+        icon: EmojiIcon,
       },
       {
         title: "Ripple",

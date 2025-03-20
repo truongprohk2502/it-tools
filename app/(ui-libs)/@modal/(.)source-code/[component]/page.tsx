@@ -18,6 +18,7 @@ import DatePickerSource from "@/app/source-code/date-picker/date-picker-source";
 import DialogSource from "@/app/source-code/dialog/dialog-source";
 import DrawerSource from "@/app/source-code/drawer/drawer-source";
 import DropdownSource from "@/app/source-code/dropdown/dropdown-source";
+import EmojiReactionSource from "@/app/source-code/emoji-reaction/emoji-reaction-source";
 import GalleriaSource from "@/app/source-code/galleria/galleria-source";
 import ImageDiffSource from "@/app/source-code/image-diff/image-diff-source";
 import InputSource from "@/app/source-code/input/input-source";
@@ -156,6 +157,8 @@ export default function Page() {
         return <TreeViewSource />;
       case Route.UIWatermark:
         return <WatermarkSource />;
+      case Route.UIEmojiReaction:
+        return <EmojiReactionSource />;
       default:
         return null;
     }

@@ -90,4 +90,5 @@ export enum Route {
   UIToast = "/toast",
   UITreeView = "/tree-view",
   UIWatermark = "/watermark",
+  UIEmojiReaction = "/emoji-reaction",
 }

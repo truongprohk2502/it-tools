@@ -193,6 +193,16 @@ export default {
           from: { transform: "scale(1)" },
           to: { transform: "scale(0)" },
         },
+        "fly-emoji": {
+          "0%": {
+            transform: "translateY(0) scale(1)",
+            opacity: "0.7",
+          },
+          "100%": {
+            transform: "translateY(-150px) scale(2)",
+            opacity: "0",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -218,6 +228,7 @@ export default {
         "toast-out": "toast-out 0.15s ease-in-out",
         "scale-in": "scale-in",
         "scale-out": "scale-out",
+        "fly-emoji": "fly-emoji 1s forwards",
       },
     },
   },
