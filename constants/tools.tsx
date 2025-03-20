@@ -4,6 +4,7 @@ import ApiIcon from "@/assets/icons/api.icon";
 import AudioCutterIcon from "@/assets/icons/audio-cutter.icon";
 import AutocompleteIcon from "@/assets/icons/autocomplete.icon";
 import AvatarIcon from "@/assets/icons/avatar.icon";
+import BackgroundColorIcon from "@/assets/icons/background-color.icon";
 import BadgeIcon from "@/assets/icons/badge.icon";
 import BigQueryIcon from "@/assets/icons/big-query.icon";
 import BreadcrumbIcon from "@/assets/icons/breadcrumb.icon";
@@ -37,6 +38,7 @@ import JsDocIcon from "@/assets/icons/js-doc.icon";
 import JsonSchemaIcon from "@/assets/icons/json-schema.icon";
 import JsonIcon from "@/assets/icons/json.icon";
 import JwtIcon from "@/assets/icons/jwt.icon";
+import LinearGradientIcon from "@/assets/icons/linear-gradient.icon";
 import MobileMockupIcon from "@/assets/icons/mobile-mockup.icon";
 import MobxIcon from "@/assets/icons/mobx.icon";
 import MongooseIcon from "@/assets/icons/mongoose.icon";
@@ -680,6 +682,191 @@ export const toolGroups: ToolGroup[] = [
         description: "React MobileMockup component with TailwindCSS",
         icon: MobileMockupIcon,
       },
+    ],
+  },
+  {
+    title: "CSS Generators",
+    items: [
+      {
+        title: "Background Color",
+        href: Route.CSSBackgroundColor,
+        description: "CSS Background Color Generator",
+        icon: BackgroundColorIcon,
+      },
+      {
+        title: "Linear Gradient",
+        href: Route.CSSLinearGradient,
+        description: "CSS Linear Gradient Generator",
+        icon: LinearGradientIcon,
+      },
+      // {
+      //   title: "Border",
+      //   href: Route.CSSBoxBorder,
+      //   description: "CSS Border Generator",
+      //   icon: BoxBorderIcon,
+      // },
+      // {
+      //   title: "Border Radius",
+      //   href: Route.CSSBorderRadius,
+      //   description: "CSS Border Radius Generator",
+      //   icon: BoxRadiusIcon,
+      // },
+      // {
+      //   title: "Box Shadow",
+      //   href: Route.CSSBoxShadow,
+      //   description: "CSS Box Shadow Generator",
+      //   icon: BoxShadowIcon,
+      // },
+      // {
+      //   title: "Opacity",
+      //   href: Route.CSSOpacity,
+      //   description: "CSS Opacity Generator",
+      //   icon: OpacityIcon,
+      // },
+      // {
+      //   title: "Filter Blur",
+      //   href: Route.CSSFilterBlur,
+      //   description: "CSS Filter Blur Generator",
+      //   icon: BlurIcon,
+      // },
+      // {
+      //   title: "Filter Sepia",
+      //   href: Route.CSSFilterSepia,
+      //   description: "CSS Filter Sepia Generator",
+      //   icon: SepiaIcon,
+      // },
+      // {
+      //   title: "Filter Brightness",
+      //   href: Route.CSSFilterBrightness,
+      //   description: "CSS Filter Brightness Generator",
+      //   icon: BrightnessIcon,
+      // },
+      // {
+      //   title: "Filter Contrast",
+      //   href: Route.CSSFilterContrast,
+      //   description: "CSS Filter Contrast Generator",
+      //   icon: ContrastIcon,
+      // },
+      // {
+      //   title: "Filter Gray-Scale",
+      //   href: Route.CSSFilterGrayscale,
+      //   description: "CSS Filter Gray-Scale Generator",
+      //   icon: GrayScaleIcon,
+      // },
+      // {
+      //   title: "Filter Hue-Rotate",
+      //   href: Route.CSSHueRotate,
+      //   description: "CSS Filter Hue-Rotate Generator",
+      //   icon: HueRotateIcon,
+      // },
+      // {
+      //   title: "Filter Invert",
+      //   href: Route.CSSInvert,
+      //   description: "CSS Filter Invert Generator",
+      //   icon: InvertIcon,
+      // },
+      // {
+      //   title: "Filter Saturate",
+      //   href: Route.CSSSaturate,
+      //   description: "CSS Filter Saturate Generator",
+      //   icon: SaturateIcon,
+      // },
+      // {
+      //   title: "Filter Drop-Shadow",
+      //   href: Route.CSSDropShadow,
+      //   description: "CSS Filter Drop-Shadow Generator",
+      //   icon: DropShadowIcon,
+      // },
+      // {
+      //   title: "Font Size",
+      //   href: Route.CSSFontSize,
+      //   description: "CSS Font Size Generator",
+      //   icon: FontSizeIcon,
+      // },
+      // {
+      //   title: "Text Color",
+      //   href: Route.CSSTextColor,
+      //   description: "CSS Text Color Generator",
+      //   icon: TextColorIcon,
+      // },
+      // {
+      //   title: "Text Decoration",
+      //   href: Route.CSSTextDecoration,
+      //   description: "CSS Text Decoration Generator",
+      //   icon: TextDecorationIcon,
+      // },
+      // {
+      //   title: "Text Transform",
+      //   href: Route.CSSTextTransform,
+      //   description: "CSS Text Transform Generator",
+      //   icon: TextTransformIcon,
+      // },
+      // {
+      //   title: "Letter Spacing",
+      //   href: Route.CSSLetterSpacing,
+      //   description: "CSS Letter Spacing Generator",
+      //   icon: LetterSpacingIcon,
+      // },
+      // {
+      //   title: "Line Height",
+      //   href: Route.CSSLineHeight,
+      //   description: "CSS Line Height Generator",
+      //   icon: LineHeightIcon,
+      // },
+      // {
+      //   title: "Text Align",
+      //   href: Route.CSSTextAlign,
+      //   description: "CSS Text Align Generator",
+      //   icon: TextAlignIcon,
+      // },
+      // {
+      //   title: "Font Weight",
+      //   href: Route.CSSFontWeight,
+      //   description: "CSS Font Weight Generator",
+      //   icon: FontWeightIcon,
+      // },
+      // {
+      //   title: "Transform Translate X",
+      //   href: Route.CSSTranslateX,
+      //   description: "CSS Transform Translate X Generator",
+      //   icon: TranslateXIcon,
+      // },
+      // {
+      //   title: "Transform Translate Y",
+      //   href: Route.CSSTranslateY,
+      //   description: "CSS Transform Translate Y Generator",
+      //   icon: TranslateYIcon,
+      // },
+      // {
+      //   title: "Transform Scale X",
+      //   href: Route.CSSScaleX,
+      //   description: "CSS Transform Scale X Generator",
+      //   icon: ScaleXIcon,
+      // },
+      // {
+      //   title: "Transform Scale Y",
+      //   href: Route.CSSScaleY,
+      //   description: "CSS Transform Scale Y Generator",
+      //   icon: ScaleYIcon,
+      // },
+      // {
+      //   title: "Transform Skew X",
+      //   href: Route.CSSSkewX,
+      //   description: "CSS Transform Skew X Generator",
+      //   icon: SkewXIcon,
+      // },
+      // {
+      //   title: "Transform Skew Y",
+      //   href: Route.CSSSkewY,
+      //   description: "CSS Transform Skew Y Generator",
+      //   icon: SkewYIcon,
+      // },
+      // {
+      //   title: "Transform Rotate",
+      //   href: Route.CSSRotate,
+      //   description: "CSS Transform Rotate Generator",
+      //   icon: RotateIcon,
+      // },
     ],
   },
 ];
