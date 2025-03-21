@@ -93,6 +93,7 @@ export enum Route {
   UIEmojiReaction = "/emoji-reaction",
   CSSBackgroundColor = "/background-color",
   CSSLinearGradient = "/linear-gradient",
+  CSSRadialGradient = "/radial-gradient",
   CSSBoxBorder = "/box-border",
   CSSBorderRadius = "/border-radius",
   CSSBoxShadow = "/box-shadow",

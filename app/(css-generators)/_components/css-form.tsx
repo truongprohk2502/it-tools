@@ -1,14 +1,39 @@
 "use client";
 
 import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
-type FieldType = "color" | "color-with-percent" | "slide";
-
-export interface CssOption {
+type CommonCssOption = {
   name: string;
   value: string;
-  type: FieldType;
-}
+  type: "color" | "color-with-percent";
+};
+
+type SlideCssOption = {
+  name: string;
+  value: string;
+  type: "slide";
+  min: number;
+  max: number;
+  step?: number;
+  unit: string;
+};
+
+type SelectCssOption = {
+  name: string;
+  value: string;
+  type: "select";
+  options: string[];
+};
+
+export type CssOption = CommonCssOption | SlideCssOption | SelectCssOption;
 
 interface Props {
   options: CssOption[];
@@ -41,13 +66,36 @@ const CssForm: React.FC<Props> = ({ options, setOptions }) => {
       <div className="mt-2 grid grid-cols-2 gap-x-4 gap-y-3">
         {options.map((item) => (
           <div key={item.name}>
+            {item.type === "select" && (
+              <>
+                <p className="mb-1 font-medium">{item.name}</p>
+                <Select
+                  value={item.value}
+                  onValueChange={(val) => handleOptionChange(item, val)}
+                >
+                  <SelectTrigger className="w-full">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectGroup>
+                      {item.options.map((value) => (
+                        <SelectItem key={value} value={value}>
+                          {value}
+                        </SelectItem>
+                      ))}
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
+              </>
+            )}
             {item.type === "slide" && (
               <>
-                <p className="mb-1 font-medium">{`angle (${item.value}deg)`}</p>
+                <p className="mb-1 font-medium">{`${item.name} (${item.value}${item.unit})`}</p>
                 <Input
                   type="range"
-                  min={0}
-                  max={360}
+                  min={item.min}
+                  max={item.max}
+                  step={item.step || 1}
                   value={item.value}
                   onChange={(e) => handleOptionChange(item, e.target.value)}
                   className="w-full"
