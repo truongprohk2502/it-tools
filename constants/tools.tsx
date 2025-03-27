@@ -63,6 +63,7 @@ import PaginationIcon from "@/assets/icons/pagination.icon";
 import PicturePuzzleIcon from "@/assets/icons/picture-puzzle.icon";
 import ProgressIcon from "@/assets/icons/progress.icon";
 import PropTypesIcon from "@/assets/icons/prop-types.icon";
+import Puzzle2048Icon from "@/assets/icons/puzzle-2048,icon";
 import QrIcon from "@/assets/icons/qr.icon";
 import RadialGradientIcon from "@/assets/icons/radial-gradient.icon";
 import RadioIcon from "@/assets/icons/radio.icon";
@@ -258,6 +259,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.PicturePuzzle,
         description: "Play picture puzzle game",
         icon: PicturePuzzleIcon,
+      },
+      {
+        title: "2048 Puzzle Game",
+        href: Route.Game2048,
+        description: "Play 2048 puzzle game",
+        icon: Puzzle2048Icon,
       },
     ],
   },

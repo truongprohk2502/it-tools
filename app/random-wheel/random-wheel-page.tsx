@@ -79,7 +79,7 @@ const RandomWheelPage: React.FC = () => {
         ref={wheelRef}
         className="flex flex-col px-6 xl:flex-row xl:gap-20 2xl:gap-20"
       >
-        <div className="flex flex-col items-center">
+        <div className="flex h-[850px] w-[600px] flex-col items-center">
           <Wheel
             segments={options}
             segColors={colorList}
