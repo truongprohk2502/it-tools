@@ -15,6 +15,7 @@ import BreadcrumbIcon from "@/assets/icons/breadcrumb.icon";
 import BrightnessIcon from "@/assets/icons/brightness.icon";
 import BrowserMockupIcon from "@/assets/icons/browser-mockup.icon";
 import ButtonIcon from "@/assets/icons/button.icon";
+import CaptureVideoIcon from "@/assets/icons/capture-video.icon";
 import CarouselIcon from "@/assets/icons/carousel.icon";
 import CheckboxIcon from "@/assets/icons/checkbox.icon";
 import ChessIcon from "@/assets/icons/chess.icon";
@@ -152,6 +153,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.AudioCutter,
         description: "Cut audio file and download",
         icon: AudioCutterIcon,
+      },
+      {
+        title: "Capture Video",
+        href: Route.CaptureVideo,
+        description: "Capture image from video and download",
+        icon: CaptureVideoIcon,
       },
       {
         title: "SQLite Preview",
