@@ -17,19 +17,21 @@ export const checkGameOver = (cells: BoardCell[]) => {
 
   if (validCells.length < 16) return false;
 
-  for (let x = 0; x < 3; x++) {
-    for (let y = 0; y < 3; y++) {
+  for (let x = 0; x < 4; x++) {
+    for (let y = 0; y < 4; y++) {
       const cell = validCells.find((c) => c.x === x && c.y === y);
 
       if (!cell) return false;
 
-      const nextRightCell = validCells.find((c) => c.x === x + 1 && c.y === y);
+      if (x < 3) {
+        const rightCell = validCells.find((c) => c.x === x + 1 && c.y === y);
+        if (!rightCell || cell.value === rightCell.value) return false;
+      }
 
-      if (!nextRightCell || cell.value === nextRightCell.value) return false;
-
-      const nextDownCell = validCells.find((c) => c.x === x && c.y === y + 1);
-
-      if (!nextDownCell || cell.value === nextDownCell.value) return false;
+      if (y < 3) {
+        const bottomCell = validCells.find((c) => c.x === x && c.y === y + 1);
+        if (!bottomCell || cell.value === bottomCell.value) return false;
+      }
     }
   }
 
