@@ -7,7 +7,8 @@ import { Route } from "@/constants/routes";
 import { useEffect, useState } from "react";
 import BoardBackground from "./_components/board-background";
 import BoardCard from "./_components/board-card";
-import { Direction, DIRECTION_ICONS, GameResult } from "./constants";
+import Instruction from "./_components/instruction";
+import { Direction, GameResult } from "./constants";
 import {
   checkGameOver,
   checkWin,
@@ -43,13 +44,13 @@ const Game2048Page: React.FC = () => {
     const handlePressKey = (e: KeyboardEvent) => {
       let newBoardCells: BoardCell[] | null = null;
 
-      if (e.key === "ArrowUp") {
+      if (e.key === "ArrowUp" || e.key.toLowerCase() === "w") {
         newBoardCells = getNextBoardState(boardCells, Direction.Up);
-      } else if (e.key === "ArrowDown") {
+      } else if (e.key === "ArrowDown" || e.key.toLowerCase() === "s") {
         newBoardCells = getNextBoardState(boardCells, Direction.Down);
-      } else if (e.key === "ArrowLeft") {
+      } else if (e.key === "ArrowLeft" || e.key.toLowerCase() === "a") {
         newBoardCells = getNextBoardState(boardCells, Direction.Left);
-      } else if (e.key === "ArrowRight") {
+      } else if (e.key === "ArrowRight" || e.key.toLowerCase() === "d") {
         newBoardCells = getNextBoardState(boardCells, Direction.Right);
       }
 
@@ -103,19 +104,7 @@ const Game2048Page: React.FC = () => {
           >
             Undo
           </Button>
-          <div className="mt-4 rounded-md bg-neutral-300 py-2 dark:bg-neutral-700">
-            <p className="text-center text-sm">Use arrow keys to move</p>
-            <div className="mt-1 flex justify-center gap-2">
-              {DIRECTION_ICONS.map((Icon, index) => (
-                <div
-                  key={index}
-                  className="flex h-5 w-5 items-center justify-center rounded-sm bg-blue-500 text-white"
-                >
-                  <Icon width={16} height={16} />
-                </div>
-              ))}
-            </div>
-          </div>
+          <Instruction />
         </div>
         <div className="relative grid h-[28rem] w-[28rem] flex-shrink-0 grid-cols-4 gap-2 rounded-xl bg-neutral-400 p-2 dark:bg-neutral-700">
           <BoardBackground />

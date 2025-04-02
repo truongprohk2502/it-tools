@@ -82,6 +82,7 @@ import SkeletonIcon from "@/assets/icons/skeleton.icon";
 import SkewXIcon from "@/assets/icons/skew-x.icon";
 import SkewYIcon from "@/assets/icons/skew-y.icon";
 import SliderIcon from "@/assets/icons/slider.icon";
+import SnakeIcon from "@/assets/icons/snake.icon";
 import SortableListIcon from "@/assets/icons/sortable-list.icon";
 import SpeedDialIcon from "@/assets/icons/speed-dial.icon";
 import SpinnerIcon from "@/assets/icons/spinner.icon";
@@ -272,6 +273,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.Game2048,
         description: "Play 2048 puzzle game",
         icon: Puzzle2048Icon,
+      },
+      {
+        title: "Snake Game",
+        href: Route.Snake,
+        description: "Play Snake game",
+        icon: SnakeIcon,
       },
     ],
   },

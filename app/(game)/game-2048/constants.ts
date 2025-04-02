@@ -1,6 +1,7 @@
 import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp } from "lucide-react";
 
 export const DIRECTION_ICONS = [ArrowLeft, ArrowUp, ArrowDown, ArrowRight];
+export const DIRECTION_KEYS = ["A", "W", "S", "D"];
 
 export enum GameResult {
   Undetermined = "Undetermined",
