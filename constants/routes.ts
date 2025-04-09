@@ -19,6 +19,7 @@ export enum Route {
   JsonFormatter = "/json-formatter",
   NumberConverter = "/number-converter",
   RandomWheel = "/random-wheel",
+  GraphQLSchema = "/graphql-schema",
   ChessGame = "/chess-game",
   GomokuGame = "/gomoku-game",
   PicturePuzzle = "/picture-puzzle",

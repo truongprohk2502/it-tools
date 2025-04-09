@@ -132,6 +132,12 @@ export const toolGroups: ToolGroup[] = [
     title: "Tools",
     items: [
       {
+        title: "GraphQL Schema",
+        href: Route.GraphQLSchema,
+        description: "Fetch and display GraphQL schema",
+        icon: GraphqlIcon,
+      },
+      {
         title: "SQL Practice",
         href: Route.SqlPractice,
         description: "SQL Practice online with editor",
