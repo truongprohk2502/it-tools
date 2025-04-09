@@ -1,3 +1,4 @@
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import {
   Table,
   TableBody,
@@ -19,34 +20,37 @@ const SqlResult: React.FC<Props> = ({ queried, data }) => {
     <div className="h-[16rem]">
       {queried ? (
         data ? (
-          <Table withScrollable wrapperClassName="h-[16rem]">
-            <TableHeader className="sticky top-0">
-              <TableRow>
-                {data.columns.map((col) => (
-                  <TableHead key={col}>{col}</TableHead>
-                ))}
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {data.values.length ? (
-                data.values.map((row, rowIndex) => (
-                  <TableRow key={rowIndex}>
-                    {row.map((col, colIndex) => (
-                      <TableCell key={colIndex}>{col}</TableCell>
-                    ))}
-                  </TableRow>
-                ))
-              ) : (
+          <ScrollArea>
+            <Table withScrollable wrapperClassName="h-[16rem]">
+              <TableHeader className="sticky top-0">
                 <TableRow>
-                  <TableCell colSpan={data.columns.length}>
-                    <div className="flex h-40 items-center justify-center">
-                      <span>No data</span>
-                    </div>
-                  </TableCell>
+                  {data.columns.map((col) => (
+                    <TableHead key={col}>{col}</TableHead>
+                  ))}
                 </TableRow>
-              )}
-            </TableBody>
-          </Table>
+              </TableHeader>
+              <TableBody>
+                {data.values.length ? (
+                  data.values.map((row, rowIndex) => (
+                    <TableRow key={rowIndex}>
+                      {row.map((col, colIndex) => (
+                        <TableCell key={colIndex}>{col}</TableCell>
+                      ))}
+                    </TableRow>
+                  ))
+                ) : (
+                  <TableRow>
+                    <TableCell colSpan={data.columns.length}>
+                      <div className="flex h-40 items-center justify-center">
+                        <span>No data</span>
+                      </div>
+                    </TableCell>
+                  </TableRow>
+                )}
+              </TableBody>
+            </Table>
+            <ScrollBar orientation="horizontal" />
+          </ScrollArea>
         ) : (
           <div className="flex h-full w-full flex-col items-center justify-center text-neutral-600 dark:text-neutral-400">
             <div className="mt-4 flex justify-center rounded-md border border-neutral-400 px-4 py-2 text-center dark:border-neutral-700">

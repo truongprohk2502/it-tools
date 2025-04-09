@@ -71,14 +71,15 @@ const SqlPracticePage: React.FC = () => {
 
   useEffect(() => {
     initSqlJs({
-      locateFile: (file) => `https://sql.js.org/dist/${file}`,
+      locateFile: () => "/sqlite/sql-wasm.wasm",
     })
       .then((sqlInstance) => {
         sql.current = sqlInstance;
         initDatabase();
       })
       .catch((err: Error) => {
-        throw err;
+        console.error(err);
+        toast.error("Cannot initialize this tool!");
       });
   }, []);
 
@@ -191,9 +192,9 @@ const SqlPracticePage: React.FC = () => {
   };
 
   return (
-    <div className="relative -mx-6 -my-8 h-[calc(100vh-4rem)] min-w-[60rem]">
+    <div className="relative -mx-6 -my-8 h-[calc(100vh-4rem)] min-w-[65rem]">
       <div className="absolute inset-y-0 left-0 right-[20rem] flex">
-        <div className="h-[calc(100vh-4rem)] flex-auto">
+        <div className="h-[calc(100vh-4rem)] w-full">
           <div className="h-[calc(100%-16rem)]">
             <SqlEditor ref={sqlEditorRef} onQuery={handleQuery} />
           </div>

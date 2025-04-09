@@ -1,5 +1,5 @@
+import type { Edge, Node } from "@xyflow/react";
 import Elk from "elkjs";
-import type { Edge, Node } from "reactflow";
 
 /* Configure the Elk Layout options (The shape and nature of the graph) */
 /* Check ELK docs for all details */

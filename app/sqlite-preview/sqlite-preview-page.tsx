@@ -13,6 +13,7 @@ import {
 import { saveAs } from "file-saver";
 import JSZip from "jszip";
 import { useEffect, useRef, useState } from "react";
+import { toast } from "sonner";
 import initSqlJs, {
   type Database,
   type SqlJsStatic,
@@ -48,13 +49,14 @@ const SqlitePreviewPage: React.FC = () => {
 
   useEffect(() => {
     initSqlJs({
-      locateFile: (file) => `https://sql.js.org/dist/${file}`,
+      locateFile: () => "sqlite/sql-wasm.wasm",
     })
       .then((sqlInstance) => {
         sql.current = sqlInstance;
       })
       .catch((err: Error) => {
-        throw err;
+        console.error(err);
+        toast.error("Cannot initialize this tool!");
       });
   }, []);
 
