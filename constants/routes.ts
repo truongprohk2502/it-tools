@@ -12,7 +12,7 @@ export enum Route {
   ImageCrop = "/image-crop",
   ReactPlayground = "/react-playground",
   WebViewPlayground = "/webview-playground",
-  Markdown = "/markdown",
+  MarkdownPreview = "/markdown-preview",
   GenerateAPIResponse = "/api-response",
   GenerateQrCode = "/qr-code",
   GenerateText = "/generate-text",

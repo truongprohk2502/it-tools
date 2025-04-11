@@ -53,6 +53,7 @@ import JwtIcon from "@/assets/icons/jwt.icon";
 import LetterSpacingIcon from "@/assets/icons/letter-spacing.icon";
 import LineHeightIcon from "@/assets/icons/line-height.icon";
 import LinearGradientIcon from "@/assets/icons/linear-gradient.icon";
+import MarkdownIcon from "@/assets/icons/markdown.icon";
 import MobileMockupIcon from "@/assets/icons/mobile-mockup.icon";
 import MobxIcon from "@/assets/icons/mobx.icon";
 import MongooseIcon from "@/assets/icons/mongoose.icon";
@@ -196,6 +197,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.JwtIO,
         description: "Decode and encode JWTs",
         icon: JwtIcon,
+      },
+      {
+        title: "Markdown Editor",
+        href: Route.MarkdownPreview,
+        description: "Edit and preview markdown",
+        icon: MarkdownIcon,
       },
       {
         title: "Regular Expressions",
