@@ -72,6 +72,7 @@ import RadioIcon from "@/assets/icons/radio.icon";
 import RatingIcon from "@/assets/icons/rating.icon";
 import ReactIcon from "@/assets/icons/react.icon";
 import RegexIcon from "@/assets/icons/regex.icon";
+import RichTextIcon from "@/assets/icons/rich-text.icon";
 import RippleIcon from "@/assets/icons/ripple.icon";
 import RotateIcon from "@/assets/icons/rotate.icon";
 import SaturateIcon from "@/assets/icons/saturate.icon";
@@ -203,6 +204,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.MarkdownPreview,
         description: "Edit and preview markdown",
         icon: MarkdownIcon,
+      },
+      {
+        title: "Rich Text Editor",
+        href: Route.RichTextEditor,
+        description: "Edit and download rich text",
+        icon: RichTextIcon,
       },
       {
         title: "Regular Expressions",

@@ -10,6 +10,7 @@ import rehypeRaw from "rehype-raw";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import remarkToc from "remark-toc";
+import Title from "./_components/title";
 import { MARKDOWN_SOURCE } from "./constants";
 import "./github-markdown.css";
 
@@ -22,16 +23,8 @@ const MarkdownPreviewPage: React.FC = () => {
   return (
     <div className="-mx-6 -my-8 h-[calc(100vh-4rem)] min-w-[60rem]">
       <div className="grid h-[3rem] grid-cols-2 border-b border-neutral-200 dark:border-neutral-800">
-        <div className="my-auto flex items-center justify-between border-r border-neutral-200 px-4 dark:border-neutral-800">
-          <span className="text-xl font-bold text-neutral-600 dark:text-neutral-300">
-            Editor
-          </span>
-        </div>
-        <div className="my-auto flex items-center justify-between px-4">
-          <span className="text-xl font-bold text-neutral-600 dark:text-neutral-300">
-            Preview
-          </span>
-        </div>
+        <Title title="Editor" border />
+        <Title title="Preview" />
       </div>
       <div className="grid h-[calc(100vh-7rem)] grid-cols-2">
         <div className="relative border-r border-neutral-200 dark:border-neutral-800">

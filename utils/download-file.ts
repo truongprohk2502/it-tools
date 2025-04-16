@@ -1,6 +1,6 @@
 export const downloadFile = (
   data: string,
-  fileType: "json" | "xml" | "csv" | "yaml" | "markdown",
+  fileType: "json" | "xml" | "csv" | "yaml" | "markdown" | "html",
 ) => {
   const blobFormat = {
     json: "application/json",
@@ -8,6 +8,7 @@ export const downloadFile = (
     csv: "text/plain",
     yaml: "text/yaml",
     markdown: "text/markdown",
+    html: "text/html",
   };
   const fileExtension = {
     json: "json",
@@ -15,6 +16,7 @@ export const downloadFile = (
     csv: "txt",
     yaml: "yaml",
     markdown: "md",
+    html: "html",
   };
 
   const blob = new Blob([data], {

@@ -13,6 +13,7 @@ export enum Route {
   ReactPlayground = "/react-playground",
   WebViewPlayground = "/webview-playground",
   MarkdownPreview = "/markdown-preview",
+  RichTextEditor = "/rich-text-editor",
   GenerateAPIResponse = "/api-response",
   GenerateQrCode = "/qr-code",
   GenerateText = "/generate-text",
