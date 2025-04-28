@@ -21,6 +21,7 @@ export enum Route {
   NumberConverter = "/number-converter",
   RandomWheel = "/random-wheel",
   GraphQLSchema = "/graphql-schema",
+  SimpleCalculator = "/simple-calculator",
   ChessGame = "/chess-game",
   GomokuGame = "/gomoku-game",
   PicturePuzzle = "/picture-puzzle",

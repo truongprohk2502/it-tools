@@ -15,6 +15,7 @@ import BreadcrumbIcon from "@/assets/icons/breadcrumb.icon";
 import BrightnessIcon from "@/assets/icons/brightness.icon";
 import BrowserMockupIcon from "@/assets/icons/browser-mockup.icon";
 import ButtonIcon from "@/assets/icons/button.icon";
+import CalculatorIcon from "@/assets/icons/calculator.icon";
 import CaptureVideoIcon from "@/assets/icons/capture-video.icon";
 import CarouselIcon from "@/assets/icons/carousel.icon";
 import CheckboxIcon from "@/assets/icons/checkbox.icon";
@@ -258,6 +259,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.NumberConverter,
         description: "Number converters and conversions",
         icon: NumberIcon,
+      },
+      {
+        title: "Simple Calculator",
+        href: Route.SimpleCalculator,
+        description: "Simple calculator application",
+        icon: CalculatorIcon,
       },
       {
         title: "Random Wheel",
