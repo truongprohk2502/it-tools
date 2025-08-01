@@ -29,6 +29,7 @@ import ContrastIcon from "@/assets/icons/contrast.icon";
 import CountdownIcon from "@/assets/icons/countdown.icon";
 import CssIcon from "@/assets/icons/css.icon";
 import CsvIcon from "@/assets/icons/csv.icon";
+import CvIcon from "@/assets/icons/cv.icon";
 import DatePickerIcon from "@/assets/icons/date-picker.icon";
 import DialogIcon from "@/assets/icons/dialog.icon";
 import DrawerIcon from "@/assets/icons/drawer.icon";
@@ -134,6 +135,12 @@ export const toolGroups: ToolGroup[] = [
   {
     title: "Tools",
     items: [
+      {
+        title: "CV Creator",
+        href: Route.CvCreator,
+        description: "Generate and custom your Résumé",
+        icon: CvIcon,
+      },
       {
         title: "GraphQL Schema",
         href: Route.GraphQLSchema,

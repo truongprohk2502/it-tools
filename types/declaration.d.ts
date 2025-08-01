@@ -39,3 +39,11 @@ declare module "babel-plugin-object-styles-to-template" {
 declare module "audiobuffer-to-wav" {
   export default function audioToWav(buffer: AudioBuffer): Blob;
 }
+
+declare module "html2pdf.js" {
+  export default function html2pdf(): {
+    from: (element: HTMLElement) => {
+      save: (filename: string) => void;
+    };
+  };
+}

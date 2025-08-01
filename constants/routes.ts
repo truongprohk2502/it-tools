@@ -22,6 +22,7 @@ export enum Route {
   RandomWheel = "/random-wheel",
   GraphQLSchema = "/graphql-schema",
   SimpleCalculator = "/simple-calculator",
+  CvCreator = "/cv-creator",
   ChessGame = "/chess-game",
   GomokuGame = "/gomoku-game",
   PicturePuzzle = "/picture-puzzle",
