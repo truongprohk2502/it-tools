@@ -6,6 +6,24 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+@layer utilities {
+  .backface-visible {
+    backface-visibility: visible;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  .transform-flat {
+    transform-style: flat;
+  }
+  .transform-3d {
+    transform-style: preserve-3d;
+  }
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+}
+
 @layer base {
   :root {
     --background: 235 100% 95%;
@@ -61,8 +79,6 @@ body {
     @apply bg-background text-foreground;
   }
 }
-
-
 
 @layer base {
   * {

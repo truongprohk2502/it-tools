@@ -56,6 +56,7 @@ import LetterSpacingIcon from "@/assets/icons/letter-spacing.icon";
 import LineHeightIcon from "@/assets/icons/line-height.icon";
 import LinearGradientIcon from "@/assets/icons/linear-gradient.icon";
 import MarkdownIcon from "@/assets/icons/markdown.icon";
+import MemoryIcon from "@/assets/icons/memory.icon";
 import MobileMockupIcon from "@/assets/icons/mobile-mockup.icon";
 import MobxIcon from "@/assets/icons/mobx.icon";
 import MongooseIcon from "@/assets/icons/mongoose.icon";
@@ -313,6 +314,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.Snake,
         description: "Play Snake game",
         icon: SnakeIcon,
+      },
+      {
+        title: "Memory Game",
+        href: Route.MemoryGame,
+        description: "Play Memory game",
+        icon: MemoryIcon,
       },
     ],
   },

@@ -45,6 +45,7 @@
     "@tiptap/starter-kit": "^2.11.7",
     "@walmartlabs/json-to-simple-graphql-schema": "^3.0.1",
     "@xyflow/react": "^12.5.4",
+    "array-shuffle": "^3.0.0",
     "audiobuffer-to-wav": "^1.0.0",
     "babel-plugin-js-to-mobx-state-tree": "^1.0.0",
     "babel-plugin-json-to-proptypes": "^0.1.0",
