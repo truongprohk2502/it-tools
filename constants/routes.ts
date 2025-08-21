@@ -29,6 +29,7 @@ export enum Route {
   Game2048 = "/game-2048",
   Snake = "/snake-game",
   MemoryGame = "/memory-game",
+  HangmanGame = "/hangman",
   TomlToJson = "/toml-to-json",
   TomlToYaml = "/toml-to-yaml",
   TomlToXml = "/toml-to-xml",

@@ -41,6 +41,7 @@ import GalleriaIcon from "@/assets/icons/galleria.icon";
 import GomokuIcon from "@/assets/icons/gomoku.icon";
 import GraphqlIcon from "@/assets/icons/graphql.icon";
 import GrayScaleIcon from "@/assets/icons/gray-scale.icon";
+import HangmanIcon from "@/assets/icons/hangman.icon";
 import HueRotateIcon from "@/assets/icons/hue-rotate.icon";
 import ImageCropIcon from "@/assets/icons/image-crop.icon";
 import ImageDiffIcon from "@/assets/icons/image-diff.icon";
@@ -320,6 +321,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.MemoryGame,
         description: "Play Memory game",
         icon: MemoryIcon,
+      },
+      {
+        title: "Hangman Game",
+        href: Route.HangmanGame,
+        description: "Play Hangman game",
+        icon: HangmanIcon,
       },
     ],
   },

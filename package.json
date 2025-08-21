@@ -91,6 +91,7 @@
     "prettier-plugin-sql": "^0.18.1",
     "prism-react-renderer": "^2.4.1",
     "qrcode.react": "^4.2.0",
+    "random-words": "^2.0.1",
     "react": "^19.0.0",
     "react-ace": "^14.0.1",
     "react-chessboard": "^4.7.2",
