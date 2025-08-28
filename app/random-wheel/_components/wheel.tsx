@@ -37,7 +37,8 @@ const Wheel: React.FC<Props> = ({ segments, segColors, onFinished }) => {
   }, [segments, segColors, theme]);
 
   const drawSpinButton = () => {
-    const ctx = spinButtonRef.current!.getContext("2d")!;
+    if (!spinButtonRef.current) return;
+    const ctx = spinButtonRef.current.getContext("2d")!;
 
     ctx.lineWidth = 1;
     ctx.strokeStyle = "black";
@@ -81,7 +82,8 @@ const Wheel: React.FC<Props> = ({ segments, segColors, onFinished }) => {
   };
 
   const drawSegment = (key: number, lastAngle: number, angle: number) => {
-    const ctx = canvasRef.current!.getContext("2d")!;
+    if (!canvasRef.current) return;
+    const ctx = canvasRef.current.getContext("2d")!;
     const value = segments[key];
     ctx.save();
     ctx.beginPath();
@@ -102,7 +104,8 @@ const Wheel: React.FC<Props> = ({ segments, segColors, onFinished }) => {
   };
 
   const drawWheel = () => {
-    const ctx = canvasRef.current!.getContext("2d")!;
+    if (!canvasRef.current) return;
+    const ctx = canvasRef.current.getContext("2d")!;
 
     angleCurrent = 0;
     let lastAngle = angleCurrent;
@@ -134,7 +137,8 @@ const Wheel: React.FC<Props> = ({ segments, segColors, onFinished }) => {
   };
 
   const clear = () => {
-    const ctx = canvasRef.current!.getContext("2d")!;
+    if (!canvasRef.current) return;
+    const ctx = canvasRef.current.getContext("2d")!;
     ctx.clearRect(0, 0, 600, 600);
   };
 
@@ -159,20 +163,22 @@ const Wheel: React.FC<Props> = ({ segments, segColors, onFinished }) => {
     const endAngle = defaultRound * 360 + extraDegToPart + randomExtraDeg;
 
     const animate = (currentTime: number) => {
+      if (!canvasRef.current) return;
       if (!startTime) startTime = currentTime;
       const elapsedTime = currentTime - startTime;
       const progress = elapsedTime / duration;
       const rotation =
         startAngle + (endAngle - startAngle) * easingFunction(progress);
 
-      canvasRef.current!.style.transform = `rotate(${rotation}deg)`;
+      canvasRef.current.style.transform = `rotate(${rotation}deg)`;
 
       if (elapsedTime < duration) {
         requestAnimationFrame(animate);
       } else {
         setTimeout(() => {
+          if (!canvasRef.current) return;
           onFinished(segments[randomPart]);
-          canvasRef.current!.style.transform = `rotate(0deg)`;
+          canvasRef.current.style.transform = `rotate(0deg)`;
           isSpinning = false;
         }, 200);
       }

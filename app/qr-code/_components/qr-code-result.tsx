@@ -71,6 +71,7 @@ const QrCodeResult: React.FC<Props> = ({ value }) => {
     const reader = new FileReader();
 
     reader.onload = function (event: ProgressEvent<FileReader>) {
+      if (!inputLogoRef.current) return;
       const base64Image = event.target?.result;
 
       if (typeof base64Image !== "string" || ownLogos.includes(base64Image))
@@ -78,11 +79,12 @@ const QrCodeResult: React.FC<Props> = ({ value }) => {
 
       const newLogos = [...ownLogos, base64Image];
       handleSetOwnLogos(newLogos as string[]);
-      inputLogoRef.current!.value = "";
+      inputLogoRef.current.value = "";
     };
 
     reader.onerror = () => {
-      inputLogoRef.current!.value = "";
+      if (!inputLogoRef.current) return;
+      inputLogoRef.current.value = "";
     };
 
     reader.readAsDataURL(file);

@@ -36,8 +36,9 @@ const RandomWheelPage: React.FC = () => {
   }, [totalOptions, colorList]);
 
   const setWheelRotation = (rotate: number) => {
+    if (!wheelRef.current) return;
     const wheelElement =
-      wheelRef.current!.getElementsByTagName("canvas")[0].parentElement!;
+      wheelRef.current.getElementsByTagName("canvas")[0].parentElement!;
 
     wheelElement.style.transform = `rotate(${rotate}deg)`;
   };

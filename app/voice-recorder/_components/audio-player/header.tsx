@@ -22,10 +22,12 @@ const Header: React.FC<Props> = ({ ref, onRemove, onDownload }) => {
   useImperativeHandle(ref, () => {
     return {
       setDuration(duration: number) {
-        durationRef.current!.innerHTML = formatTime(duration);
+        if (!durationRef.current) return;
+        durationRef.current.innerHTML = formatTime(duration);
       },
       setTimer(seek: number) {
-        timerRef.current!.innerHTML = formatTime(Math.floor(seek));
+        if (!timerRef.current) return;
+        timerRef.current.innerHTML = formatTime(Math.floor(seek));
       },
     };
   }, []);

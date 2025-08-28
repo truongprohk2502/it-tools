@@ -40,11 +40,12 @@ const PicturePuzzlePage: React.FC = () => {
 
   useEffect(() => {
     const handleResizeWindow = () => {
+      if (!boardWrapperRef.current) return;
       const size = window.innerHeight - 200;
       const maxSize = 42 * 16;
       const boardSize = size > maxSize ? maxSize : size;
-      boardWrapperRef.current!.style.width = `${boardSize}px`;
-      boardWrapperRef.current!.style.height = `${boardSize}px`;
+      boardWrapperRef.current.style.width = `${boardSize}px`;
+      boardWrapperRef.current.style.height = `${boardSize}px`;
       setBoardLoaded(true);
     };
 

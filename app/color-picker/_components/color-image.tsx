@@ -20,11 +20,12 @@ const ColorImage: React.FC<Props> = ({ onConfirm, onClose }) => {
   const [bitmapSize, setBitmapSize] = useState<ImageBitmap | null>(null);
 
   const handleChangeFile = async (file: File) => {
+    if (!canvasRef.current) return;
     if (bitmapSize) bitmapSize.close();
     const bitmap = await createImageBitmap(file);
-    canvasRef.current!.width = bitmap.width;
-    canvasRef.current!.height = bitmap.height;
-    const ctx = canvasRef.current!.getContext("2d");
+    canvasRef.current.width = bitmap.width;
+    canvasRef.current.height = bitmap.height;
+    const ctx = canvasRef.current.getContext("2d");
     ctx!.drawImage(bitmap, 0, 0);
     setBitmapSize(bitmap);
   };
@@ -96,7 +97,7 @@ const ColorImage: React.FC<Props> = ({ onConfirm, onClose }) => {
               Close
             </Button>
           )}
-          <Button onClick={() => inputFileRef.current!.click()}>
+          <Button onClick={() => inputFileRef.current?.click()}>
             Change image
           </Button>
         </div>
@@ -121,7 +122,7 @@ const ColorImage: React.FC<Props> = ({ onConfirm, onClose }) => {
       >
         <div
           className="flex w-96 items-center justify-center rounded-lg border border-dashed border-neutral-500 py-16"
-          onClick={() => inputFileRef.current!.click()}
+          onClick={() => inputFileRef.current?.click()}
         >
           <span className="font-semibold">Please upload your image</span>
         </div>

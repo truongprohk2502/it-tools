@@ -58,7 +58,7 @@ const SqlPracticePage: React.FC = () => {
   const initDatabase = async () => {
     if (!sql.current) return;
 
-    db.current = new sql.current!.Database();
+    db.current = new sql.current.Database();
 
     for (const createTable of initHospitalDatabaseFunctions) {
       try {
@@ -117,11 +117,11 @@ const SqlPracticePage: React.FC = () => {
   };
 
   const handleQuery = async () => {
-    if (!db.current) return;
+    if (!db.current || !sqlEditorRef.current) return;
 
     try {
       setQueried(true);
-      const query = sqlEditorRef.current!.getQueryString();
+      const query = sqlEditorRef.current.getQueryString();
       const result = await db.current.exec(query);
       const data = result?.[0] || null;
       setData(data);

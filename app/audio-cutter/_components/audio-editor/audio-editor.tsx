@@ -45,7 +45,8 @@ const AudioEditor: React.FC<Props> = ({ file, onResetFile }) => {
     });
 
     waveSufferInstance.current.on("ready", () => {
-      duration.current = waveSufferInstance.current!.getDuration();
+      if (!waveSufferInstance.current) return;
+      duration.current = waveSufferInstance.current.getDuration();
 
       regionsPlugin.enableDragSelection({
         color: "#436afc66",
@@ -75,7 +76,7 @@ const AudioEditor: React.FC<Props> = ({ file, onResetFile }) => {
       URL.revokeObjectURL(fileUrl);
       timelinePlugin.destroy();
       regionsPlugin.destroy();
-      waveSufferInstance.current!.destroy();
+      waveSufferInstance.current?.destroy();
     };
   }, []);
 

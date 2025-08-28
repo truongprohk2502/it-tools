@@ -52,11 +52,12 @@ const ChessGamePage: React.FC = () => {
 
   useEffect(() => {
     const handleResizeWindow = () => {
+      if (!chessWrapperRef.current) return;
       const size = window.innerHeight - 200;
       const maxSize = 42 * 16;
       const boardSize = size > maxSize ? maxSize : size;
-      chessWrapperRef.current!.style.width = `${boardSize}px`;
-      chessWrapperRef.current!.style.height = `${boardSize}px`;
+      chessWrapperRef.current.style.width = `${boardSize}px`;
+      chessWrapperRef.current.style.height = `${boardSize}px`;
     };
 
     handleResizeWindow();
@@ -109,8 +110,9 @@ const ChessGamePage: React.FC = () => {
   }, []);
 
   const findBestMove = () => {
-    workerRef.current!.postMessage(`position fen ${gameRef.current.fen()}`);
-    workerRef.current!.postMessage(`go depth ${level}`);
+    if (!workerRef.current) return;
+    workerRef.current.postMessage(`position fen ${gameRef.current.fen()}`);
+    workerRef.current.postMessage(`go depth ${level}`);
     setThinking(true);
   };
 

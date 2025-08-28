@@ -61,7 +61,8 @@ const SqlitePreviewPage: React.FC = () => {
   }, []);
 
   const getTableRowsCount = (name: string) => {
-    const sel = db.current!.prepare(`SELECT COUNT(*) AS count FROM '${name}'`);
+    if (!db.current) return 0;
+    const sel = db.current.prepare(`SELECT COUNT(*) AS count FROM '${name}'`);
     if (sel.step()) {
       const count = sel.getAsObject()["count"];
       sel.free();
@@ -73,11 +74,12 @@ const SqlitePreviewPage: React.FC = () => {
   };
 
   const initializeTableInfoList = (tableNames: string[]) => {
+    if (!db.current) return;
     const tableInfoList: TableInfo[] = [];
 
     for (const tableName of tableNames) {
-      const sel = db.current!.prepare(getDefaultQuery(tableName));
-      const { columns } = getColumns(db.current!, tableName, sel);
+      const sel = db.current.prepare(getDefaultQuery(tableName));
+      const { columns } = getColumns(db.current, tableName, sel);
       tableInfoList.push({ name: tableName, columns });
     }
 
@@ -85,8 +87,9 @@ const SqlitePreviewPage: React.FC = () => {
   };
 
   const initializeTableOptions = () => {
+    if (!db.current) return;
     //Get all table names from master table
-    const tableQuery = db.current!.prepare(
+    const tableQuery = db.current.prepare(
       "SELECT * FROM sqlite_master WHERE type='table' OR type='view' ORDER BY name",
     );
 
@@ -129,10 +132,12 @@ const SqlitePreviewPage: React.FC = () => {
   };
 
   const handleUpload = (data: ArrayBuffer) => {
+    if (!sql.current) return;
+
     try {
       setIsLoading(true);
       const buffer = new Uint8Array(data);
-      db.current = new sql.current!.Database(buffer as Buffer);
+      db.current = new sql.current.Database(buffer as Buffer);
       setIsReady(true);
       initializeTableOptions();
     } catch {
@@ -141,9 +146,10 @@ const SqlitePreviewPage: React.FC = () => {
   };
 
   const handleQuery = (query: string) => {
+    if (!db.current) return;
     let sel: Statement | null = null;
     try {
-      sel = db.current!.prepare(query);
+      sel = db.current.prepare(query);
     } catch (ex) {
       if (sel != null) {
         sel.free();
@@ -161,7 +167,7 @@ const SqlitePreviewPage: React.FC = () => {
       }
 
       const { columns, columnNames, columnTypes } = getColumns(
-        db.current!,
+        db.current,
         tableName,
         sel,
       );
@@ -211,6 +217,8 @@ const SqlitePreviewPage: React.FC = () => {
   };
 
   const exportAllToCsv = () => {
+    if (!db.current) return;
+
     try {
       const zip = new JSZip();
 
@@ -218,7 +226,7 @@ const SqlitePreviewPage: React.FC = () => {
 
       for (const tableName of tableNames) {
         const exportedRows = exportCsvTableQuery(
-          db.current!,
+          db.current,
           getDefaultQuery(tableName),
         );
 
@@ -238,9 +246,11 @@ const SqlitePreviewPage: React.FC = () => {
   };
 
   const exportSelectedTableToCsv = () => {
+    if (!db.current) return;
+
     try {
       const exportedRows = exportCsvTableQuery(
-        db.current!,
+        db.current,
         getDefaultQuery(selectedTable),
       );
 
@@ -256,10 +266,12 @@ const SqlitePreviewPage: React.FC = () => {
   };
 
   const exportQueryTableToCsv = () => {
-    try {
-      const query = sqlEditorRef.current!.getQueryString();
+    if (!db.current || !sqlEditorRef.current) return;
 
-      const exportedRows = exportCsvTableQuery(db.current!, query);
+    try {
+      const query = sqlEditorRef.current.getQueryString();
+
+      const exportedRows = exportCsvTableQuery(db.current, query);
 
       if (exportedRows != null) {
         const blob = new Blob([convertArrayToCsv(exportedRows)], {

@@ -3,7 +3,7 @@ export enum Route {
   JwtIO = "/jwt-io",
   Regex = "/regex",
   CaptureVideo = "/capture-video",
-  AudioCutter = "audio-cutter",
+  AudioCutter = "/audio-cutter",
   VoiceRecorder = "/voice-recorder",
   ScreenRecorder = "/screen-recorder",
   SqlitePreview = "/sqlite-preview",
