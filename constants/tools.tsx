@@ -112,6 +112,7 @@ import TranslateXIcon from "@/assets/icons/translate-x.icon";
 import TranslateYIcon from "@/assets/icons/translate-y.icon";
 import TreeViewIcon from "@/assets/icons/tree-view.icon";
 import TypescriptIcon from "@/assets/icons/typescript.icon";
+import VideoConverterIcon from "@/assets/icons/video-converter.icon";
 import VoiceRecorderIcon from "@/assets/icons/voice-recorder.icon";
 import WatermarkIcon from "@/assets/icons/watermark.icon";
 import WebviewIcon from "@/assets/icons/webview.icon";
@@ -134,6 +135,53 @@ interface ToolGroup {
 }
 
 export const toolGroups: ToolGroup[] = [
+  {
+    title: "Games",
+    items: [
+      {
+        title: "Chess Game",
+        href: Route.ChessGame,
+        description: "Play chess game with computer",
+        icon: ChessIcon,
+      },
+      {
+        title: "Gomoku Game",
+        href: Route.GomokuGame,
+        description: "Play gomoku game with computer",
+        icon: GomokuIcon,
+      },
+      {
+        title: "Picture Puzzle Game",
+        href: Route.PicturePuzzle,
+        description: "Play picture puzzle game",
+        icon: PicturePuzzleIcon,
+      },
+      {
+        title: "2048 Puzzle Game",
+        href: Route.Game2048,
+        description: "Play 2048 puzzle game",
+        icon: Puzzle2048Icon,
+      },
+      {
+        title: "Snake Game",
+        href: Route.Snake,
+        description: "Play Snake game",
+        icon: SnakeIcon,
+      },
+      {
+        title: "Memory Game",
+        href: Route.MemoryGame,
+        description: "Play Memory game",
+        icon: MemoryIcon,
+      },
+      {
+        title: "Hangman Game",
+        href: Route.HangmanGame,
+        description: "Play Hangman game",
+        icon: HangmanIcon,
+      },
+    ],
+  },
   {
     title: "Tools",
     items: [
@@ -178,6 +226,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.CaptureVideo,
         description: "Capture image from video and download",
         icon: CaptureVideoIcon,
+      },
+      {
+        title: "Video Converters",
+        href: Route.VideoConverters,
+        description: "Convert video files to different formats",
+        icon: VideoConverterIcon,
       },
       {
         title: "SQLite Preview",
@@ -280,53 +334,6 @@ export const toolGroups: ToolGroup[] = [
         href: Route.RandomWheel,
         description: "Random name picker",
         icon: WheelIcon,
-      },
-    ],
-  },
-  {
-    title: "Games",
-    items: [
-      {
-        title: "Chess Game",
-        href: Route.ChessGame,
-        description: "Play chess game with computer",
-        icon: ChessIcon,
-      },
-      {
-        title: "Gomoku Game",
-        href: Route.GomokuGame,
-        description: "Play gomoku game with computer",
-        icon: GomokuIcon,
-      },
-      {
-        title: "Picture Puzzle Game",
-        href: Route.PicturePuzzle,
-        description: "Play picture puzzle game",
-        icon: PicturePuzzleIcon,
-      },
-      {
-        title: "2048 Puzzle Game",
-        href: Route.Game2048,
-        description: "Play 2048 puzzle game",
-        icon: Puzzle2048Icon,
-      },
-      {
-        title: "Snake Game",
-        href: Route.Snake,
-        description: "Play Snake game",
-        icon: SnakeIcon,
-      },
-      {
-        title: "Memory Game",
-        href: Route.MemoryGame,
-        description: "Play Memory game",
-        icon: MemoryIcon,
-      },
-      {
-        title: "Hangman Game",
-        href: Route.HangmanGame,
-        description: "Play Hangman game",
-        icon: HangmanIcon,
       },
     ],
   },
