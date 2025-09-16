@@ -56,6 +56,7 @@ import JwtIcon from "@/assets/icons/jwt.icon";
 import LetterSpacingIcon from "@/assets/icons/letter-spacing.icon";
 import LineHeightIcon from "@/assets/icons/line-height.icon";
 import LinearGradientIcon from "@/assets/icons/linear-gradient.icon";
+import LoadingIcon from "@/assets/icons/loading.icon";
 import MarkdownIcon from "@/assets/icons/markdown.icon";
 import MemoryIcon from "@/assets/icons/memory.icon";
 import MobileMockupIcon from "@/assets/icons/mobile-mockup.icon";
@@ -515,6 +516,12 @@ export const toolGroups: ToolGroup[] = [
   {
     title: "UI Components",
     items: [
+      {
+        title: "Loading Components",
+        href: Route.LoadingComponents,
+        description: "React Loading components with css-in-js",
+        icon: LoadingIcon,
+      },
       {
         title: "Autocomplete",
         href: Route.UIAutocomplete,

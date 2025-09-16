@@ -1,4 +1,5 @@
 export enum Route {
+  LoadingComponents = "/loading-components",
   VideoConverters = "/video-converters",
   CompareTexts = "/compare-texts",
   JwtIO = "/jwt-io",

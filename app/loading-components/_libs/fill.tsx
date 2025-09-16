@@ -1,0 +1,74 @@
+"use client";
+
+import React from "react";
+import styled, { keyframes } from "styled-components";
+import type { SpinnerProps, TransientSpinnerProps } from "../types";
+
+const rotate = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`;
+
+const Wrapper = styled.div<TransientSpinnerProps>`
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: ${(props) => `${props.$size}${props.$sizeUnit}`};
+  height: ${(props) => `${props.$size}${props.$sizeUnit}`};
+  border: ${(props) => `${props.$size / 8}${props.$sizeUnit}`} solid
+    ${(props) => props.$color};
+  animation: ${rotate} 3s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+`;
+
+const fill = keyframes`
+  0% {
+    height: 0%;
+  }
+  25% {
+    height: 0%;
+  }
+  50% {
+    height: 100%;
+  }
+  75% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+  }
+`;
+
+type PlaneProps = Pick<TransientSpinnerProps, "$color">;
+
+const Plane = styled.div<PlaneProps>`
+  width: 100%;
+  background-color: ${(props) => props.$color};
+  animation: ${fill} 3s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+`;
+
+const FillSpinner: React.FC<SpinnerProps> = ({
+  size = 40,
+  color = "#436bfc",
+  sizeUnit = "px",
+}) => {
+  return (
+    <Wrapper $size={size} $color={color} $sizeUnit={sizeUnit}>
+      <Plane $color={color} />
+    </Wrapper>
+  );
+};
+
+export default FillSpinner;
