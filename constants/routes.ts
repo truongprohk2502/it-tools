@@ -1,4 +1,5 @@
 export enum Route {
+  AlarmClock = "/alarm-clock",
   LoadingComponents = "/loading-components",
   VideoConverters = "/video-converters",
   CompareTexts = "/compare-texts",

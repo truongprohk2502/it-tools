@@ -1,4 +1,5 @@
 import AccordionIcon from "@/assets/icons/accordion.icon";
+import AlarmIcon from "@/assets/icons/alarm.icon";
 import AngleSliderIcon from "@/assets/icons/angle-slider.icon";
 import ApiIcon from "@/assets/icons/api.icon";
 import AudioCutterIcon from "@/assets/icons/audio-cutter.icon";
@@ -186,6 +187,12 @@ export const toolGroups: ToolGroup[] = [
   {
     title: "Tools",
     items: [
+      {
+        title: "Alarm Clock",
+        href: Route.AlarmClock,
+        description: "Set an alarm to notify you",
+        icon: AlarmIcon,
+      },
       {
         title: "CV Creator",
         href: Route.CvCreator,
