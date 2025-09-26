@@ -4,6 +4,7 @@ import AngleSliderIcon from "@/assets/icons/angle-slider.icon";
 import ApiIcon from "@/assets/icons/api.icon";
 import AudioCutterIcon from "@/assets/icons/audio-cutter.icon";
 import AutocompleteIcon from "@/assets/icons/autocomplete.icon";
+import AvatarGeneratorIcon from "@/assets/icons/avatar-generator.icon";
 import AvatarIcon from "@/assets/icons/avatar.icon";
 import BackgroundColorIcon from "@/assets/icons/background-color.icon";
 import BadgeIcon from "@/assets/icons/badge.icon";
@@ -187,6 +188,12 @@ export const toolGroups: ToolGroup[] = [
   {
     title: "Tools",
     items: [
+      {
+        title: "Avatar Generator",
+        href: Route.AvatarGenerator,
+        description: "Generate an avatar image",
+        icon: AvatarGeneratorIcon,
+      },
       {
         title: "Alarm Clock",
         href: Route.AlarmClock,
