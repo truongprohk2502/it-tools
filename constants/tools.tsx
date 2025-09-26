@@ -45,6 +45,7 @@ import GraphqlIcon from "@/assets/icons/graphql.icon";
 import GrayScaleIcon from "@/assets/icons/gray-scale.icon";
 import HangmanIcon from "@/assets/icons/hangman.icon";
 import HueRotateIcon from "@/assets/icons/hue-rotate.icon";
+import IconListIcon from "@/assets/icons/icon-list.icon";
 import ImageCropIcon from "@/assets/icons/image-crop.icon";
 import ImageDiffIcon from "@/assets/icons/image-diff.icon";
 import InputIcon from "@/assets/icons/input.icon";
@@ -193,6 +194,12 @@ export const toolGroups: ToolGroup[] = [
         href: Route.AvatarGenerator,
         description: "Generate an avatar image",
         icon: AvatarGeneratorIcon,
+      },
+      {
+        title: "Tech Icons",
+        href: Route.TechIcons,
+        description: "Browse and select tech icons",
+        icon: IconListIcon,
       },
       {
         title: "Alarm Clock",

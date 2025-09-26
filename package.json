@@ -148,6 +148,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@svgr/webpack": "^8.1.0",
     "@types/babel__standalone": "^7.1.9",
     "@types/base-64": "^1.0.2",
     "@types/color-convert": "^2.0.4",

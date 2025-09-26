@@ -1,5 +1,6 @@
 export enum Route {
   AvatarGenerator = "/avatar-generator",
+  TechIcons = "/tech-icons",
   AlarmClock = "/alarm-clock",
   LoadingComponents = "/loading-components",
   VideoConverters = "/video-converters",

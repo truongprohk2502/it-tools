@@ -18,6 +18,13 @@ const nextConfig: NextConfig = {
       type: "javascript/auto",
     });
 
+    // Add the rule to handle SVG files using @svgr/webpack
+    config.module.rules.push({
+      test: /\.svg$/i,
+      issuer: /\.[jt]sx?$/,
+      use: ["@svgr/webpack"],
+    });
+
     return config;
   },
 };
